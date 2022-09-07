@@ -68,16 +68,29 @@
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
          //                           |  CTRL    |  CMD       | SPACE  |       |  ENTER | ALTGR |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
-         // &kp DLLR   &kp LPAR  &kp RPAR   &kp LBKT  &kp RBKT    &kp TILDE                               &none       &kp GRAVE  &none    &none          &none   &none
-         // &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH                                &kp AMPS    &kp PIPE   &none    &kp AT_SING    &none   &none
-         // &kp LSHFT  &kp LT    &kp GT     &kp HOME  &kp PG_DN   &kp END                                 &kp TILDE   &kp APOS   &none    &none          &none   &none
-         // &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
          bindings = <
             &kp DLLR   &kp LPAR  &kp RPAR   &kp LBKT  &kp RBKT    &kp TILDE             &none     &kp GRAVE  &none    &none     &none   &none
             &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              &kp AMPS  &kp PIPE   &none    &kp AT    &none   &none
             &kp LSHFT  &kp LT    &kp GT     &kp HOME  &kp PG_DN   &kp END               &kp TILDE &kp APOS   &none    &none     &none   &none
-                                    &kp LGUI &trans   &kp SPACE                         &kp RET   &trans    &kp RALT
+                                    &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
+                         function_layer {
+         //  .------------------------------------------------.                         .-------------------------------------------------.
+         //  |    F1  |  F2   |   F3  |   F4  |  F5   |TRADUCT|                         |   F7  |    F8 |    F9 |   F10 |   F11 |   F12   |
+         //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //  |  ALT   | TAB   | SPELL |EMOJI  |   \   |ALFRED |                         |C-A-DEL|PASS   |       |       |BRI_UP |         |
+         //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //  |  ALT   | TAB   |CANCEL |       |ALFRED |   F6  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
+         //  '---------------------------------------------------------|       |----------------------------------------------------------'
+         //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
+         //                           '--------------------------------'       '--------------------------------'
+         bindings = <
+            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp PRCNT &kp F7    &kp F8    &kp F9          &kp F10  &kp F11  &kp F12
+            &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+            &kp LSHFT &trans   &trans &trans   &trans   &kp F6      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                                    &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                                 >;
+                         };
    };
 };
