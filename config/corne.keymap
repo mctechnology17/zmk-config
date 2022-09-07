@@ -40,17 +40,21 @@
                                            &kp LCTRL  &kp LGUI  &kp RALT      &lt NUMBER SPACE  &lt SYMBOL RGUI &lt FUNCTION RALT
                         >;
                 };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                number_layer {
+//   .-------------------------------------------------.                         .-------------------------------------------------.
+//   |   0     |   1   |   2   |   3   |   -   |   +   |                         |   ß   |   Ü   |   Ä   |   Ö   |       |         |
+//   |---------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+//   |CAPS_LOCK|   4   |   5   |   6   |   /   |   *   |                         |   #   |   ~   |   ?   |       |       |         |
+//   |---------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+//   | SHIFT   |   7   |   8   |   9   |   %   |   =   |                         |   .   |   ´   |   `   |       |       |         |
+//   '----------------------------------------------------------|       |----------------------------------------------------------'
+//                             |  CTRL |  CMD  |     SPACE      |       |        |  LSFT |      ALTGR    |
+//                             '--------------------------------'       '--------------------------------'
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp N0     &kp N1   &kp N2   &kp N3    &kp MINUS   &kp PLUS                                &none     &none      &none         &none     &none   &none
+   &bt CAPS   &kp N4   &kp N5   &kp N6    &kp FSLH    &kp KP_MULTIPLY                         &kp HASH  &kp TILDE  &kp QUESTION  &none     &none   &none
+   &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   &kp EQUAL                               &kp DOT   &none      &kp GRAVE     &none     &none   &none
+                                           &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
                         >;
                 };
 
