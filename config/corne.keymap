@@ -7,22 +7,37 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
+#define DEFAULT 0
+#define NUMBER 1
+#define SYMBOL 2
+#define FUNCTION 3
+#define MEDIA 4
+#define MOUSE 5
+// &lt LOWER SPACE
+
+#define DE_Y &kp Z
+#define DE_Z &kp Y
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//    .------------------------------------------------.                         .-------------------------------------------------.
+//    |LT4 ESC |   Q   |   W   |   E   |   R   |   T   |                         |   Z   |   U   |   I   |   O   |   P   | BACKSPC |
+//    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+//    |LT5 TAB |   A   |   S   |   D   |   F   |   G   |                         |   H   |   J   |   K   |   L   |  UP   |   ENTER |
+//    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+//    |SHIFT   |   Y   |   X   |   C   |   V   |   B   |                         |   N   |   M   |RSFT , |  LEFT |  DOWN |   RIGHT |
+//    '---------------------------------------------------------|       |----------------------------------------------------------'
+//                             |  CTRL    |  CMD       |   ALT  |       | LT1 SPACE | LT2 CMD   | LT3 RALT |
+//                             '--------------------------------'       '----------------------------------'
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &lt MEDIA ESC   &kp Q   &kp W   &kp E   &kp R      &kp T                                  DE_Z    &kp U  &kp I      &kp O     &kp P     &kp BSPC
+   &lt MOUSE TAB   &kp A   &kp S   &kp D   &kp F      &kp G                                  &kp H   &kp J  &kp K      &kp L     &kp UP    &kp RET
+   &kp LSHFT       DE_Y    &kp X   &kp C   &kp V      &kp B                                  &kp N   &kp M  &kp COMMA  &kp LEFT  &kp DOWN  &kp RIGHT
+                                           &kp LCTRL  &kp LGUI  &kp RALT      &lt NUMBER SPACE  &lt SYMBOL RGUI &lt FUNCTION RALT
                         >;
                 };
                 lower_layer {
