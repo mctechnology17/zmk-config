@@ -75,7 +75,7 @@
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
-                         function_layer {
+      function_layer {
          //  .------------------------------------------------.                         .-------------------------------------------------.
          //  |    F1  |  F2   |   F3  |   F4  |  F5   |TRADUCT|                         |   F7  |    F8 |    F9 |   F10 |   F11 |   F12   |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
@@ -85,11 +85,48 @@
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
          //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
+         // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          bindings = <
             &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp PRCNT &kp F7    &kp F8    &kp F9          &kp F10  &kp F11  &kp F12
-            &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-            &kp LSHFT &trans   &trans &trans   &trans   &kp F6      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                    &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+            &kp LALT &kp TAB   &trans &trans   &kp BSLH   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+            &kp LALT &kp TAB   &trans &trans   &trans   &kp F6      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                                    &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
+                                 >;
+                         };
+      media_layer {
+         //  .------------------------------------------------.                         .-------------------------------------------------.
+         //  |    F1  |  F2   |   F3  |   F4  |  F5   |TRADUCT|                         |   F7  |    F8 |    F9 |   F10 |   F11 |   F12   |
+         //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //  |  ALT   | TAB   | SPELL |EMOJI  |   \   |ALFRED |                         |C-A-DEL|PASS   |       |       |BRI_UP |         |
+         //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //  |  ALT   | TAB   |CANCEL |       |ALFRED |   F6  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
+         //  '---------------------------------------------------------|       |----------------------------------------------------------'
+         //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
+         //                           '--------------------------------'       '--------------------------------'
+         // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
+         bindings = <
+            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp PRCNT &kp F7    &kp F8    &kp F9          &kp F10  &kp F11  &kp F12
+            &kp LALT &kp TAB   &trans &trans   &kp BSLH   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+            &kp LALT &kp TAB   &trans &trans   &trans   &kp F6      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                                    &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
+                                 >;
+                         };
+      mouse_layer {
+         //  .------------------------------------------------.                         .-------------------------------------------------.
+         //  |    F1  |  F2   |   F3  |   F4  |  F5   |TRADUCT|                         |   F7  |    F8 |    F9 |   F10 |   F11 |   F12   |
+         //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //  |  ALT   | TAB   | SPELL |EMOJI  |   \   |ALFRED |                         |C-A-DEL|PASS   |       |       |BRI_UP |         |
+         //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //  |  ALT   | TAB   |CANCEL |       |ALFRED |   F6  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
+         //  '---------------------------------------------------------|       |----------------------------------------------------------'
+         //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
+         //                           '--------------------------------'       '--------------------------------'
+         // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
+         bindings = <
+            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp PRCNT &kp F7    &kp F8    &kp F9          &kp F10  &kp F11  &kp F12
+            &kp LALT &kp TAB   &trans &trans   &kp BSLH   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+            &kp LALT &kp TAB   &trans &trans   &trans   &kp F6      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                                    &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
                                  >;
                          };
    };
