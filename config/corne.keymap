@@ -52,7 +52,7 @@
 //                             '--------------------------------'       '--------------------------------'
                         bindings = <
    &kp N0     &kp N1   &kp N2   &kp N3    &kp MINUS   &kp PLUS                                &none     &none      &none         &none     &none   &none
-   &bt CAPS   &kp N4   &kp N5   &kp N6    &kp FSLH    &kp KP_MULTIPLY                         &kp HASH  &kp TILDE  &kp QUESTION  &none     &none   &none
+   &kp CAPS   &kp N4   &kp N5   &kp N6    &kp FSLH    &kp STAR                                &kp HASH  &kp TILDE  &kp QUESTION  &none     &none   &none
    &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   &kp EQUAL                               &kp DOT   &none      &kp GRAVE     &none     &none   &none
                                            &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
                         >;
