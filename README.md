@@ -76,7 +76,7 @@ cd ~/zmk-config/config
 
 # vista de como esta estructurado el repositorio
 zmk-config # carpeta principal
-├── build.yaml # archivo de configuracion para el compilado
+├── build.yaml # archivo de configuracion para el compilado NO MODIFICAR
 ├── config # carpeta de configuracion
 │   ├── corne.conf # archicho de configuracios de las macros
 │   ├── corne.keymap # archicho de configuracios de las teclas
