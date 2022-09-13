@@ -1,3 +1,4 @@
+// ### include define {{{
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
@@ -19,10 +20,11 @@
 
 #define DE_Y &kp Z
 #define DE_Z &kp Y
+// }}}
 / {
    keymap {
       compatible = "zmk,keymap";
-
+      // ### default_layer {{{
       default_layer {
          //    .------------------------------------------------.                         .-------------------------------------------------.
          //    |LT4 ESC |   Q   |   W   |   E   |   R   |   T   |                         |   Z   |   U   |   I   |   O   |   P   | BACKSPC |
@@ -40,6 +42,8 @@
             &kp LCTRL  &kp LGUI  &kp RALT      &lt NUMBER SPACE  &lt SYMBOL RGUI &lt FUNCTION RALT
             >;
       };
+      // }}}
+      // ### number_layer {{{
       number_layer {
          //   .-------------------------------------------------.        TODO:            .-------------------------------------------------.
          //   |   0     |   1   |   2   |   3   |   -   |   +   |                         |   ß   |   Ü   |   Ä   |   Ö   |       |BACKSPC  |
@@ -57,7 +61,8 @@
             &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
             >;
       };
-
+      // }}}
+      // ### symbol_layer {{{
       symbol_layer {
          //  .------------------------------------------------.          TODO:          .-------------------------------------------------.
          //  |   $    |   (   |   )   |   [   |   ]   |   ~   |                         | ´     |   `   |       |       |       |         |
@@ -75,6 +80,8 @@
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
+      // }}}
+      // ### function_layer {{{
       function_layer {
          //  .------------------------------------------------.                         .-------------------------------------------------.
          //  |    F1  |  F2   |   F3  |   F4  | SPELL |TRADUCT|          TODO:          |       |       |       |       |       |         |
@@ -93,6 +100,8 @@
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     &kp GRAVE &kp LCTRL
                                  >;
                          };
+      // }}}
+      // ### media_layer {{{
       media_layer {
          // .------------------------------------------------.           TODO:         .-------------------------------------------------.
          // |        |<S-D-1>|<S-D-2>|<S-D-3>|       |       |                         |LANG_1 |LANG_2 |LANG_3 |       | STOP  |  DELETE |
@@ -112,6 +121,8 @@
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp SPACE   &kp RALT &kp LCTRL
                                  >;
                          };
+      // }}}
+      // ### mouse_layer {{{
       mouse_layer {
          //   .------------------------------------------------.         TODO:           .-------------------------------------------------.
          //   |        |       |       |OUT_USB|OUT_TOG|OUT_BLE|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
@@ -129,5 +140,7 @@
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
                                  >;
                          };
+      // }}}
    };
 };
+// vim: fdm=marker:
