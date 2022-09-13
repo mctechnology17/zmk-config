@@ -75,13 +75,13 @@ con el siguiente comando y modificar el codigo a tu gusto:
 cd ~/zmk-config/config
 
 # vista de como esta estructurado el repositorio
- zmk-config # carpeta principal
-├──  build.yaml # archivo de configuracion para el compilado
-├──  config # carpeta de configuracion
-│   ├──  corne.conf # archicho de configuracios de las macros
-│   ├──  corne.keymap # archicho de configuracios de las teclas
-│   └──  west.yml # config para conectarse con https://github.com/zmkfirmware NO MODIFICAR
-└──  README.md
+zmk-config # carpeta principal
+├── build.yaml # archivo de configuracion para el compilado
+├── config # carpeta de configuracion
+│   ├── corne.conf # archicho de configuracios de las macros
+│   ├── corne.keymap # archicho de configuracios de las teclas
+│   └── west.yml # config para conectarse con https://github.com/zmkfirmware NO MODIFICAR
+└── README.md
 ```
 
 Si no modificaste nada peiedes simplemente ir a tu repositorio en github y dale a refrescar a la pagina.
@@ -104,10 +104,10 @@ Ahora ve a descarga en tu computadora(o donde tengas por defecto las descargas):
 Si quieres usar mi configuracion solo debes clonar este repositorio y reemplazar los archivos `corne.conf` y `corne.keymap`
 que se encuentran en la siguiente ruta:
 ```bash
- zmk-config # carpeta principal
-├──  config # carpeta de configuracion
-│   ├──  corne.conf # archicho de configuracios de las macros
-│   ├──  corne.keymap # archicho de configuracios de las teclas
+zmk-config # carpeta principal
+├── config # carpeta de configuracion
+│   ├── corne.conf # archicho de configuracios de las macros
+│   ├── corne.keymap # archicho de configuracios de las teclas
 ```
 
 # Donacion
