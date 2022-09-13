@@ -114,18 +114,18 @@
                          };
       mouse_layer {
          //   .------------------------------------------------.         TODO:           .-------------------------------------------------.
-         //   |        |       |       |       |       |       |                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
+         //   |        |       |       |OUT_USB|OUT_TOG|OUT_BLE|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
          //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          //   |        |CLICK_1|CLICK_2|       |       |       |                         |       |       |       |CLICK_1| UP    |CLICK_2  |
          //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   | L_SHIFT|       |       |       |       |       |                         |       |       |       | LEFT  | DOWN  | RIGHT   |
+         //   | L_SHIFT|       |BT_CLR |BT_0   |BT_1   |BT_2   |                         |       |       |       | LEFT  | DOWN  | RIGHT   |
          //   '---------------------------------------------------------|       |----------------------------------------------------------'
          //                            |  CTRL    |  CMD       | SPACE  |       |       |        |               |
          //                            '--------------------------------'       '--------------------------------'
          bindings = <
+            &none &none &none &out OUT_USB &out OUT_TOG  &out OUT_BLE &none    &none   &none          &none  &none  &none
             &none &none &none &none &none &none &none    &none   &none          &none  &none  &none
-            &none &none &none &none &none &none &none    &none   &none          &none  &none  &none
-            &none &none &none &none &none &none &none    &none   &none          &none  &none  &none
+            &none &none &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none    &none   &none          &none  &none  &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
                                  >;
                          };
