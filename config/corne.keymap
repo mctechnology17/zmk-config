@@ -35,10 +35,10 @@
 #define DE_PLUS       &kp RBKT       // +
 #define DE_GRAVE      &kp PLUS       // `
 #define DE_HASH       &kp BSLH       // #
-#define DE_TILDE      &kp LA(RBKT)    // ~
-#define DE_PIPE       &kp LA(PLUS)      // "|"
-#define DE_BSLH       &kp LA(MINUS)      // \
-#define DE_QUESTION   &kp LS(MINUS)      // ?
+#define DE_TILDE      &kp LA(DE_PLUS)    // ~
+#define DE_PIPE       &kp LA(GRAVE)      // "|"
+#define DE_BSLH       &kp LA(DE_SS)      // \
+#define DE_QUESTION   &kp LS(DE_SS)      // ?
 #define DE_AT         &kp LA(Q)          // @
 #define DE_AMPS       &kp CARET      // &
 // ### ejemplos {{{
@@ -93,7 +93,7 @@
          //                             '--------------------------------'       '--------------------------------'
          bindings = <
             &kp N0     &kp N1   &kp N2   &kp N3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
-            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  &none     &none   &none
+            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  &kp QUESTION  &none     &none   &none
             &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   DE_EQUAL                               &kp DOT   &none      DE_GRAVE     &none     &none   &none
             &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
             >;
@@ -132,7 +132,7 @@
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          bindings = <
             &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) &none   &none &none &none &none &none
-            &kp F5 &kp F6   &kp F7 &kp F8 DE_BSLH &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
+            &kp F5 &kp F6   &kp F7 &kp F8 &kp BSLH &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
             &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          &none  &kp C_BRI_DN  &none
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     &kp GRAVE &kp LCTRL
                                  >;
