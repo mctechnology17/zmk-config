@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
+// #include <dt-bindings/zmk/ext_power.h>
 
 #define DEFAULT 0
 #define NUMBER 1
@@ -19,8 +19,30 @@
 #define MOUSE 5
 // &lt LOWER SPACE
 
-#define DE_Y &kp Z
-#define DE_Z &kp Y
+#define DE_Y    &kp Z          // Y
+#define DE_Z    &kp Y          // Z
+#define DE_SS   &kp MINUS      // ß
+#define DE_UDIA &kp LBKT       // Ü
+#define DE_ODIA &kp SEMICOLON  // Ö
+#define DE_ADIA &kp APOS       // Ä
+#define DE_MINS &kp SLASH      // -
+#define DE_LABK &kp GRAVE      // <
+#define DE_FSLH &kp AMPS       // "/"
+#define DE_STAR &kp RBRC       // "*"
+#define DE_EQUAL &kp RPAR       // =
+// #define DE_HASH KC_NUHS     // #
+// &kp PLUS =  `
+// &kp GRAVE = <
+// &kp RPAR = =
+// &kp APOS = ä
+// &kp AMPS = /
+// &kp FSLH = -
+// &kp STAR = (
+// &kp LBKT = ü
+// &kp RBKT = +
+// &kp TILDE = >
+// &kp RBRC = *
+// &kp CARET = &
 // }}}
 / {
    keymap {
@@ -56,9 +78,9 @@
          //                             |  CTRL |  CMD  |     SPACE      |       |        |  LSFT |      ALTGR    |
          //                             '--------------------------------'       '--------------------------------'
          bindings = <
-            &kp N0     &kp N1   &kp N2   &kp N3    &kp MINUS   &kp PLUS                                &none     &none      &none         &none     &none   &kp BSPC
-            &kp CAPS   &kp N4   &kp N5   &kp N6    &kp FSLH    &kp STAR                                &kp HASH  &kp TILDE  &kp QUESTION  &none     &none   &none
-            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   &kp EQUAL                               &kp DOT   &none      &kp GRAVE     &none     &none   &none
+            &kp N0     &kp N1   &kp N2   &kp N3    DE_MINS   &kp PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
+            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                &kp HASH  &kp TILDE  &kp QUESTION  &none     &none   &none
+            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   DE_EQUAL                               &kp DOT   &none      &kp GRAVE     &none     &none   &none
             &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
             >;
       };
@@ -139,7 +161,7 @@
          bindings = <
             &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
             &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none  &none   &none  &none  &none  &none
-            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG  &none  &none  &none
+            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  &none  &none  &none  &none  &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
                                  >;
                          };
