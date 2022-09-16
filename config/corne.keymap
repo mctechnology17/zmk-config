@@ -93,7 +93,7 @@
          //                             '--------------------------------'       '--------------------------------'
          bindings = <
             &kp N0     &kp N1   &kp N2   &kp N3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
-            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  &none     &none   &none
+            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  &kp QUESTION  &none     &none   &none
             &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   DE_EQUAL                               &kp DOT   &none      DE_GRAVE     &none     &none   &none
             &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
             >;
@@ -112,7 +112,7 @@
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
             &kp DLLR   &kp LPAR  &kp RPAR   &kp LBKT  &kp RBKT    &kp TILDE             &none     &kp GRAVE  &none    &none     &none   &none
-            &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
+            &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              &kp AMPS  &kp PIPE   &none    &kp AT    &none   &none
             &kp LSHFT  &kp LT    &kp GT     &kp HOME  &kp PG_DN   &kp END               &kp TILDE &kp APOS   &none    &none     &none   &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
@@ -132,7 +132,7 @@
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          bindings = <
             &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) &none   &none &none &none &none &none
-            &kp F5 &kp F6   &kp F7 &kp F8 DE_BSLH &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
+            &kp F5 &kp F6   &kp F7 &kp F8 &kp BSLH &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
             &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          &none  &kp C_BRI_DN  &none
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     &kp GRAVE &kp LCTRL
                                  >;
