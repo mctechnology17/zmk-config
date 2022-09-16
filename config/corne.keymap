@@ -35,10 +35,10 @@
 #define DE_PLUS       &kp RBKT       // +
 #define DE_GRAVE      &kp PLUS       // `
 #define DE_HASH       &kp BSLH       // #
-#define DE_TILDE      LA(DE_PLUS)    // ~
-#define DE_PIPE       LA(GRAVE)      // "|"
-#define DE_BSLH       LA(DE_SS)      // \
-#define DE_QUESTION   LS(DE_SS)      // ?
+#define DE_TILDE      LA(RBKT)    // ~
+#define DE_PIPE       LA(PLUS)      // "|"
+#define DE_BSLH       LA(MINUS)      // \
+#define DE_QUESTION   LS(MINUS)      // ?
 #define DE_AT         LA(Q)          // @
 #define DE_AMPS       &kp CARET      // &
 // &kp PLUS =  `
