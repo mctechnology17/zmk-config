@@ -38,9 +38,14 @@
 #define DE_TILDE      &kp LA(RBKT)   // ~
 #define DE_PIPE       &kp RA(GRAVE)  // "|"
 #define DE_AMPS       &kp CARET      // "&"
-#define DE_BSLH       &kp RA(MINUS)      // "\"
-#define DE_QUESTION   &kp LS(MINUS)      // ? hasta aqui funciona
-#define DE_AT         &kp RA(Q)          // "@"
+#define DE_BSLH       &kp RA(MINUS)  // "\"
+#define DE_QUESTION   &kp LS(MINUS)  // ?
+#define DE_AT         &kp RA(Q)      // "@"
+#define DE_LPAR       &kp LS(N8)     // ( hasta aqui funciona
+#define DE_RPAR       &kp LS(N9)     // )
+#define DE_LBKT       &kp RA(N8)     // [
+#define DE_RBKT       &kp RA(N9)     // ]
+
 // ### ejemplos {{{
 // &kp PLUS =  `
 // &kp GRAVE = <
@@ -111,7 +116,7 @@
          //                           |  CTRL    |  CMD       | SPACE  |       |  ENTER | ALTGR |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
-            &kp DLLR   &kp LPAR  &kp RPAR   &kp LBKT  &kp RBKT    &kp TILDE             &none     &kp GRAVE  &none    &none     &none   &none
+            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_LBKT   DE_TILDE             &none     &kp GRAVE  &none    &none     &none   &none
             &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
             &kp LSHFT  &kp LT    &kp GT     &kp HOME  &kp PG_DN   &kp END               &kp TILDE &kp APOS   &none    &none     &none   &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
