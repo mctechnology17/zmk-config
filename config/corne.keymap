@@ -28,7 +28,6 @@
 #define DE_ODIA       &kp SEMICOLON  // Ö
 #define DE_ADIA       &kp APOS       // Ä
 #define DE_MINS       &kp SLASH      // -
-#define DE_LABK       &kp GRAVE      // <
 #define DE_FSLH       &kp AMPS       // "/"
 #define DE_STAR       &kp RBRC       // "*"
 #define DE_EQUAL      &kp RPAR       // =
@@ -46,6 +45,11 @@
 #define DE_LBKT       &kp RA(N8)     // [
 #define DE_RBKT       &kp RA(N9)     // ]
 
+#define DE_LBRC       &kp RA(N7)     // {
+#define DE_RBRC       &kp RA(N0)     // }
+#define DE_LABK       &kp GRAVE      // <
+#define DE_RABK       &kp LS(GRAVE)  // >
+#define DE_APOS       &kp PIPE       // '
 // ### ejemplos {{{
 // &kp PLUS =  `
 // &kp GRAVE = <
@@ -117,8 +121,8 @@
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
             &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_LBKT   DE_TILDE             &none     &kp GRAVE  &none    &none     &none   &none
-            &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
-            &kp LSHFT  &kp LT    &kp GT     &kp HOME  &kp PG_DN   &kp END               &kp TILDE &kp APOS   &none    &none     &none   &none
+            &kp PRCNT  DE_LBRC  DE_RBRC   &kp CARET &kp PG_UP   &kp HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
+            &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
