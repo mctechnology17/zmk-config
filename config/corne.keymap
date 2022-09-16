@@ -112,7 +112,7 @@
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
             &kp DLLR   &kp LPAR  &kp RPAR   &kp LBKT  &kp RBKT    &kp TILDE             &none     &kp GRAVE  &none    &none     &none   &none
-            &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              &kp AMPS  &kp PIPE   &none    &kp AT    &none   &none
+            &kp PRCNT  &kp LBRC  &kp RBRC   &kp CARET &kp PG_UP   &kp HASH              DE_AMPS  DE_PIPE   &none    &kp AT    &none   &none
             &kp LSHFT  &kp LT    &kp GT     &kp HOME  &kp PG_DN   &kp END               &kp TILDE &kp APOS   &none    &none     &none   &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
