@@ -23,7 +23,7 @@
 Este repositorio contiene mi configuracion personal de mi teclado corne con el sofware de [ZMK](https://zmk.dev/docs),
 flashado en el microcontrolador [nice!nano_v2](https://nicekeyboards.com/nice-nano).
 
-[![nicenano_v2](https://nicekeyboards.com/nicenano-thin.webm)](https://nicekeyboards.com/nice-nano/)
+[![nicenano_v2](https://github.com/mctechnology17/mctechnology17/blob/main/src/nicenanov2.GIF)](https://nicekeyboards.com/nice-nano/)
 
 NO ME HAGO RESPONSABLE DE NINGUN DAÑO QUE PUEDA OCASIONAR ESTE CODIGO, UTILIZALO
 BAJO TU PROPIO RIESGO.
