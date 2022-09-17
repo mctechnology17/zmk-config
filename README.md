@@ -32,11 +32,14 @@ SIENTETE LIBRE DE MODIFICAR EL CODIGO A TU GUSTO O DE OCUPAR LO QUE NECESITES
 NO OLVIDES REFERENCIAR A LOS AUTORES DE LOS CODIGOS QUE OCUPES.
 
 Caracteristicas:
- - Teclado inalambrico con bleutooth y usb-c
- - Teclado ergonomico
+ - Teclado inalambrico atraves de conexion bluetooth y usb-c
+ - Teclado ergonomico y ortolineal
  - Altamente programable con el sofware de ZMK
  - Compatibilidad con Linux, Windows, MacOS, Android, IOS y mas
- - Completamente inalambrico entre las dos mitades
+ - COMPLETAMENTE INALAMBRICO ENTRE LAS DOS MITADES Y CON EL PC
+ - Ultra bajo consumo. Extiende la duración de la batería al límite
+ - Arrastrar y soltar gracias a el cargador de arranque UF2 incluido
+ - NO SE REQUIERE SOFTWARE ADICIONAL (como VIAL, QMK ToolBox etc.)
  - Y mas...
 
 FUNCIONANDO SIN ERRORES HASTA EL MOMENTO!
