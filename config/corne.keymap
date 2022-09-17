@@ -20,7 +20,7 @@
 #define MOUSE 5
 // &lt LOWER SPACE
 //}}}
-// ### definiendo el teclado aleman {{{
+// ### definicion de teclado ALEMAN STANDARD {{{
 #define DE_Y          &kp Z          // Y
 #define DE_Z          &kp Y          // Z
 #define DE_SS         &kp MINUS      // ß
@@ -52,25 +52,6 @@
 #define DE_ACUT       &kp EQUAL      // ´ hasta aqui funciona
 
 #define DE_CARET      &kp HASH         // ^ TODO:
-
-// ### ejemplos {{{
-// &kp PLUS =  `
-// &kp GRAVE = <
-// &kp LT = ^
-// &kp RPAR = =
-// &kp APOS = ä
-// &kp AMPS = /
-// &kp FSLH = -
-// &kp STAR = (
-// &kp LBKT = ü
-// &kp RBKT = +
-// &kp TILDE = >
-// &kp RBRC = *
-// &kp CARET = &
-// &kp PIPE = '
-// &kp BSLH = #
-// &kp EQUAL = ´
-//}}}
 //}}}
 / {
    keymap {
