@@ -51,7 +51,7 @@
 #define DE_APOS       &kp PIPE       // ' hasta aqui funciona
 
 #define DE_CARET      &kp LT         // ^
-#define DE_EQUAL      &kp EQUAL      // ´
+#define DE_ACUT       &kp EQUAL      // ´
 
 // ### ejemplos {{{
 // &kp PLUS =  `
@@ -125,7 +125,7 @@
          //                           |  CTRL    |  CMD       | SPACE  |       |  ENTER | ALTGR |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
-            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_EQUAL     &kp GRAVE  &none    &none     &none   &none
+            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  &none    &none     &none   &none
             &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
             &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
