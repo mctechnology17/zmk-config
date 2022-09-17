@@ -48,10 +48,10 @@
 #define DE_RBRC       &kp RA(N0)     // }
 #define DE_LABK       &kp GRAVE      // <
 #define DE_RABK       &kp LS(GRAVE)  // >
-#define DE_APOS       &kp PIPE       // ' hasta aqui funciona
+#define DE_APOS       &kp PIPE       // '
+#define DE_ACUT       &kp EQUAL      // ´ hasta aqui funciona
 
-#define DE_CARET      &kp LT         // ^
-#define DE_ACUT       &kp EQUAL      // ´
+#define DE_CARET      &kp HASH         // ^ TODO:
 
 // ### ejemplos {{{
 // &kp PLUS =  `
@@ -99,16 +99,16 @@
          //   .-------------------------------------------------.        TODO:            .-------------------------------------------------.
          //   |   0     |   1   |   2   |   3   |   -   |   +   |                         |   ß   |   Ü   |   Ä   |   Ö   |       |BACKSPC  |
          //   |---------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |CAPS_LOCK|   4   |   5   |   6   |   /   |   *   |                         |   #   |   ~   |   ?   |       |       |         |
+         //   |CAPS_LOCK|   4   |   5   |   6   |   /   |   *   |                         |   #   |   ~   |   ?   |       |       | ALT     |
          //   |---------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   | SHIFT   |   7   |   8   |   9   |   %   |   =   |                         |   .   |   ´   |   `   |       |       |         |
+         //   | SHIFT   |   7   |   8   |   9   |   %   |   =   |                         |   .   |   ´   |   `   |       |       |ALTGR    |
          //   '----------------------------------------------------------|       |----------------------------------------------------------'
          //                             |  CTRL |  CMD  |     SPACE      |       |        |  LSFT |      ALTGR    |
          //                             '--------------------------------'       '--------------------------------'
          bindings = <
             &kp N0     &kp N1   &kp N2   &kp N3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
-            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  &none     &none   &none
-            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   DE_EQUAL                               &kp DOT   &none      DE_GRAVE     &none     &none   &none
+            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  &none     &none   &kp LALT
+            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   DE_EQUAL                               &kp DOT   DE_ACUT      DE_GRAVE     &none     &none   &kp RALT
             &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
             >;
       };
@@ -116,18 +116,18 @@
       // ### symbol_layer {{{
       symbol_layer {
          //  .------------------------------------------------.          TODO:          .-------------------------------------------------.
-         //  |   $    |   (   |   )   |   [   |   ]   |   ~   |                         | ´     |   `   |       |       |       |         |
+         //  |   $    |   (   |   )   |   [   |   ]   |   ~   |                         | ´     |   `   |       |       |       |BACKSPC  |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //  |   %    |   {   |   }   |   ^   |PAGE_UP|   #   |                         |   &   |   |   |       |  @    |       |         |
+         //  |   %    |   {   |   }   |   ^   |PAGE_UP|   #   |                         |   &   |   |   |       |  @    |       | ALT     |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //  |SHIFT   |    <  |   >   |  HOME |PAGE_DO|  END  |                         |   ~   |   '   |       |       |       |         |
+         //  |SHIFT   |    <  |   >   |  HOME |PAGE_DO|  END  |                         |   ~   |   '   |       |       |       |ALTGR    |
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
          //                           |  CTRL    |  CMD       | SPACE  |       |  ENTER | ALTGR |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
-            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  &none    &none     &none   &none
-            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
-            &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &none
+            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  &none    &none     &none   &kp BSPC
+            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &kp LALT
+            &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &kp RALT
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
@@ -148,7 +148,7 @@
             &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) &none   &none &none &none &none &none
             &kp F5 &kp F6   &kp F7 &kp F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
             &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          &none  &kp C_BRI_DN  &none
-                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     &kp GRAVE &kp LCTRL
+                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     DE_ACUT &kp LCTRL
                                  >;
                          };
       // }}}
