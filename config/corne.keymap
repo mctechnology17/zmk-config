@@ -40,19 +40,23 @@
 #define DE_BSLH       &kp RA(MINUS)  // "\"
 #define DE_QUESTION   &kp LS(MINUS)  // ?
 #define DE_AT         &kp RA(Q)      // "@"
-#define DE_LPAR       &kp LS(N8)     // ( hasta aqui funciona
+#define DE_LPAR       &kp LS(N8)     // (
 #define DE_RPAR       &kp LS(N9)     // )
 #define DE_LBKT       &kp RA(N8)     // [
 #define DE_RBKT       &kp RA(N9)     // ]
-
 #define DE_LBRC       &kp RA(N7)     // {
 #define DE_RBRC       &kp RA(N0)     // }
 #define DE_LABK       &kp GRAVE      // <
 #define DE_RABK       &kp LS(GRAVE)  // >
-#define DE_APOS       &kp PIPE       // '
+#define DE_APOS       &kp PIPE       // ' hasta aqui funciona
+
+#define DE_CARET      &kp LT         // ^
+#define DE_EQUAL      &kp EQUAL      // ´
+
 // ### ejemplos {{{
 // &kp PLUS =  `
 // &kp GRAVE = <
+// &kp LT = ^
 // &kp RPAR = =
 // &kp APOS = ä
 // &kp AMPS = /
@@ -65,6 +69,7 @@
 // &kp CARET = &
 // &kp PIPE = '
 // &kp BSLH = #
+// &kp EQUAL = ´
 //}}}
 //}}}
 / {
@@ -120,8 +125,8 @@
          //                           |  CTRL    |  CMD       | SPACE  |       |  ENTER | ALTGR |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
          bindings = <
-            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_LBKT   DE_TILDE             &none     &kp GRAVE  &none    &none     &none   &none
-            &kp PRCNT  DE_LBRC  DE_RBRC   &kp CARET &kp PG_UP   &kp HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
+            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_EQUAL     &kp GRAVE  &none    &none     &none   &none
+            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &none
             &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
