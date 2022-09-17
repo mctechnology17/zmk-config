@@ -122,7 +122,7 @@ que son herramientas de trabajo fáciles de integrar, pero muy potentes que te p
 mejore su flujo de trabajo, integrándose con todos los sistemas operativos y todas las
 shells(zsh, fish, bash, etc.) posibles.
 
-Aquí puedes ver otro proyecto publicado recientemente:
+Aquí puedes ver otros proyecto publicado recientemente:
 - [vimtools] navaja suiza para vim (funciones y configuraciones que te facilitarán la vida)
 - [gm] administrador multiplataforma GIT con una interfaz de usuario amigable
 - [vim-better-header] la mejor plantilla automatizada
@@ -131,9 +131,9 @@ Aquí puedes ver otro proyecto publicado recientemente:
 
 # [LICENSE](LICENSE)
 
-Released under the GNU General Public License v3.0.
+Released under the MIT License
 
-Copyright (c) 2022 Marcos Chow Castro
+Copyright (c) 2020 The ZMK Contributors
 
 [twitter]: https://twitter.com/mctechnology17
 [youtube]: https://www.youtube.com/c/mctechnology17
