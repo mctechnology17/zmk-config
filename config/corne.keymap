@@ -10,6 +10,45 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+
+/*
+ * Temporarily here because nice nano v2 spi is not defined on ZMk Yet
+ * Source: https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/reviung41/boards/nice_nano.overlay
+ * GitHub Issue: https://github.com/zmkfirmware/zmk/issues/885
+ */
+
+#include <dt-bindings/led/led.h>
+&spi1 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	mosi-pin = <6>;
+	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+	sck-pin = <5>;
+	miso-pin = <7>;
+
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		label = "WS2812";
+
+		/* SPI */
+		reg = <0>; /* ignored, but necessary for SPI bindings */
+		spi-max-frequency = <4000000>;
+
+		/* WS2812 */
+		chain-length = <11>; /* arbitrary; change at will */
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+	};
+};
+
+/ {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+};
+
 // }}}
 // ### definiendo capas {{{
 #define DEFAULT 0
@@ -157,7 +196,7 @@
       // ### mouse_layer {{{
       mouse_layer {
          //   .------------------------------------------------.         TODO:           .-------------------------------------------------.
-         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
+         //   |RGB TOG |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
          //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          //   |        |CLICK_1|CLICK_2|BT_CLR |BT_PRV | BT_NXT|                         |       |       |       |CLICK_1| UP    |CLICK_2  |
          //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
@@ -168,7 +207,7 @@
          //   &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG  &none  &none  &none
          //   &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  &none  &none  &none  &none  &none
          bindings = <
-            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
+            &rgb_ug RGB_TOG &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
             &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none  &none   &none  &none  &none  &none
             &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG  &none  &none  &none
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
@@ -177,4 +216,19 @@
       // }}}
    };
 };
+/*
+                adjust_layer {
+// -----------------------------------------------------------------------------------------
+// | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | RGB TOG |   |  BT1  | BT2 | BT3 | BT4 | BT5 | BT CLR |
+// | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |    |         |   |       |     |     |     |     |        |
+// |          |          |          |          |    |         |   | RESET |     |     |     |     |        |
+//                                              |     |     |     |     |     |
+                        bindings = <
+   &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &rgb_ug RGB_TOG    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
+   &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none              &none        &none        &none        &none        &none        &none
+   &none           &none           &none           &none           &none &none              &reset       &none        &none        &none        &none        &none
+                                                             &trans      &trans       &tog _ADJUST        &trans      &trans
+                        >;
+                };
+*/
 // vim: fdm=marker:
