@@ -12,14 +12,18 @@
 <br>
 
 
-- [Intro](#Intro)
-- [Instalacion](#Instalacion)
-- [Donacion](#Donacion)
+- [INTRO](#INTRO)
+- [INSTALACION](#INSTALACION)
+- [MODO SUSPENCION](#MODO-SUSPENCION)
+- [PANTALLA OLED](#PANTALLA-OLED)
+- [RGB](#RGB)
+- [OTROS CONSEJOS IMPORTANTES](#OTROS-CONSEJOS-IMPORTANTES)
+- [DONACION](#DONACION)
 - [LICENSE](#LICENSE)
 
 ----
 
-# Intro
+# INTRO
 Este repositorio contiene mi configuracion personal de mi teclado corne con el sofware de [ZMK](https://zmk.dev/docs),
 flashado en el microcontrolador [nice!nano_v2](https://nicekeyboards.com/nice-nano).
 
@@ -44,15 +48,21 @@ Caracteristicas:
 
 FUNCIONANDO SIN ERRORES HASTA EL MOMENTO!
 
-# Instalacion
+# INSTALACION
 [Referencia ZMK](https://zmk.dev/docs/user-setup) de donde saque la informacion.
 
-Requisitos:
- - Tener instalado `git` en tu computadora y una cuenta en github
- - Opcional tener instalado VSC (Visual Studio Code)
+PRE-Requisitos:
+ - Tener instalado [git](https://github.com/git-guides/install-git) en tu computadora y una cuenta en [github](https://github.com/)
+   - Crear un nuevo repositorio en github. [Para crear un nuevo repositorio dale click aqui](https://github.com/new)
+   - Cuando se te solicite el nombre del repositorio, ingresa zmk-config (puede ser otro nombre tambien).
+   - El repositorio puede ser público o privado
+   - No marcar ninguna de las opciones para inicializar el repositorio con un README u otros archivos.
+   - Haz clic en "Crear repositorio"
+ - Opcional tener instalado en tu computadora VSC (Visual Studio Code)
    u otro editor de texto de tu preferencia, yo uso `nvim/vim`
  - Opcional puedes de preferencia usar `git` con SSH
-   eso te evitara tener que poner tu usuario y contraseña
+   eso te evitara tener que poner tu usuario y contraseña cada vez que tengas que hacer un `git push`
+   en otras palabras despues de cada modificacion que le hagas al codigo
 
 ```bash
 # 0. crea una repositorio con el nombre de zmk-config en tu cuenta de github
@@ -89,8 +99,7 @@ zmk-config # carpeta principal
 └── README.md
 ```
 
-Si no modificaste nada peiedes simplemente ir a tu repositorio en github y dale a refrescar a la pagina.
-[En mi caso aqui](https://github.com/mctechnology17/zmk-config).
+Si no modificaste nada puedes simplemente ir a tu repositorio en github y dale a refrescar a la pagina.
 
 Ahora ve a esta ruta en tu repositorio de github:
  - Actions(click) -> All Workflows (click)-> Initial User Config. (aqui haces scroll hasta abajo y click)
@@ -115,7 +124,125 @@ zmk-config # carpeta principal
 │   ├── corne.keymap # archicho de configuracios de las teclas
 ```
 
-# Donacion
+# MODO SUSPENCION
+En el archicho de configuracios de las macros [corne.conf](./config/corne.conf) puedes poner la siguiente macro:
+```make
+CONFIG_ZMK_SLEEP=y
+```
+Esta macro te permite poner el teclado en modo de suspencion, para despertarlo solo debes presionar cualquier tecla.
+Es muy util para preservar la vida de la bateria.
+```bash
+zmk-config # carpeta principal
+├── config # carpeta de configuracion
+│   ├── corne.conf # archicho de configuracios de las macros
+```
+ESTA MACRO NO VIENE POR DEFECTO EN LA CONFIGURACION ESTANDAR DE ZMK, POR LO QUE DEBES AGREGARLA TU MISMO.
+
+# PANTALLA OLED
+La pantalla OLED aun no esta soportada por ZMK o mejor dicho esta en desarrollo, por lo que no se puede usar.
+
+# RGB
+En el archicho de configuracios de las macros [corne.conf](./config/corne.conf) puedes poner la siguiente macro:
+```make
+CONFIG_ZMK_RGB_UNDERGLOW=y
+# Usar la configuración de STRIP específica para los LED que estás usando
+CONFIG_WS2812_STRIP=y
+```
+```bash
+zmk-config # carpeta principal
+├── config # carpeta de configuracion
+│   ├── corne.conf # archicho de configuracios de las macros
+```
+Ahora debes ir a la siguiente ruta y modificar el archivo [corne.keymap](conf/corne.keymap):
+```bash
+zmk-config # carpeta principal
+├── config # carpeta de configuracion
+│   ├── corne.keymap # archicho de configuracios de las teclas + RBG
+```
+Agrega las siguientes lineas antes de keymap:
+```c
+#ifdef CONFIG_ZMK_RGB_UNDERGLOW
+#    include <dt-bindings/zmk/rgb.h>
+#    include <dt-bindings/led/led.h>
+&spi1 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	mosi-pin = <6>;
+	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+	sck-pin = <5>;
+	miso-pin = <7>;
+
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		label = "WS2812";
+
+		/* SPI */
+		reg = <0>; /* ignored, but necessary for SPI bindings */
+		spi-max-frequency = <4000000>;
+
+		/* WS2812 */
+		chain-length = <11>; /* arbitrary; change at will */
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+	};
+};
+
+/ {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+};
+#endif // CONFIG_ZMK_RGB_UNDERGLOW
+```
+Ahora aqui tienes un ejemplo de como debes mapear las teclas para controlar el RGB:
+```c
+#ifdef CONFIG_ZMK_RGB_UNDERGLOW
+      mouse_layer {
+         //   .------------------------------------------------.                         .-------------------------------------------------.
+         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |RGBBRI-|RGBBRI+|WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
+         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //   |        |CLICK_1|CLICK_2|BT_CLR |BT_PRV | BT_NXT|                         |RGBSAT-|RGBSAT+|       |CLICK_1| UP    |CLICK_2  |
+         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |RGBHUE-|RGBHUE+| RESET | LEFT  | DOWN  | RIGHT   |
+         //   '---------------------------------------------------------|       |----------------------------------------------------------'
+         //                            |EP_ON  | EP_OFF|         EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
+         //                            '--------------------------------'       '--------------------------------'
+         bindings = <
+            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &none  &none  &none  &none
+            &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &rgb_ug RGB_SAD  &rgb_ug RGB_SAI   &none  &none  &none  &none
+            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &rgb_ug RGB_HUD  &rgb_ug RGB_HUI   &reset  &none  &none  &none
+                                    &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG                      &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+                                 >;
+                         };
+#else
+      mouse_layer {
+         //   .------------------------------------------------.                         .-------------------------------------------------.
+         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
+         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //   |        |CLICK_1|CLICK_2|BT_CLR |BT_PRV | BT_NXT|                         |       |       |       |CLICK_1| UP    |CLICK_2  |
+         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+         //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |       |       | RESET | LEFT  | DOWN  | RIGHT   |
+         //   '---------------------------------------------------------|       |----------------------------------------------------------'
+         //                            |EP_ON  | EP_OFF|         EP_TOG |       |       |        |               |
+         //                            '--------------------------------'       '--------------------------------'
+         bindings = <
+            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
+            &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none  &none   &none  &none  &none  &none
+            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  &none  &reset  &none  &none  &none
+                                    &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG                      &none  &none  &none
+                                 >;
+                         };
+#endif // CONFIG_ZMK_RGB_UNDERGLOW
+```
+RECUERDA QUE EL RGB GASTA DEMASIADA ENERGIA, LO MEJOR ES NO ACTIVARLO!
+
+# OTROS CONSEJOS IMPORTANTES
+- Si se te desconectaron/desincronizaron ambas mitades solo tienes que presionar el boton de reset de ambas mitades 10 veces seguidas y se volveran a conectar.
+- Si quires volver a flashar el firware solo tienes que conectar el teclado(osea una mitad primero, normalmente la izquierda) presionar el boton de reset 2 veces seguidas
+  y tu dispositivo se reconocera como una unidad de almecenamiento de disco duro, luego solo arrastra el archivo a flashear y listo. Haz lo mismo con la otra mitad.
+
+# DONACION
 Si disfrutas de mi trabajo, siéntete libre de donar o convertirte en patrocinador.
 - [paypal]
 - [sponsor]
