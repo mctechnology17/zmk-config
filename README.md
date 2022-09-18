@@ -153,7 +153,7 @@ zmk-config # carpeta principal
 ├── config # carpeta de configuracion
 │   ├── corne.conf # archicho de configuracios de las macros
 ```
-Ahora debes ir a la siguiente ruta y modificar el archivo [corne.keymap](conf/corne.keymap):
+Ahora debes ir a la siguiente ruta y modificar el archivo [corne.keymap](./config/corne.keymap):
 ```bash
 zmk-config # carpeta principal
 ├── config # carpeta de configuracion
