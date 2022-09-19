@@ -12,7 +12,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 // }}}
 // nvim ~/qmk_firmware/quantum/keymap_extras/keymap_german_mac_iso.h
-#include "keymap_german_mac_iso.h"
+// #include "keymap_german_mac_iso.h"
+// label = "MOUSE";
 #ifdef CONFIG_ZMK_DISPLAY
 #    include "oled.dtsi"
 #endif // CONFIG_ZMK_DISPLAY
@@ -58,12 +59,52 @@
 };
 //}}}
 #endif // CONFIG_ZMK_RGB_UNDERGLOW
+// ### definiendo capas {{{
+#define DEFAULT 0
+#define NUMBER 1
+#define SYMBOL 2
+#define FUNCTION 3
+#define MEDIA 4
+#define MOUSE 5
+//}}}
+// ### definicion de teclado ALEMAN STANDARD {{{
+#define DE_Y          &kp Z          // Y
+#define DE_Z          &kp Y          // Z
+#define DE_SS         &kp MINUS      // ß
+#define DE_UDIA       &kp LBKT       // Ü
+#define DE_ODIA       &kp SEMICOLON  // Ö
+#define DE_ADIA       &kp APOS       // Ä
+#define DE_MINS       &kp SLASH      // -
+#define DE_FSLH       &kp AMPS       // "/"
+#define DE_STAR       &kp RBRC       // "*"
+#define DE_EQUAL      &kp RPAR       // =
+#define DE_PLUS       &kp RBKT       // +
+#define DE_GRAVE      &kp PLUS       // `
+#define DE_HASH       &kp BSLH       // #
+#define DE_TILDE      &kp LA(RBKT)   // ~
+#define DE_PIPE       &kp RA(GRAVE)  // "|"
+#define DE_AMPS       &kp CARET      // "&"
+#define DE_BSLH       &kp RA(MINUS)  // "\"
+#define DE_QUESTION   &kp LS(MINUS)  // ?
+#define DE_AT         &kp RA(Q)      // "@"
+#define DE_LPAR       &kp LS(N8)     // (
+#define DE_RPAR       &kp LS(N9)     // )
+#define DE_LBKT       &kp RA(N8)     // [
+#define DE_RBKT       &kp RA(N9)     // ]
+#define DE_LBRC       &kp RA(N7)     // {
+#define DE_RBRC       &kp RA(N0)     // }
+#define DE_LABK       &kp GRAVE      // <
+#define DE_RABK       &kp LS(GRAVE)  // >
+#define DE_APOS       &kp PIPE       // '
+#define DE_ACUT       &kp EQUAL      // ´ hasta aqui funciona
+
+#define DE_CARET      &kp HASH         // ^ TODO:
+//}}}
 / {
    keymap {
       compatible = "zmk,keymap";
       // ### default_layer {{{
       default_layer {
-      label = "DEFAULT";
          //    .------------------------------------------------.                         .-------------------------------------------------.
          //    |LT4 ESC |   Q   |   W   |   E   |   R   |   T   |                         |   Z   |   U   |   I   |   O   |   P   | BACKSPC |
          //    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
@@ -92,7 +133,6 @@
          //   '----------------------------------------------------------|       |----------------------------------------------------------'
          //                             |  CTRL |  CMD  |     SPACE      |       |        |  LSFT |      ALTGR    |
          //                             '--------------------------------'       '--------------------------------'
-         label = "NUMBER";
          bindings = <
             &kp N0     &kp N1   &kp N2   &kp N3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
             &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  &none     &none   &kp LALT
@@ -112,7 +152,6 @@
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
          //                           |  CTRL    |  CMD       | SPACE  |       |  ENTER | ALTGR |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
-         label = "SYMBOL";
          bindings = <
             &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  &none    &none     &none   &kp BSPC
             &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    DE_AT    &none   &kp LALT
@@ -133,7 +172,6 @@
          //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
-         label = "FUNCTION";
          bindings = <
             &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) &none   &none &none &none &none &none
             &kp F5 &kp F6   &kp F7 &kp F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
@@ -155,7 +193,6 @@
          //                          '--------------------------------'       '--------------------------------'
          // &none &none &none &none &none &none &none    &none   &none          &none  &none  &none
          //                         &none  &none  &none                      &none     &none &none
-         label = "MEDIA";
          bindings = <
             &none &kp LS(LG(NUMBER_1)) &kp LS(LG(NUMBER_2)) &kp LS(LG(NUMBER_3)) &none &none &kp LANG1    &kp LANG2   &kp LANG3          &none  &kp C_STOP  &kp DEL
             &none &kp LS(LG(NUMBER_4)) &kp LS(LG(NUMBER_5)) &none &none &none &none    &none   &none          &none &kp C_VOL_UP  &kp C_PLAY_PAUSE
@@ -176,7 +213,6 @@
          //   '---------------------------------------------------------|       |----------------------------------------------------------'
          //                            |EP_OFF  | EP_ON|         EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
          //                            '--------------------------------'       '--------------------------------'
-         label = "MOUSE";
          bindings = <
             &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &none  &none  &none  &none
             &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &rgb_ug RGB_SAD  &rgb_ug RGB_SAI   &none  &none  &none  &none
@@ -197,7 +233,6 @@
          //   '---------------------------------------------------------|       |----------------------------------------------------------'
          //                            |EP_OFF  | EP_ON|         EP_TOG |       |       |        |               |
          //                            '--------------------------------'       '--------------------------------'
-         label = "MOUSE";
          bindings = <
             &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
             &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none  &none   &none  &none  &none  &none
