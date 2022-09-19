@@ -152,56 +152,56 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-#define DE_DLQU LA(GRAVE)   // „
-#define DE_IEXL LA(N1)    // ¡
-#define DE_LDQU LA(N2)    // “
-#define DE_PILC LA(N3)    // ¶
-#define DE_CENT LA(N4)    // ¢
-#define DE_LBRC LA(N5)    // [
-#define DE_RBRC LA(N6)    // ]
-#define DE_PIPE LA(N7)    // |
-#define DE_LCBR LA(N8)    // {
-#define DE_RCBR LA(N9)    // }
-#define DE_NEQL LA(N0)    // ≠
-#define DE_IQUE LA(MINUS)   // ¿
+#define DE_DLQU &kp LA(GRAVE)   // „
+#define DE_IEXL &kp LA(N1)    // ¡
+#define DE_LDQU &kp LA(N2)    // “
+#define DE_PILC &kp LA(N3)    // ¶
+#define DE_CENT &kp LA(N4)    // ¢
+#define DE_LBRC &kp LA(N5)    // [
+#define DE_RBRC &kp LA(N6)    // ]
+#define DE_PIPE &kp LA(N7)    // |
+#define DE_LCBR &kp LA(N8)    // {
+#define DE_RCBR &kp LA(N9)    // }
+#define DE_NEQL &kp LA(N0)    // ≠
+#define DE_IQUE &kp LA(MINUS)   // ¿
 // Row 2
-#define DE_LDAQ LA(Q)    // «
-#define DE_NARS LA(W)    // ∑
-#define DE_EURO LA(E)    // €
-#define DE_REGD LA(R)    // ®
-#define DE_DAGG LA(T)    // †
-#define DE_OMEG LA(Z)    // Ω
-#define DE_DIAE LA(U)    // ¨ (dead)
-#define DE_FRSL LA(I)    // ⁄
-#define DE_OSTR LA(O)    // Ø
-#define DE_PI   LA(P)    // π
-#define DE_BULT LA(LBKT) // •
-#define DE_PLMN LA(RBKT) // ±
+#define DE_LDAQ &kp LA(Q)    // «
+#define DE_NARS &kp LA(W)    // ∑
+#define DE_EURO &kp LA(E)    // €
+#define DE_REGD &kp LA(R)    // ®
+#define DE_DAGG &kp LA(T)    // †
+#define DE_OMEG &kp LA(Z)    // Ω
+#define DE_DIAE &kp LA(U)    // ¨ (dead)
+#define DE_FRSL &kp LA(I)    // ⁄
+#define DE_OSTR &kp LA(O)    // Ø
+#define DE_PI   &kp LA(P)    // π
+#define DE_BULT &kp LA(LBKT) // •
+#define DE_PLMN &kp LA(RBKT) // ±
 // Row 3
-#define DE_ARNG LA(A)    // Å
-#define DE_SLQU LA(S)    // ‚
-#define DE_PDIF LA(D)    // ∂
-#define DE_FHK  LA(F)    // ƒ
-#define DE_COPY LA(G)    // ©
-#define DE_FORD LA(H)    // ª
-#define DE_MORD LA(J)    // º
-#define DE_INCR LA(K)    // ∆
-#define DE_AT   LA(L)    // @
-#define DE_OE   LA(SEMICOLON) // Œ
-#define DE_AE   LA(APOS) // Æ
-#define DE_LSQU LA(BSLH) // ‘
+#define DE_ARNG &kp LA(A)    // Å
+#define DE_SLQU &kp LA(S)    // ‚
+#define DE_PDIF &kp LA(D)    // ∂
+#define DE_FHK  &kp LA(F)    // ƒ
+#define DE_COPY &kp LA(G)    // ©
+#define DE_FORD &kp LA(H)    // ª
+#define DE_MORD &kp LA(J)    // º
+#define DE_INCR &kp LA(K)    // ∆
+#define DE_AT   &kp LA(L)    // @
+#define DE_OE   &kp LA(SEMICOLON) // Œ
+#define DE_AE   &kp LA(APOS) // Æ
+#define DE_LSQU &kp LA(BSLH) // ‘
 // Row 4
-#define DE_LTEQ LA(GRAVE) // ≤
-#define DE_YEN  LA(Y)    // ¥
-#define DE_AEQL LA(X)    // ≈
-#define DE_CCCE LA(C)    // Ç
-#define DE_SQRT LA(V)    // √
-#define DE_INTG LA(B)    // ∫
-#define DE_TILD LA(N)    // ~ (dead)
-#define DE_MICR LA(M)    // µ
-#define DE_INFN LA(COMMA) // ∞
-#define DE_ELLP LA(DOT)  // …
-#define DE_NDSH LA(MINS) // –
+#define DE_LTEQ &kp LA(GRAVE) // ≤
+#define DE_YEN  &kp LA(Y)    // ¥
+#define DE_AEQL &kp LA(X)    // ≈
+#define DE_CCCE &kp LA(C)    // Ç
+#define DE_SQRT &kp LA(V)    // √
+#define DE_INTG &kp LA(B)    // ∫
+#define DE_TILD &kp LA(N)    // ~ (dead)
+#define DE_MICR &kp LA(M)    // µ
+#define DE_INFN &kp LA(COMMA) // ∞
+#define DE_ELLP &kp LA(DOT)  // …
+#define DE_NDSH &kp LA(MINS) // –
 
 /* Shift+Alted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
