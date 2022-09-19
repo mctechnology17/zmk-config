@@ -46,6 +46,13 @@ Caracteristicas:
  - NO SE REQUIERE SOFTWARE ADICIONAL (como VIAL, QMK ToolBox etc.)
  - Y mas...
 
+Tabla de pros y contras importantes a tomar en cuenta:
+**PROS**     | **CONTRAS**
+-------------|---------|
+Soporte Multi-Dispositivos BLE (HASTA 5)      |Mouse Keys (EN DESARROLLO)
+Hasta 1 semana de uso sin cargador (con 100mAh)       |Display Support (EN DESARROLLO)
+No necesitas de sofware adicional para flashar       | Tienes que hacer conectarte a internet compilar (todo se hace en github)
+
 FUNCIONANDO SIN ERRORES HASTA EL MOMENTO!
 
 # INSTALACION
