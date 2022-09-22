@@ -10,8 +10,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
-// #include "keymap_german_mac_iso.h"
-#include "keymap_german_mac_iso_test.h"
+// #include "keymap_german_mac_iso_sources.h"
+#include "keymap_german_mac_iso.h"
 // }}}
 // ### CONFIG_ZMK_DISPLAY {{{
 #ifdef CONFIG_ZMK_DISPLAY
