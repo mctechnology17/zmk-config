@@ -153,9 +153,9 @@
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          // label = "FUNCTION";
          bindings = <
-            &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) XXX   XXX XXX XXX XXX XXX
-            &kp F5 &kp F6   &kp F7 &kp F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    XXX   XXX          XXX  &kp C_BRI_UP  XXX
-            &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          XXX  &kp C_BRI_DN  XXX
+            DE_F1 DE_F2   DE_F3 DE_F4 &kp LC(LG(D)) &kp LS(LA(T)) XXX   XXX XXX XXX XXX XXX
+            DE_F5 DE_F6   DE_F7 DE_F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    XXX   XXX          XXX  &kp C_BRI_UP  XXX
+            DE_F9 DE_F10  DE_F11  DE_F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          XXX  &kp C_BRI_DN  XXX
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     DE_ACUT &kp LCTRL
                                  >;
                          };
