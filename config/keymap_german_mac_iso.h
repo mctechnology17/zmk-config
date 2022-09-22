@@ -51,13 +51,13 @@
 #define DE_DOT &kp DOT    // .
 #define DE_MINS &kp SLASH // -
 
-#define DE_Y &kp Z      // Y
-#define DE_Z &kp Y      // Z
-#define DE_SS &kp MINUS // ß
+// #define DE_Y &kp Z      // Y
+// #define DE_Z &kp Y      // Z
+// #define DE_SS &kp MINUS // ß
 // #define DE_UDIA &kp LBKT          // Ü
 // #define DE_ODIA &kp SEMICOLON     // Ö
 // #define DE_ADIA &kp APOS          // Ä
-#define DE_MINS &kp SLASH // -
+// #define DE_MINS &kp SLASH // -
 #define DE_FSLH &kp AMPS  // "/"
 #define DE_STAR &kp RBRC  // "*"
 #define DE_EQUAL &kp RPAR // =
