@@ -41,6 +41,20 @@
 #define DE_HOME &kp HOME
 #define DE_END &kp END
 
+// FUNCTION KEYS
+#define DE_F1 &kp F1
+#define DE_F2 &kp F2
+#define DE_F3 &kp F3
+#define DE_F4 &kp F4
+#define DE_F5 &kp F5
+#define DE_F6 &kp F6
+#define DE_F7 &kp F7
+#define DE_F8 &kp F8
+#define DE_F9 &kp F9
+#define DE_F10 &kp F10
+#define DE_F11 &kp F11
+#define DE_F12 &kp F12
+
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
 // #define GLOBE CAPSLOCK
