@@ -107,7 +107,7 @@
  */
 #define DE_TILDE &kp LA(RBKT)     // ~
 #define DE_PIPE &kp RA(GRAVE)     // "|"
-#define DE_AMPS &kp CARET         // "&"
+// #define DE_AMPS &kp CARET         // "&"
 #define DE_BSLH &kp RA(MINUS)     // "\"
 #define DE_QUESTION &kp LS(MINUS) // ?
 #define DE_AT &kp RA(Q)           // "@"
@@ -117,9 +117,9 @@
 #define DE_RBKT &kp RA(N9)        // ]
 #define DE_LBRC &kp RA(N7)        // {
 #define DE_RBRC &kp RA(N0)        // }
-#define DE_LABK &kp GRAVE         // <
+// #define DE_LABK &kp GRAVE         // <
 #define DE_RABK &kp LS(GRAVE)     // >
-#define DE_APOS &kp PIPE          // '
-#define DE_ACUT &kp EQUAL         // ´ hasta aqui funciona
+// #define DE_APOS &kp PIPE          // '
+// #define DE_ACUT &kp EQUAL         // ´ hasta aqui funciona
 
-#define DE_CARET &kp HASH // ^ TODO:
+// #define DE_CARET &kp HASH // ^ TODO:
