@@ -244,7 +244,7 @@
 #define DE_DLSI &kp LS(LA(J))    // ı
 #define DE_FL   &kp LS(LA(L))    // ﬂ
 // Row 4
-#define DE_GTEQ &kp LS(LA(DE_LABK)) // ≥
+#define DE_GTEQ &kp LS(LA(GRAVE)) // ≥
 #define DE_DDAG &kp LS(LA(Y))    // ‡
 #define DE_UGRV &kp LS(LA(X))    // Ù
 #define DE_LOZN &kp LS(LA(V))    // ◊
@@ -253,4 +253,4 @@
 #define DE_BREV &kp LS(LA(M))    // ˘
 #define DE_OGON &kp LS(LA(COMMA)) // ˛
 #define DE_DIV  &kp LS(LA(DOT))  // ÷
-#define DE_MDSH &kp LS(LA(MINS)) // —
+#define DE_MDSH &kp LS(LA(MINUS)) // —
