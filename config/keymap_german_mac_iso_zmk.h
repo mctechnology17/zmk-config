@@ -92,6 +92,43 @@
 #define DE_DOT &kp DOT    // .
 #define DE_MINS &kp SLASH // -
 
+/* Shifted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │ ° │ ! │ " │ § │ $ │ % │ & │ / │ ( │ ) │ = │ ? │ ` │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │   │   │   │   │   │   │   │   │   │   │   │ * │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │ ' │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ > │   │   │   │   │   │   │   │ ; │ : │ _ │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// Row 1
+#define DE_DEG  &kp LS(GRAVE) // °
+#define DE_EXCL &kp LS(N1)    // !
+#define DE_DQUO &kp LS(N2)    // "
+#define DE_SECT &kp LS(N3)    // §
+#define DE_DLR  &kp LS(N4)    // $
+#define DE_PERC &kp LS(N5)    // %
+#define DE_AMPR &kp LS(N6)    // &
+#define DE_SLSH &kp LS(N7)    // /
+#define DE_LPRN &kp LS(N8)    // (
+#define DE_RPRN &kp LS(N9)    // )
+#define DE_EQL  &kp LS(N0)    // =
+#define DE_QUES &kp LS(MINUS)   // ?
+#define DE_GRV  &kp LS(EQUAL) // ` (dead)
+// Row 2
+#define DE_ASTR &kp LS(RPAR) // *
+// Row 3
+#define DE_QUOT &kp LS(BSLH) // '
+// Row 4
+#define DE_RABK &kp LS(GRAVE) // >
+#define DE_SCLN &kp LS(COMMA) // ;
+#define DE_COLN &kp LS(DOT)  // :
+#define DE_UNDS &kp LS(SLASH) // _
+
 // #define DE_Y &kp Z      // Y
 // #define DE_Z &kp Y      // Z
 // #define DE_SS &kp MINUS // ß
@@ -118,7 +155,7 @@
 #define DE_LBRC &kp RA(N7)        // {
 #define DE_RBRC &kp RA(N0)        // }
 // #define DE_LABK &kp GRAVE         // <
-#define DE_RABK &kp LS(GRAVE) // >
+// #define DE_RABK &kp LS(GRAVE) // >
 #define DE_APOS &kp PIPE      // '
 // #define DE_ACUT &kp EQUAL         // ´ hasta aqui funciona
 
