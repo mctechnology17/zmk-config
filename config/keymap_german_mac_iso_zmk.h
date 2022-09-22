@@ -40,7 +40,7 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-// #define DE_CIRC &kp GRAVE // ^ (dead)
+#define DE_CIRC &kp GRAVE // ^ (dead)
 #define DE_1 &kp N1       // 1
 #define DE_2 &kp N2       // 2
 #define DE_3 &kp N3       // 3
@@ -129,34 +129,102 @@
 #define DE_COLN &kp LS(DOT)  // :
 #define DE_UNDS &kp LS(SLASH) // _
 
-// #define DE_Y &kp Z      // Y
-// #define DE_Z &kp Y      // Z
-// #define DE_SS &kp MINUS // ß
-// #define DE_UDIA &kp LBKT          // Ü
-// #define DE_ODIA &kp SEMICOLON     // Ö
-// #define DE_ADIA &kp APOS          // Ä
-// #define DE_MINS &kp SLASH // -
+/* Alted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │ „ │ ¡ │ “ │ ¶ │ ¢ │ [ │ ] │ | │ { │ } │ ≠ │ ¿ │   │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │ « │ ∑ │ € │ ® │ † │ Ω │ ¨ │ ⁄ │ Ø │ π │ • │ ± │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │ Å │ ‚ │ ∂ │ ƒ │ © │ ª │ º │ ∆ │ @ │ Œ │ Æ │ ‘ │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ ≤ │ ¥ │ ≈ │ Ç │ √ │ ∫ │ ~ │ µ │ ∞ │ … │ – │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// Row 1
+#define DE_DLQU &kp LA(GRAVE)   // „
+#define DE_IEXL &kp LA(N1)    // ¡
+#define DE_LDQU &kp LA(N2)    // “
+#define DE_PILC &kp LA(N3)    // ¶
+#define DE_CENT &kp LA(N4)    // ¢
+#define DE_LBRC &kp LA(N5)    // [
+#define DE_RBRC &kp LA(N6)    // ]
+#define DE_PIPE &kp LA(N7)    // |
+#define DE_LCBR &kp LA(N8)    // {
+#define DE_RCBR &kp LA(N9)    // }
+#define DE_NEQL &kp LA(N0)    // ≠
+#define DE_IQUE &kp LA(MINUS)   // ¿
+// Row 2
+#define DE_LDAQ &kp LA(Q)    // «
+#define DE_NARS &kp LA(W)    // ∑
+#define DE_EURO &kp LA(E)    // €
+#define DE_REGD &kp LA(R)    // ®
+#define DE_DAGG &kp LA(T)    // †
+#define DE_OMEG &kp LA(Z)    // Ω
+#define DE_DIAE &kp LA(U)    // ¨ (dead)
+#define DE_FRSL &kp LA(I)    // ⁄
+#define DE_OSTR &kp LA(O)    // Ø
+#define DE_PI   &kp LA(P)    // π
+#define DE_BULT &kp LA(LBKT) // •
+#define DE_PLMN &kp LA(RBKT) // ±
+// Row 3
+#define DE_ARNG &kp LA(A)    // Å
+#define DE_SLQU &kp LA(S)    // ‚
+#define DE_PDIF &kp LA(D)    // ∂
+#define DE_FHK  &kp LA(F)    // ƒ
+#define DE_COPY &kp LA(G)    // ©
+#define DE_FORD &kp LA(H)    // ª
+#define DE_MORD &kp LA(J)    // º
+#define DE_INCR &kp LA(K)    // ∆
+#define DE_AT   &kp LA(L)    // @
+#define DE_OE   &kp LA(SEMICOLON) // Œ
+#define DE_AE   &kp LA(APOS) // Æ
+#define DE_LSQU &kp LA(BSLH) // ‘
+// Row 4
+#define DE_LTEQ &kp LA(GRAVE) // ≤
+#define DE_YEN  &kp LA(Y)    // ¥
+#define DE_AEQL &kp LA(X)    // ≈
+#define DE_CCCE &kp LA(C)    // Ç
+#define DE_SQRT &kp LA(V)    // √
+#define DE_INTG &kp LA(B)    // ∫
+#define DE_TILD &kp LA(N)    // ~ (dead)
+#define DE_MICR &kp LA(M)    // µ
+#define DE_INFN &kp LA(COMMA) // ∞
+#define DE_ELLP &kp LA(DOT)  // …
+#define DE_NDSH &kp LA(MINUS) // –
+
+/* Shift+Alted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │   │ ¬ │ ” │   │ £ │ ﬁ │   │ \ │ ˜ │ · │ ¯ │ ˙ │ ˚ │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │ » │   │ ‰ │ ¸ │ ˝ │ ˇ │ Á │ Û │   │ ∏ │   │  │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │   │ Í │ ™ │ Ï │ Ì │ Ó │ ı │   │ ﬂ │   │   │   │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ ≥ │ ‡ │ Ù │   │ ◊ │ ‹ │ › │ ˘ │ ˛ │ ÷ │ — │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// ###############
 #define DE_FSLH &kp AMPS  // "/"
 #define DE_STAR &kp RBRC  // "*"
 #define DE_EQUAL &kp RPAR // =
-// #define DE_PLUS &kp RBKT          // +
 #define DE_GRAVE &kp PLUS         // `
-#define DE_HASH &kp BSLH          // #
+// #define DE_HASH &kp BSLH          // #
 #define DE_TILDE &kp LA(RBKT)     // ~
-#define DE_PIPE &kp RA(GRAVE)     // "|"
+// #define DE_PIPE &kp RA(GRAVE)     // "|"
 #define DE_AMPS &kp CARET         // "&"
 #define DE_BSLH &kp RA(MINUS)     // "\"
 #define DE_QUESTION &kp LS(MINUS) // ?
-#define DE_AT &kp RA(Q)           // "@"
+// #define DE_AT &kp RA(Q)           // "@"
 #define DE_LPAR &kp LS(N8)        // (
 #define DE_RPAR &kp LS(N9)        // )
 #define DE_LBKT &kp RA(N8)        // [
 #define DE_RBKT &kp RA(N9)        // ]
-#define DE_LBRC &kp RA(N7)        // {
-#define DE_RBRC &kp RA(N0)        // }
-// #define DE_LABK &kp GRAVE         // <
-// #define DE_RABK &kp LS(GRAVE) // >
+// #define DE_LBRC &kp RA(N7)        // {
+// #define DE_RBRC &kp RA(N0)        // }
 #define DE_APOS &kp PIPE      // '
-// #define DE_ACUT &kp EQUAL         // ´ hasta aqui funciona
 
 #define DE_CARET &kp HASH // ^ TODO:

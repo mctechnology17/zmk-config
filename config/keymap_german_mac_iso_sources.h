@@ -15,10 +15,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// #pragma once
+#pragma once
 
 #define XXX &none
 #define ___ &trans
+
+#define DEFAULT 0
+#define NUMBER 1
+#define SYMBOL 2
+#define FUNCTION 3
+#define MEDIA 4
+#define MOUSE 5
 
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
@@ -237,7 +244,7 @@
 #define DE_DLSI &kp LS(LA(J))    // ı
 #define DE_FL   &kp LS(LA(L))    // ﬂ
 // Row 4
-#define DE_GTEQ &kp LS(LA(GRAVE)) // ≥
+#define DE_GTEQ &kp LS(LA(DE_LABK)) // ≥
 #define DE_DDAG &kp LS(LA(Y))    // ‡
 #define DE_UGRV &kp LS(LA(X))    // Ù
 #define DE_LOZN &kp LS(LA(V))    // ◊
