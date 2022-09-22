@@ -17,8 +17,8 @@
 
 // #pragma once
 
-// #define XXX &none
-// #define ___ &trans
+#define XXX &none
+#define ___ &trans
 
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
@@ -40,57 +40,57 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-#define DE_CIRC GRAVE // ^ (dead)
-#define DE_1    N1    // 1
-#define DE_2    N2    // 2
-#define DE_3    N3    // 3
-#define DE_4    N4    // 4
-#define DE_5    N5    // 5
-#define DE_6    N6    // 6
-#define DE_7    N7    // 7
-#define DE_8    N8    // 8
-#define DE_9    N9    // 9
-#define DE_0    N0    // 0
-#define DE_SS   MINUS // ß
-#define DE_ACUT EQUAL // ´ (dead)
+#define DE_CIRC &kp GRAVE // ^ (dead)
+#define DE_1    &kp N1    // 1
+#define DE_2    &kp N2    // 2
+#define DE_3    &kp N3    // 3
+#define DE_4    &kp N4    // 4
+#define DE_5    &kp N5    // 5
+#define DE_6    &kp N6    // 6
+#define DE_7    &kp N7    // 7
+#define DE_8    &kp N8    // 8
+#define DE_9    &kp N9    // 9
+#define DE_0    &kp N0    // 0
+#define DE_SS   &kp MINUS // ß
+#define DE_ACUT &kp EQUAL // ´ (dead)
 // Row 2
-#define DE_Q    Q    // Q
-#define DE_W    W    // W
-#define DE_E    E    // E
-#define DE_R    R    // R
-#define DE_T    T    // T
-#define DE_Z    Y    // Z
-#define DE_U    U    // U
-#define DE_I    I    // I
-#define DE_O    O    // O
-#define DE_P    P    // P
-#define DE_UDIA LBKT // Ü
-#define DE_PLUS RPAR // +
+#define DE_Q    &kp Q    // Q
+#define DE_W    &kp W    // W
+#define DE_E    &kp E    // E
+#define DE_R    &kp R    // R
+#define DE_T    &kp T    // T
+#define DE_Z    &kp Y    // Z
+#define DE_U    &kp U    // U
+#define DE_I    &kp I    // I
+#define DE_O    &kp O    // O
+#define DE_P    &kp P    // P
+#define DE_UDIA &kp LBKT // Ü
+#define DE_PLUS &kp RPAR // +
 // Row 3
-#define DE_A    A    // A
-#define DE_S    S    // S
-#define DE_D    D    // D
-#define DE_F    F    // F
-#define DE_G    G    // G
-#define DE_H    H    // H
-#define DE_J    J    // J
-#define DE_K    K    // K
-#define DE_L    L    // L
-#define DE_ODIA SEMI // Ö
-#define DE_ADIA APOS // Ä
-#define DE_HASH BSLH // #
+#define DE_A    &kp A    // A
+#define DE_S    &kp S    // S
+#define DE_D    &kp D    // D
+#define DE_F    &kp F    // F
+#define DE_G    &kp G    // G
+#define DE_H    &kp H    // H
+#define DE_J    &kp J    // J
+#define DE_K    &kp K    // K
+#define DE_L    &kp L    // L
+#define DE_ODIA &kp SEMI // Ö
+#define DE_ADIA &kp APOS // Ä
+#define DE_HASH &kp BSLH // #
 // Row 4
-#define DE_LABK GRAVE // <
-#define DE_Y    Z    // Y
-#define DE_X    X    // X
-#define DE_C    C    // C
-#define DE_V    V    // V
-#define DE_B    B    // B
-#define DE_N    N    // N
-#define DE_M    M    // M
-#define DE_COMM COMMA // ,
-#define DE_DOT  DOT  // .
-#define DE_MINS SLASH // -
+#define DE_LABK &kp GRAVE // <
+#define DE_Y    &kp Z    // Y
+#define DE_X    &kp X    // X
+#define DE_C    &kp C    // C
+#define DE_V    &kp V    // V
+#define DE_B    &kp B    // B
+#define DE_N    &kp N    // N
+#define DE_M    &kp M    // M
+#define DE_COMM &kp COMMA // ,
+#define DE_DOT  &kp DOT  // .
+#define DE_MINS &kp SLASH // -
 
 /* Shifted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
