@@ -74,6 +74,40 @@
 // label = "MOUSE";
 // label = "MOUSE";
 //}}}
+// ### definicion de teclado ALEMAN STANDARD {{{
+/*
+#define DE_Y          &kp Z          // Y
+#define DE_Z          &kp Y          // Z
+#define DE_SS         &kp MINUS      // ß
+#define DE_UDIA       &kp LBKT       // Ü
+#define DE_ODIA       &kp SEMICOLON  // Ö
+#define DE_ADIA       &kp APOS       // Ä
+#define DE_MINS       &kp SLASH      // -
+#define DE_FSLH       &kp AMPS       // "/"
+#define DE_STAR       &kp RBRC       // "*"
+#define DE_EQUAL      &kp RPAR       // =
+#define DE_PLUS       &kp RBKT       // +
+#define DE_GRAVE      &kp PLUS       // `
+#define DE_HASH       &kp BSLH       // #
+#define DE_TILDE      &kp LA(RBKT)   // ~
+#define DE_PIPE       &kp RA(GRAVE)  // "|"
+#define DE_AMPS       &kp CARET      // "&"
+#define DE_BSLH       &kp RA(MINUS)  // "\"
+#define DE_QUESTION   &kp LS(MINUS)  // ?
+#define DE_AT         &kp RA(Q)      // "@"
+#define DE_LPAR       &kp LS(N8)     // (
+#define DE_RPAR       &kp LS(N9)     // )
+#define DE_LBKT       &kp RA(N8)     // [
+#define DE_RBKT       &kp RA(N9)     // ]
+#define DE_LBRC       &kp RA(N7)     // {
+#define DE_RBRC       &kp RA(N0)     // }
+#define DE_LABK       &kp GRAVE      // <
+#define DE_RABK       &kp LS(GRAVE)  // >
+#define DE_APOS       &kp PIPE       // '
+#define DE_ACUT       &kp EQUAL      // ´ hasta aqui funciona
+#define DE_CARET      &kp HASH         // ^ TODO:
+*/
+//}}}
 / {
    keymap {
       compatible = "zmk,keymap";
@@ -90,9 +124,9 @@
          //                             '--------------------------------'       '----------------------------------'
          // label = "DEFAULT";
          bindings = <
-            &lt MEDIA ESC   &kp Q   &kp W   &kp E   &kp R      &kp T                                  DE_Z    &kp U  &kp I      &kp O     &kp P     &kp BSPC
+            &lt MEDIA ESC   &kp Q   &kp W   &kp E   &kp R      &kp T                                 &kp DE_Z    &kp U  &kp I      &kp O     &kp P     &kp BSPC
             &lt MOUSE TAB   &kp A   &kp S   &kp D   &kp F      &kp G                                  &kp H   &kp J  &kp K      &kp L     &kp UP    &kp RET
-            &kp LSHFT       DE_Y    &kp X   &kp C   &kp V      &kp B                                  &kp N   &kp M  &mt LSHFT COMMA  &kp LEFT  &kp DOWN  &kp RIGHT
+            &kp LSHFT      &kp DE_Y    &kp X   &kp C   &kp V      &kp B                                  &kp N   &kp M  &mt LSHFT COMMA  &kp LEFT  &kp DOWN  &kp RIGHT
             &kp LCTRL  &kp LGUI  &kp RALT      &lt NUMBER SPACE  &lt SYMBOL RGUI &lt FUNCTION RALT
             >;
       };
@@ -110,9 +144,9 @@
          //                             '--------------------------------'       '--------------------------------'
          // label = "NUMBER";
          bindings = <
-            &kp N0     &kp N1   &kp N2   &kp N3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
-            &kp CAPS   &kp N4   &kp N5   &kp N6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  DE_AT     &none   &kp LALT
-            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   DE_EQUAL                               &kp DOT   DE_ACUT      DE_GRAVE     &none     &none   &kp RALT
+            &kp N0     &kp N1   &kp N2   &kp N3   &kp DE_MINS  &kp DE_PLUS                               &kp DE_SS    &kp DE_UDIA     &kp DE_ADIA        &kp DE_ODIA     &none   &kp BSPC
+            &kp CAPS   &kp N4   &kp N5   &kp N6   &kp DE_FSLH   &kp DE_STAR                               &kp DE_HASH &kp DE_TILDE &kp DE_QUESTION &kp DE_AT     &none   &kp LALT
+            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT  &kp DE_EQUAL                               &kp DOT  &kp DE_ACUT     &kp DE_GRAVE     &none     &none   &kp RALT
             &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
             >;
       };
@@ -130,9 +164,9 @@
          //                           '--------------------------------'       '--------------------------------'
          // label = "SYMBOL";
          bindings = <
-            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  &none    &none     &none   &kp BSPC
-            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    &none    &none   &kp LALT
-            &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &kp RALT
+            &kp DLLR  &kp DE_LPAR &kp DE_RPAR  &kp DE_LBKT &kp DE_RBKT  &kp DE_TILDE            &kp DE_ACUT    &kp DE_GRAVE  &none    &none     &none   &kp BSPC
+            &kp PRCNT &kp DE_LBRC &kp DE_RBRC  &kp DE_CARET &kp PG_UP  &kp DE_HASH             &kp DE_AMPS &kp DE_PIPE   &none    &none    &none   &kp LALT
+            &kp LSHFT &kp DE_LABK &kp DE_RABK   &kp HOME  &kp PG_DN   &kp END              &kp DE_TILDE&kp DE_APOS   &none    &none     &none   &kp RALT
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
@@ -152,9 +186,9 @@
          // label = "FUNCTION";
          bindings = <
             &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) &none   &none &none &none &none &none
-            &kp F5 &kp F6   &kp F7 &kp F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
+            &kp F5 &kp F6   &kp F7 &kp F8 &kp DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
             &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          &none  &kp C_BRI_DN  &none
-                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     DE_ACUT &kp LCTRL
+                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB    &kp DE_ACUT &kp LCTRL
                                  >;
                          };
       // }}}
