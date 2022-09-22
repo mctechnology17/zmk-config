@@ -92,10 +92,10 @@
          //                             '--------------------------------'       '----------------------------------'
          // label = "DEFAULT";
          bindings = <
-            MEDIA_ESC   DE_Q   DE_W   DE_E   DE_R      DE_T                                  DE_Z   DE_U  DE_I      DE_O     DE_P     DE_BSPC
-            MOUSE_TAB   DE_A   DE_S   DE_D   DE_F      DE_G                                  DE_H   DE_J  DE_K      DE_L     DE_UP    DE_RET
-            DE_LSHFT       DE_Y   DE_X   DE_C   DE_V      DE_B                                  DE_N   DE_M  LSHFT_COMMA  DE_LEFT  DE_DOWN  DE_RIGHT
-            DE_LCTRL  DE_LGUI  DE_RALT      NUMBER_SPACE  SYMBOL_RGUI FUNCTION_RALT
+            MEDIA_ESC   DE_Q   DE_W   DE_E   DE_R      DE_T                  DE_Z        DE_U  DE_I         DE_O     DE_P     DE_BSPC
+            MOUSE_TAB   DE_A   DE_S   DE_D   DE_F      DE_G                  DE_H        DE_J  DE_K         DE_L     DE_UP    DE_RET
+            DE_LSHFT    DE_Y   DE_X   DE_C   DE_V      DE_B                  DE_N        DE_M  LSHFT_COMMA  DE_LEFT  DE_DOWN  DE_RIGHT
+                                 DE_LCTRL  DE_LGUI  DE_RALT                  NUMBER_SPACE  SYMBOL_RGUI  FUNCTION_RALT
             >;
       };
       // }}}
@@ -112,10 +112,10 @@
          //                             '--------------------------------'       '--------------------------------'
          // label = "NUMBER";
          bindings = <
-            DE_0     DE_1   DE_2   DE_3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     XXX   &kp BSPC
-            &kp CAPS   DE_4   DE_5   DE_6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  DE_AT     XXX   &kp LALT
-            &kp LSHFT  DE_7   DE_8   DE_9    &kp PRCNT   DE_EQUAL                               &kp DOT   DE_ACUT      DE_GRAVE     XXX     XXX   &kp RALT
-            &kp LCTRL  &kp LGUI        &kp SPACE     XXX     &kp LSHFT &kp RALT
+            DE_0     DE_1   DE_2   DE_3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     XXX   DE_BSPC
+            DE_CAPS   DE_4   DE_5   DE_6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  DE_AT     XXX   DE_LALT
+            DE_LSHFT  DE_7   DE_8   DE_9    DE_PERC   DE_EQUAL                               DE_DOT   DE_ACUT      DE_GRAVE     XXX     XXX   DE_RALT
+            DE_LCTRL  DE_LGUI        DE_SPACE     XXX     DE_LSHFT DE_RALT
             >;
       };
       // }}}
@@ -133,7 +133,7 @@
          // label = "SYMBOL";
          bindings = <
             &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  XXX    XXX     XXX   &kp BSPC
-            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   XXX    XXX    XXX   &kp LALT
+            DE_PERC  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   XXX    XXX    XXX   &kp LALT
             &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   XXX    XXX     XXX   &kp RALT
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;

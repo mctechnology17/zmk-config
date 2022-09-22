@@ -33,6 +33,8 @@
 #define DE_LEFT &kp LEFT
 #define DE_DOWN &kp DOWN
 #define DE_RIGHT &kp RIGHT
+#define DE_SPACE &kp SPACE
+#define DE_CAPS &kp CAPS
 
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
