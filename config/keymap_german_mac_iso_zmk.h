@@ -19,6 +19,20 @@
 
 #define XXX &none
 #define ___ &trans
+#define DE_LCTRL &kp LCTRL
+#define DE_RCTRL &kp RCTRL
+#define DE_LGUI &kp LGUI
+#define DE_RGUI &kp RGUI
+#define DE_LALT &kp LALT
+#define DE_RALT &kp RALT
+#define DE_LSHFT &kp LSHFT
+#define DE_RSHFT &kp RSHFT
+#define DE_BSPC &kp BSPC
+#define DE_RET &kp RET
+#define DE_UP &kp UP
+#define DE_LEFT &kp LEFT
+#define DE_DOWN &kp DOWN
+#define DE_RIGHT &kp RIGHT
 
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
