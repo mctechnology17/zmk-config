@@ -36,6 +36,11 @@
 #define DE_SPACE &kp SPACE
 #define DE_CAPS &kp CAPS
 
+#define DE_PG_UP &kp PG_UP
+#define DE_PG_DN &kp PG_DN
+#define DE_HOME &kp HOME
+#define DE_END &kp END
+
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
 // #define GLOBE CAPSLOCK
