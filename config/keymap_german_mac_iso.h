@@ -17,7 +17,7 @@
 
 // #pragma once
 
-// #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define XXX &none
 #define ___ &trans
