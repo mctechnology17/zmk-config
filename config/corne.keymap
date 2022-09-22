@@ -124,7 +124,7 @@
          //                             '--------------------------------'       '----------------------------------'
          // label = "DEFAULT";
          bindings = <
-            &lt MEDIA ESC   DE_Q   DE_W   DE_E   DE_R      DE_T                                  DE_Z    DE_U  DE_I      DE_O     DE_P     &kp BSPC
+            &lt MEDIA ESC   DE_Q   DE_W   DE_E   DE_R      DE_T                                  DE_Z   DE_U  DE_I      DE_O     DE_P     &kp BSPC
             &lt MOUSE TAB   DE_A   DE_S   DE_D   DE_F      DE_G                                  DE_H   DE_J  DE_K      DE_L     &kp UP    &kp RET
             &kp LSHFT       DE_Y   DE_X   DE_C   DE_V      DE_B                                  DE_N   DE_M  &mt LSHFT COMMA  &kp LEFT  &kp DOWN  &kp RIGHT
             &kp LCTRL  &kp LGUI  &kp RALT      &lt NUMBER SPACE  &lt SYMBOL RGUI &lt FUNCTION RALT
@@ -144,10 +144,10 @@
          //                             '--------------------------------'       '--------------------------------'
          // label = "NUMBER";
          bindings = <
-            DE_0     DE_1   DE_2   DE_3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     &none   &kp BSPC
-            &kp CAPS   DE_4   DE_5   DE_6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  DE_AT     &none   &kp LALT
-            &kp LSHFT  DE_7   DE_8   DE_9    &kp PRCNT   DE_EQUAL                               &kp DOT   DE_ACUT      DE_GRAVE     &none     &none   &kp RALT
-            &kp LCTRL  &kp LGUI        &kp SPACE     &none     &kp LSHFT &kp RALT
+            DE_0     DE_1   DE_2   DE_3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     XXX   &kp BSPC
+            &kp CAPS   DE_4   DE_5   DE_6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILDE  DE_QUESTION  DE_AT     XXX   &kp LALT
+            &kp LSHFT  DE_7   DE_8   DE_9    &kp PRCNT   DE_EQUAL                               &kp DOT   DE_ACUT      DE_GRAVE     XXX     XXX   &kp RALT
+            &kp LCTRL  &kp LGUI        &kp SPACE     XXX     &kp LSHFT &kp RALT
             >;
       };
       // }}}
@@ -164,9 +164,9 @@
          //                           '--------------------------------'       '--------------------------------'
          // label = "SYMBOL";
          bindings = <
-            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  &none    &none     &none   &kp BSPC
-            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   &none    &none    &none   &kp LALT
-            &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   &none    &none     &none   &kp RALT
+            &kp DLLR   DE_LPAR  DE_RPAR   DE_LBKT  DE_RBKT   DE_TILDE             DE_ACUT     DE_GRAVE  XXX    XXX     XXX   &kp BSPC
+            &kp PRCNT  DE_LBRC  DE_RBRC   DE_CARET &kp PG_UP   DE_HASH              DE_AMPS  DE_PIPE   XXX    XXX    XXX   &kp LALT
+            &kp LSHFT  DE_LABK  DE_RABK   &kp HOME  &kp PG_DN   &kp END               DE_TILDE DE_APOS   XXX    XXX     XXX   &kp RALT
                                     &kp LCTRL  &kp LGUI  &kp SPACE                      &kp RET     &kp RALT &kp LCTRL
             >;
       };
@@ -185,9 +185,9 @@
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          // label = "FUNCTION";
          bindings = <
-            &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) &none   &none &none &none &none &none
-            &kp F5 &kp F6   &kp F7 &kp F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    &none   &none          &none  &kp C_BRI_UP  &none
-            &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          &none  &kp C_BRI_DN  &none
+            &kp F1 &kp F2   &kp F3 &kp F4 &kp LC(LG(D)) &kp LS(LA(T)) XXX   XXX XXX XXX XXX XXX
+            &kp F5 &kp F6   &kp F7 &kp F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    XXX   XXX          XXX  &kp C_BRI_UP  XXX
+            &kp F9 &kp F10  &kp F11  &kp F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          XXX  &kp C_BRI_DN  XXX
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     DE_ACUT &kp LCTRL
                                  >;
                          };
@@ -203,13 +203,13 @@
          // '---------------------------------------------------------|       |----------------------------------------------------------'
          //                          |  CTRL    |  CMD       |   ALT  |       |  SPACE | ALTGR |          CTRL |
          //                          '--------------------------------'       '--------------------------------'
-         // &none &none &none &none &none &none &none    &none   &none          &none  &none  &none
-         //                         &none  &none  &none                      &none     &none &none
+         // XXX XXX XXX XXX XXX XXX XXX    XXX   XXX          XXX  XXX  XXX
+         //                         XXX  XXX  XXX                      XXX     XXX XXX
          // label = "MEDIA";
          bindings = <
-            &none &kp LS(LG(NUMBER_1)) &kp LS(LG(NUMBER_2)) &kp LS(LG(NUMBER_3)) &kp LC(LG(LA(SLASH))) &none &kp LA(LG(NUMBER_1)) &kp LA(LG(NUMBER_2)) &kp LANG1    &kp LANG2  &kp C_STOP  &kp DEL
-            &none &kp LS(LG(NUMBER_4)) &kp LS(LG(NUMBER_5)) &none &none &none &kp LA(LG(NUMBER_3)) &kp LA(LG(NUMBER_4))   &kp LANG3          &none &kp C_VOL_UP  &kp C_PLAY_PAUSE
-            &none &none &none &none &none &none &none    &none   &kp C_MUTE      &kp K_PREV  &kp C_VOL_DN  &kp C_NEXT
+            XXX &kp LS(LG(NUMBER_1)) &kp LS(LG(NUMBER_2)) &kp LS(LG(NUMBER_3)) &kp LC(LG(LA(SLASH))) XXX &kp LA(LG(NUMBER_1)) &kp LA(LG(NUMBER_2)) &kp LANG1    &kp LANG2  &kp C_STOP  &kp DEL
+            XXX &kp LS(LG(NUMBER_4)) &kp LS(LG(NUMBER_5)) XXX XXX XXX &kp LA(LG(NUMBER_3)) &kp LA(LG(NUMBER_4))   &kp LANG3          XXX &kp C_VOL_UP  &kp C_PLAY_PAUSE
+            XXX XXX XXX XXX XXX XXX XXX    XXX   &kp C_MUTE      &kp K_PREV  &kp C_VOL_DN  &kp C_NEXT
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp SPACE   &kp RALT &kp LCTRL
                                  >;
                          };
@@ -228,9 +228,9 @@
          //                            '--------------------------------'       '--------------------------------'
          // label = "MOUSE";
          bindings = <
-            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &none  &none  &none  &none
-            &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &rgb_ug RGB_SAD  &rgb_ug RGB_SAI   &none  &none  &none  &none
-            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &rgb_ug RGB_HUD  &rgb_ug RGB_HUI   &reset  &none  &none  &none
+            XXX XXX XXX &out OUT_USB &out OUT_BLE  &out OUT_TOG  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   XXX  XXX  XXX  XXX
+            XXX XXX XXX &bt BT_CLR &bt BT_PRV &bt BT_NXT &rgb_ug RGB_SAD  &rgb_ug RGB_SAI   XXX  XXX  XXX  XXX
+            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &rgb_ug RGB_HUD  &rgb_ug RGB_HUI   &reset  XXX  XXX  XXX
                                     &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG                      &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
                                  >;
                          };
@@ -249,10 +249,10 @@
          //                            '--------------------------------'       '--------------------------------'
          // label = "MOUSE";
          bindings = <
-            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
-            &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none  &none   &none  &none  &none  &none
-            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  &none  &reset  &none  &none  &none
-                                    &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG                      &none  &none  &none
+            XXX XXX XXX &out OUT_USB &out OUT_BLE  &out OUT_TOG XXX    XXX   XXX  XXX  XXX  XXX
+            XXX XXX XXX &bt BT_CLR &bt BT_PRV &bt BT_NXT XXX  XXX   XXX  XXX  XXX  XXX
+            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 XXX  XXX  &reset  XXX  XXX  XXX
+                                    &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG                      XXX  XXX  XXX
                                  >;
                          };
       // }}}

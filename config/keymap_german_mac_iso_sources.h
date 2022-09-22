@@ -106,28 +106,28 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-#define DE_DEG  LS(GRAVE) // °
-#define DE_EXLM LS(N1)    // !
-#define DE_DQUO LS(N2)    // "
-#define DE_SECT LS(N3)    // §
-#define DE_DLR  LS(N4)    // $
-#define DE_PERC LS(N5)    // %
-#define DE_AMPR LS(N6)    // &
-#define DE_SLSH LS(N7)    // /
-#define DE_LPRN LS(N8)    // (
-#define DE_RPRN LS(N9)    // )
-#define DE_EQL  LS(N0)    // =
-#define DE_QUES LS(MINUS)   // ?
-#define DE_GRV  LS(EQUAL) // ` (dead)
+#define DE_DEG  &kp LS(GRAVE) // °
+#define DE_EXLM &kp LS(N1)    // !
+#define DE_DQUO &kp LS(N2)    // "
+#define DE_SECT &kp LS(N3)    // §
+#define DE_DLR  &kp LS(N4)    // $
+#define DE_PERC &kp LS(N5)    // %
+#define DE_AMPR &kp LS(N6)    // &
+#define DE_SLSH &kp LS(N7)    // /
+#define DE_LPRN &kp LS(N8)    // (
+#define DE_RPRN &kp LS(N9)    // )
+#define DE_EQL  &kp LS(N0)    // =
+#define DE_QUES &kp LS(MINUS)   // ?
+#define DE_GRV  &kp LS(EQUAL) // ` (dead)
 // Row 2
-#define DE_ASTR LS(RPAR) // *
+#define DE_ASTR &kp LS(RPAR) // *
 // Row 3
-#define DE_QUOT LS(BSLH) // '
+#define DE_QUOT &kp LS(BSLH) // '
 // Row 4
-#define DE_RABK LS(GRAVE) // >
-#define DE_SCLN LS(COMMA) // ;
-#define DE_COLN LS(DOT)  // :
-#define DE_UNDS LS(SLASH) // _
+#define DE_RABK &kp LS(GRAVE) // >
+#define DE_SCLN &kp LS(COMMA) // ;
+#define DE_COLN &kp LS(DOT)  // :
+#define DE_UNDS &kp LS(SLASH) // _
 
 /* Alted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
@@ -208,42 +208,42 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-#define DE_NOT  S(LA(N1))    // ¬
-#define DE_RDQU LS(LA(N2))    // ”
-#define DE_PND  LS(LA(N4))    // £
-#define DE_FI   LS(LA(N5))    // ﬁ
-#define DE_BSLS LS(LA(N7))    // (backslash)
-#define DE_STIL LS(LA(N8))    // ˜
-#define DE_MDDT LS(LA(N9))    // ·
-#define DE_MACR LS(LA(N0))    // ¯
-#define DE_DOTA LS(LA(MINUS))   // ˙
-#define DE_RNGA LS(LA(EQUAL)) // ˚
+#define DE_NOT  &kp LS(LA(N1))    // ¬
+#define DE_RDQU &kp LS(LA(N2))    // ”
+#define DE_PND  &kp LS(LA(N4))    // £
+#define DE_FI   &kp LS(LA(N5))    // ﬁ
+#define DE_BSLS &kp LS(LA(N7))    // (backslash)
+#define DE_STIL &kp LS(LA(N8))    // ˜
+#define DE_MDDT &kp LS(LA(N9))    // ·
+#define DE_MACR &kp LS(LA(N0))    // ¯
+#define DE_DOTA &kp LS(LA(MINUS))   // ˙
+#define DE_RNGA &kp LS(LA(EQUAL)) // ˚
 // Row 2
-#define DE_RDAQ LS(LA(Q))    // »
-#define DE_PERM LS(LA(E))    // ‰
-#define DE_CEDL LS(LA(R))    // ¸
-#define DE_DACU LS(LA(T))    // ˝
-#define DE_CARN LS(LA(Z))    // ˇ
-#define DE_AACU LS(LA(U))    // Á
-#define DE_UCIR LS(LA(I))    // Û
-#define DE_NARP LS(LA(P))    // ∏
-#define DE_APPL LS(LA(RPAR)) //  (Apple logo)
+#define DE_RDAQ &kp LS(LA(Q))    // »
+#define DE_PERM &kp LS(LA(E))    // ‰
+#define DE_CEDL &kp LS(LA(R))    // ¸
+#define DE_DACU &kp LS(LA(T))    // ˝
+#define DE_CARN &kp LS(LA(Z))    // ˇ
+#define DE_AACU &kp LS(LA(U))    // Á
+#define DE_UCIR &kp LS(LA(I))    // Û
+#define DE_NARP &kp LS(LA(P))    // ∏
+#define DE_APPL &kp LS(LA(RPAR)) //  (Apple logo)
 // Row 3
-#define DE_IACU LS(LA(S))    // Í
-#define DE_TM   LS(LA(D))    // ™
-#define DE_IDIA LS(LA(F))    // Ï
-#define DE_IGRV LS(LA(G))    // Ì
-#define DE_OACU LS(LA(H))    // Ó
-#define DE_DLSI LS(LA(J))    // ı
-#define DE_FL   LS(LA(L))    // ﬂ
+#define DE_IACU &kp LS(LA(S))    // Í
+#define DE_TM   &kp LS(LA(D))    // ™
+#define DE_IDIA &kp LS(LA(F))    // Ï
+#define DE_IGRV &kp LS(LA(G))    // Ì
+#define DE_OACU &kp LS(LA(H))    // Ó
+#define DE_DLSI &kp LS(LA(J))    // ı
+#define DE_FL   &kp LS(LA(L))    // ﬂ
 // Row 4
-#define DE_GTEQ LS(LA(GRAVE)) // ≥
-#define DE_DDAG LS(LA(Y))    // ‡
-#define DE_UGRV LS(LA(X))    // Ù
-#define DE_LOZN LS(LA(V))    // ◊
-#define DE_LSAQ LS(LA(B))    // ‹
-#define DE_RSAQ LS(LA(N))    // ›
-#define DE_BREV LS(LA(M))    // ˘
-#define DE_OGON LS(LA(COMMA)) // ˛
-#define DE_DIV  LS(LA(DOT))  // ÷
-#define DE_MDSH LS(LA(MINS)) // —
+#define DE_GTEQ &kp LS(LA(GRAVE)) // ≥
+#define DE_DDAG &kp LS(LA(Y))    // ‡
+#define DE_UGRV &kp LS(LA(X))    // Ù
+#define DE_LOZN &kp LS(LA(V))    // ◊
+#define DE_LSAQ &kp LS(LA(B))    // ‹
+#define DE_RSAQ &kp LS(LA(N))    // ›
+#define DE_BREV &kp LS(LA(M))    // ˘
+#define DE_OGON &kp LS(LA(COMMA)) // ˛
+#define DE_DIV  &kp LS(LA(DOT))  // ÷
+#define DE_MDSH &kp LS(LA(MINS)) // —
