@@ -84,8 +84,15 @@ SPDX-License-Identifier: MIT
 #define NUMBER_SPACE &lt NUMBER SPACE
 #define SYMBOL_RGUI &lt SYMBOL RGUI
 #define FUNCTION_RALT &lt FUNCTION RALT
-// otros
+// default_layer
 #define LSHFT_COMMA &mt LSHFT COMMA
+// function_layer
+#define SPELL &kp LC(LG(D))
+#define TRADUCT &kp LS(LA(T))
+#define SNIPPET &kp LA(LG(G))
+#define CLIPBRD &kp LA(LG(V))
+#define EMOJI &kp LC(LG(SPACE))
+#define TASKM &kp LC(LA(DEL)) // C-A-DEL
 //}}}
 // ### keymap {{{
 / {
@@ -156,18 +163,18 @@ SPDX-License-Identifier: MIT
          //  .------------------------------------------------.                         .-------------------------------------------------.
          //  |    F1  |  F2   |   F3  |   F4  | SPELL |TRADUCT|                         |       |       |       |       |       |         |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //  |    F5  |  F6   |   F7  |   F8  |   \   |ALFRED |                         |C-A-DEL|PASS   |       |       |BRI_UP |         |
+         //  |    F5  |  F6   |   F7  |   F8  |   \   |SNIPPET|                         |TASKM  |       |       |       |BRI_UP |         |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //  |    F9  |   F10 |   F11 |   F12 |ALFRED |EMOJI  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
+         //  |    F9  |   F10 |   F11 |   F12 |CLIPBRD|EMOJI  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
          //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
          //                           '--------------------------------'       '--------------------------------'
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          // label = "FUNCTION";
          bindings = <
-            DE_F1 DE_F2   DE_F3 DE_F4 &kp LC(LG(D)) &kp LS(LA(T)) XXX   XXX XXX XXX XXX XXX
-            DE_F5 DE_F6   DE_F7 DE_F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    XXX   XXX          XXX  DE_BRI_UP  XXX
-            DE_F9 DE_F10  DE_F11  DE_F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) DE_LSHFT    DE_LSHFT   DE_RSHFT          XXX  DE_BRI_DN  XXX
+            DE_F1 DE_F2   DE_F3 DE_F4 SPELL TRADUCT XXX   XXX XXX XXX XXX XXX
+            DE_F5 DE_F6   DE_F7 DE_F8  DE_BSLH  SNIPPET  TASKM   XXX   XXX          XXX  DE_BRI_UP  XXX
+            DE_F9 DE_F10  DE_F11  DE_F12 CLIPBRD EMOJI DE_LSHFT    DE_LSHFT   DE_RSHFT          XXX  DE_BRI_DN  XXX
                                     DE_LCTRL  DE_LGUI  DE_LALT                      DE_TAB     DE_ACUT DE_LCTRL
                                  >;
                          };
