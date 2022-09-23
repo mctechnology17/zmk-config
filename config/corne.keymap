@@ -144,7 +144,7 @@ SPDX-License-Identifier: MIT
          bindings = <
             DE_0     DE_1   DE_2   DE_3    DE_MINS   DE_PLUS                                DE_SS     DE_UDIA      DE_ADIA         DE_ODIA     XXX   DE_BSPC
             DE_CAPS   DE_4   DE_5   DE_6    DE_FSLH    DE_STAR                                DE_HASH  DE_TILD  DE_QUES  DE_AT     XXX   DE_LALT
-            DE_LSHFT  DE_7   DE_8   DE_9    DE_PERC   DE_EQUAL                               DE_DOT   DE_ACUT      DE_GRAVE     XXX     XXX   DE_RALT
+            DE_LSHFT  DE_7   DE_8   DE_9    DE_PERC   DE_EQUAL                               DE_DOT   DE_ACUT      DE_GRV     XXX     XXX   DE_RALT
             DE_LCTRL  DE_LGUI        DE_SPACE     XXX     DE_LSHFT DE_RALT
             >;
       };
@@ -163,7 +163,7 @@ SPDX-License-Identifier: MIT
          // label = "SYMBOL";
          bindings = <
             DE_DLR   DE_LPRN  DE_RPRN   DE_LBRC  DE_RBRC   DE_TILD             DE_ACUT     DE_GRAVE  XXX    XXX     XXX   DE_BSPC
-            DE_PERC  DE_RBKT  DE_RCBR   DE_CARET DE_PG_UP   DE_HASH              DE_AMPR  DE_PIPE   XXX    XXX    XXX   DE_LALT
+            DE_PERC  DE_RBKT  DE_RCBR   DE_CIRC DE_PG_UP   DE_HASH              DE_AMPR  DE_PIPE   XXX    XXX    XXX   DE_LALT
             DE_LSHFT  DE_LABK  DE_RABK   DE_HOME  DE_PG_DN   DE_END               DE_TILD DE_APOS   XXX    XXX     XXX   DE_RALT
                                     DE_LCTRL  DE_LGUI  DE_SPACE                      DE_RET     DE_RALT DE_LCTRL
             >;

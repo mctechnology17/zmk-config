@@ -351,7 +351,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_FSLH &kp AMPS  // "/"
 #define DE_STAR &kp RBRC  // "*"
 #define DE_EQUAL &kp RPAR // =
-#define DE_GRAVE &kp PLUS         // `
+// #define DE_GRAVE &kp PLUS         // `
 // #define DE_HASH &kp BSLH          // #
 // #define DE_TILDE &kp LA(RBKT)     // ~
 // #define DE_PIPE &kp RA(GRAVE)     // "|"
@@ -367,5 +367,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define DE_RBRC &kp RA(N0)        // }
 #define DE_APOS &kp PIPE      // '
 
-#define DE_CARET &kp HASH // ^ TODO:
+// #define DE_CARET &kp HASH // ^ TODO:
 // vim: fdm=marker:
