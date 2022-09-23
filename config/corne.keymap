@@ -201,14 +201,12 @@ SPDX-License-Identifier: MIT
          // '---------------------------------------------------------|       |----------------------------------------------------------'
          //                          |  CTRL    |  CMD       |   ALT  |       |  SPACE | ALTGR |          CTRL |
          //                          '--------------------------------'       '--------------------------------'
-         // XXX XXX XXX XXX XXX XXX XXX    XXX   XXX          XXX  XXX  XXX
-         //                         XXX  XXX  XXX                      XXX     XXX XXX
          // label = "MEDIA";
          bindings = <
-            XXX SC_FLOW TXTSNIP SC_SHOT OP_TERM XXX POS1 POS2 &kp LANG1    &kp LANG2  &kp C_STOP  &kp DEL
+            XXX SC_FLOW TXTSNIP SC_SHOT OP_TERM XXX POS1 POS2 &kp LANG1    &kp LANG2  &kp C_STOP  DE_DEL
             XXX SC_SPSF SC_RE XXX XXX XXX POS3 POS4   &kp LANG3          DE_SHUFFLE &kp C_VOL_UP  &kp C_PLAY_PAUSE
-            XXX XXX XXX XXX XXX XXX XXX    XXX   &kp C_MUTE      &kp K_PREV  &kp C_VOL_DN  &kp C_NEXT
-                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp SPACE   &kp RALT &kp LCTRL
+            XXX XXX XXX XXX XXX XXX XXX    XXX   &kp C_MUTE      &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT
+                                    DE_LCTRL  DE_LGUI  DE_LALT                      DE_SPACE   DE_RALT DE_LCTRL
                                  >;
                          };
       // }}}
