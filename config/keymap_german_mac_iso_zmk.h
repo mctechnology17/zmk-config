@@ -5,7 +5,7 @@ Author: Marcos Chow Castro
 Email: mctechnology170318@gmail.com
 GitHub: https://github.com/mctechnology17
 Brief: define keymap for the wireless corne keyboard
-Use: in your keymap.c file, include this file
+Use: in your keymap file, include this file
      #include "keymap_german_mac_iso_zmk.h"
 ===========================================
 Copyright 2022 Marcos Ivan Chow Castro

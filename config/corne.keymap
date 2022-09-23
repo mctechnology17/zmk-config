@@ -96,7 +96,7 @@ SPDX-License-Identifier: MIT
 // media_layer
 #define SC_FLOW &kp LS(LG(NUMBER_1)) // <S-D-1> ScrenFlow app for MacOS
 #define TXTSNIP &kp LS(LG(NUMBER_2)) // <S-D-2> TextSniper app for MacOS
-#define SC_SHOT &kp PRINTSCREEN // <S-D-3> ScrenShot for all system see &kp LS(LG(NUMBER_3)) for MacOS
+#define SC_SHOT &kp LS(LG(NUMBER_3)) // <S-D-3> ScrenShot for all system see &kp PRINTSCREEN for MacOS
 #define SC_SPSF &kp LS(LG(NUMBER_4)) // <S-D-4> Save picture of screen as a file for MacOS
 #define SC_RE &kp LS(LG(NUMBER_5)) // <S-D-5> Screenshot and recording options for MacOS
 #define OP_TERM &kp LC(LG(LA(SLASH))) // open terminal iTerm2 in current directory for MacOS
