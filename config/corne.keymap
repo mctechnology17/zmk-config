@@ -1,16 +1,28 @@
+/* ========================================
+FileName: corne.keymap
+Date: 15:17 23.September.2022
+Author: Marcos Chow Castro
+Email: mctechnology170318@gmail.com
+GitHub: https://github.com/mctechnology17
+Brief: keymap for the wireless corne keyboard
+=========================================
+                             ╔═╦═╦═╗
+                      ╔════╗ ║║║║║╔╝
+                      ║╔╗╔╗║ ║║║║║╚╗
+                      ╚╝║║╚╝ ║╠═╩╩═╝
+                        ║╠═╦═╣╚╦═╦╦═╦╗╔═╦═╦╦╗
+                        ║║╩╣═╣║║║║║╬║╚╣╬║╬║║║
+                        ╚╩═╩═╩╩╩╩═╩═╩═╩═╬╗╠╗║
+                                        ╚═╩═╝
+Copyright (c) 2020 The ZMK Contributors
+SPDX-License-Identifier: MIT
+*/
 // ### include define {{{
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
-// #include "keymap_german_mac_iso_sources.h"
 #include "keymap_german_mac_iso_zmk.h"
 // }}}
 // ### CONFIG_ZMK_DISPLAY {{{
@@ -76,6 +88,7 @@
 // otros
 #define LSHFT_COMMA &mt LSHFT COMMA
 //}}}
+// ### keymap {{{
 / {
    keymap {
       compatible = "zmk,keymap";
@@ -227,4 +240,5 @@
 #endif // CONFIG_ZMK_RGB_UNDERGLOW
    };
 };
+// }}}
 // vim: fdm=marker:

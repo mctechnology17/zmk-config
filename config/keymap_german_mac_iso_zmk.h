@@ -1,24 +1,44 @@
-/* Copyright 2022 Marcos Ivan Chow Castro
- * Inspired by Stephen Bösebeck
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+/* ========================================
+FileName: keymap_german_mac_iso_zmk.h
+Date: 15:17 23.September.2022
+Author: Marcos Chow Castro
+Email: mctechnology170318@gmail.com
+GitHub: https://github.com/mctechnology17
+Brief: define keymap for the wireless corne keyboard
+Use: in your keymap.c file, include this file
+     #include "keymap_german_mac_iso_zmk.h"
+===========================================
+Copyright 2022 Marcos Ivan Chow Castro
+Inspired by Stephen Bösebeck
+                           ╔═╦═╦═╗
+                    ╔════╗ ║║║║║╔╝
+                    ║╔╗╔╗║ ║║║║║╚╗
+                    ╚╝║║╚╝ ║╠═╩╩═╝
+                      ║╠═╦═╣╚╦═╦╦═╦╗╔═╦═╦╦╗
+                      ║║╩╣═╣║║║║║╬║╚╣╬║╬║║║
+                      ╚╩═╩═╩╩╩╩═╩═╩═╩═╬╗╠╗║
+                                      ╚═╩═╝
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 // #pragma once
 
 #define XXX &none
 #define ___ &trans
+
+// CONTROL CMD/WINDOWS SHIFT ALT/META/OPTION
 #define DE_LCTRL &kp LCTRL
 #define DE_RCTRL &kp RCTRL
 #define DE_LGUI &kp LGUI
@@ -27,15 +47,20 @@
 #define DE_RALT &kp RALT
 #define DE_LSHFT &kp LSHFT
 #define DE_RSHFT &kp RSHFT
-#define DE_BSPC &kp BSPC
-#define DE_RET &kp RET
+
+// ARROWS
 #define DE_UP &kp UP
 #define DE_LEFT &kp LEFT
 #define DE_DOWN &kp DOWN
 #define DE_RIGHT &kp RIGHT
+
+// SPACE CAPS TAB ENTER
 #define DE_SPACE &kp SPACE
 #define DE_CAPS &kp CAPS
+#define DE_BSPC &kp BSPC
+#define DE_RET &kp RET
 
+// PAGE UP PAGE DOWN HOME END
 #define DE_PG_UP &kp PG_UP
 #define DE_PG_DN &kp PG_DN
 #define DE_HOME &kp HOME
@@ -54,6 +79,18 @@
 #define DE_F10 &kp F10
 #define DE_F11 &kp F11
 #define DE_F12 &kp F12
+#define DE_F13 &kp F13
+#define DE_F14 &kp F14
+#define DE_F15 &kp F15
+#define DE_F16 &kp F16
+#define DE_F17 &kp F17
+#define DE_F18 &kp F18
+#define DE_F19 &kp F19
+#define DE_F20 &kp F20
+#define DE_F21 &kp F21
+#define DE_F22 &kp F22
+#define DE_F23 &kp F23
+#define DE_F24 &kp F24
 
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
@@ -304,3 +341,4 @@
 #define DE_APOS &kp PIPE      // '
 
 #define DE_CARET &kp HASH // ^ TODO:
+// vim: fdm=marker:
