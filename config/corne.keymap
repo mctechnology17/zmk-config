@@ -166,9 +166,9 @@ SPDX-License-Identifier: MIT
          // label = "FUNCTION";
          bindings = <
             DE_F1 DE_F2   DE_F3 DE_F4 &kp LC(LG(D)) &kp LS(LA(T)) XXX   XXX XXX XXX XXX XXX
-            DE_F5 DE_F6   DE_F7 DE_F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    XXX   XXX          XXX  &kp C_BRI_UP  XXX
-            DE_F9 DE_F10  DE_F11  DE_F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          XXX  &kp C_BRI_DN  XXX
-                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp TAB     DE_ACUT &kp LCTRL
+            DE_F5 DE_F6   DE_F7 DE_F8  DE_BSLH  &kp LA(LG(G)) &kp LC(LA(DEL))    XXX   XXX          XXX  DE_BRI_UP  XXX
+            DE_F9 DE_F10  DE_F11  DE_F12 &kp LA(LG(V)) &kp LC(LG(SPACE)) &kp LSHIFT    &kp LSHIFT   &kp RSHIFT          XXX  DE_BRI_DN  XXX
+                                    DE_LCTRL  DE_LGUI  DE_LALT                      DE_TAB     DE_ACUT DE_LCTRL
                                  >;
                          };
       // }}}
@@ -187,10 +187,10 @@ SPDX-License-Identifier: MIT
          //                         XXX  XXX  XXX                      XXX     XXX XXX
          // label = "MEDIA";
          bindings = <
-            XXX &kp LS(LG(NUMBER_1)) &kp LS(LG(NUMBER_2)) &kp LS(LG(NUMBER_3)) &kp LC(LG(LA(SLASH))) XXX &kp LA(LG(NUMBER_1)) &kp LA(LG(NUMBER_2)) &kp LANG1    &kp LANG2  &kp C_STOP  &kp DEL
-            XXX &kp LS(LG(NUMBER_4)) &kp LS(LG(NUMBER_5)) XXX XXX XXX &kp LA(LG(NUMBER_3)) &kp LA(LG(NUMBER_4))   &kp LANG3          XXX &kp C_VOL_UP  &kp C_PLAY_PAUSE
-            XXX XXX XXX XXX XXX XXX XXX    XXX   &kp C_MUTE      &kp K_PREV  &kp C_VOL_DN  &kp C_NEXT
-                                    &kp LCTRL  &kp LGUI  &kp LALT                      &kp SPACE   &kp RALT &kp LCTRL
+            XXX &kp LS(LG(NUMBER_1)) &kp LS(LG(NUMBER_2)) &kp LS(LG(NUMBER_3)) &kp LC(LG(LA(SLASH))) XXX &kp LA(LG(NUMBER_1)) &kp LA(LG(NUMBER_2)) &kp LANG1    &kp LANG2  DE_STOP  DE_DEL
+            XXX &kp LS(LG(NUMBER_4)) &kp LS(LG(NUMBER_5)) XXX XXX XXX &kp LA(LG(NUMBER_3)) &kp LA(LG(NUMBER_4))   &kp LANG3          XXX DE_VOL_UP  DE_PLAY
+            XXX XXX XXX XXX XXX XXX XXX    XXX   DE_MUTE      DE_PREV  DE_VOL_DN  DE_NEXT
+                                    DE_LCTRL  DE_LGUI  DE_LALT                      DE_SPACE   DE_RALT DE_LCTRL
                                  >;
                          };
       // }}}

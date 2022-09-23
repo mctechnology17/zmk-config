@@ -39,9 +39,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ___ &trans
 
 // CONTROL CMD/WINDOWS SHIFT ALT/META/OPTION
-#define DE_LCTRL &kp LCTRL
-#define DE_RCTRL &kp RCTRL
-#define DE_LGUI &kp LGUI
+#define DE_LCTRL &kp LCTRL // left control
+#define DE_RCTRL &kp RCTRL // right control
+#define DE_LGUI &kp LGUI   // left cmd
 #define DE_RGUI &kp RGUI
 #define DE_LALT &kp LALT
 #define DE_RALT &kp RALT
@@ -54,11 +54,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_DOWN &kp DOWN
 #define DE_RIGHT &kp RIGHT
 
-// SPACE CAPS TAB ENTER
-#define DE_SPACE &kp SPACE
-#define DE_CAPS &kp CAPS
-#define DE_BSPC &kp BSPC
-#define DE_RET &kp RET
+// SPACE CAPS TAB ENTER BACKSPACE ESCAPE DELETE
+#define DE_SPACE &kp SPACE // Space
+#define DE_CAPS &kp CAPS   // Caps Lock
+#define DE_BSPC &kp BSPC   // Backspace
+#define DE_RET &kp RET     // Enter
+#define DE_TAB &kp TAB     // Tab
+#define DE_DEL &kp DEL     // Delete
 
 // PAGE UP PAGE DOWN HOME END
 #define DE_PG_UP &kp PG_UP
@@ -91,6 +93,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_F22 &kp F22
 #define DE_F23 &kp F23
 #define DE_F24 &kp F24
+
+// SOUND / VOLUME
+#define DE_VOL_UP &kp C_VOL_UP
+#define DE_VOL_DN &kp C_VOL_DOWN
+#define DE_MUTE &kp C_MUTE
+#define DE_NEXT &kp C_NEXT
+#define DE_PREV &kp K_PREV
+#define DE_STOP &kp C_STOP
+#define DE_PLAY &kp C_PLAY_PAUSE
+
+// DISPLAY BRIGHTNESS
+#define DE_BRI_UP &kp C_BRI_UP
+#define DE_BRI_DN &kp C_BRI_DN
 
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
