@@ -5,7 +5,6 @@ Author: Marcos Chow Castro
 Email: mctechnology170318@gmail.com
 GitHub: https://github.com/mctechnology17
 Brief: keymap for the wireless corne keyboard
-=========================================
                              ╔═╦═╦═╗
                       ╔════╗ ║║║║║╔╝
                       ║╔╗╔╗║ ║║║║║╚╗
@@ -16,7 +15,7 @@ Brief: keymap for the wireless corne keyboard
                                         ╚═╩═╝
 Copyright (c) 2020 The ZMK Contributors
 SPDX-License-Identifier: MIT
-*/
+========================================= */
 // ### include define {{{
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>

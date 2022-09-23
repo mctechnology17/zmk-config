@@ -1,3 +1,19 @@
+/* ========================================
+FileName: macros.dtsi
+Date: 15:17 23.September.2022
+Author: Marcos Chow Castro
+Email: mctechnology170318@gmail.com
+GitHub: https://github.com/mctechnology17
+Brief: combos keymap for the wireless corne keyboard
+                             ╔═╦═╦═╗
+                      ╔════╗ ║║║║║╔╝
+                      ║╔╗╔╗║ ║║║║║╚╗
+                      ╚╝║║╚╝ ║╠═╩╩═╝
+                        ║╠═╦═╣╚╦═╦╦═╦╗╔═╦═╦╦╗
+                        ║║╩╣═╣║║║║║╬║╚╣╬║╬║║║
+                        ╚╩═╩═╩╩╩╩═╩═╩═╩═╬╗╠╗║
+                                        ╚═╩═╝
+========================================= */
 /* TODO: en adptacion */
 /* Macro macro: */
 #define str(s) #s
@@ -11,10 +27,10 @@
       bindings = <BINDINGS>; \
   };
 
-/* Brackets */
+/* BRACKETS */
 MACRO(parentheses, &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT)
 MACRO(brackets, &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT)
 MACRO(ltgt, &kp LESS_THAN &kp GREATER_THAN &kp LEFT)
 
-/* Suspend macOS by holding power key for 1 second */
+/* SUSPEND MACOS BY HOLDING POWER KEY FOR 1 SECOND */
 MACRO(power, &macro_tap_time 1000 &kp C_POWER)
