@@ -99,7 +99,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_VOL_DN &kp C_VOL_DOWN
 #define DE_MUTE &kp C_MUTE
 #define DE_NEXT &kp C_NEXT
-#define DE_PREV &kp K_PREV
+#define DE_PREV &kp C_PREV
 #define DE_STOP &kp C_STOP
 #define DE_PLAY &kp C_PLAY_PAUSE
 
