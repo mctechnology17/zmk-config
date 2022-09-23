@@ -95,13 +95,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_F24 &kp F24
 
 // SOUND / VOLUME
-#define DE_VOL_UP &kp C_VOL_UP
-#define DE_VOL_DN &kp C_VOL_DOWN
+#define DE_VOL_UP &kp C_VOLUME_UP
+#define DE_VOL_DN &kp C_VOLUME_DOWN
 #define DE_MUTE &kp C_MUTE
 #define DE_NEXT &kp C_NEXT
-#define DE_PREV &kp C_PREV
+#define DE_PREV &kp C_PREVIOUS
 #define DE_STOP &kp C_STOP
 #define DE_PLAY &kp C_PLAY_PAUSE
+#define DE_SHUFFLE &kp C_SHUFFLE
 
 // DISPLAY BRIGHTNESS
 #define DE_BRI_UP &kp C_BRI_UP
