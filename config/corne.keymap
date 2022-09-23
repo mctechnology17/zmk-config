@@ -96,7 +96,7 @@ SPDX-License-Identifier: MIT
 // media_layer
 #define SC_FLOW &kp LS(LG(NUMBER_1)) // <S-D-1> ScrenFlow app for MacOS
 #define TXTSNIP &kp LS(LG(NUMBER_2)) // <S-D-2> TextSniper app for MacOS
-#define SC_SHOT &kp LS(LG(NUMBER_3)) // <S-D-3> ScrenShot app for MacOS
+#define SC_SHOT &kp PRINTSCREEN // <S-D-3> ScrenShot for all system see &kp LS(LG(NUMBER_3)) for MacOS
 #define SC_SPSF &kp LS(LG(NUMBER_4)) // <S-D-4> Save picture of screen as a file for MacOS
 #define SC_RE &kp LS(LG(NUMBER_5)) // <S-D-5> Screenshot and recording options for MacOS
 #define OP_TERM &kp LC(LG(LA(SLASH))) // open terminal iTerm2 in current directory for MacOS
@@ -203,8 +203,8 @@ SPDX-License-Identifier: MIT
          //                          '--------------------------------'       '--------------------------------'
          // label = "MEDIA";
          bindings = <
-            XXX SC_FLOW TXTSNIP SC_SHOT OP_TERM XXX POS1 POS2 &kp LANG1    &kp LANG2  DE_STOP  DE_DEL
-            XXX SC_SPSF SC_RE XXX XXX XXX POS3 POS4   &kp LANG3          DE_SHUFFLE DE_VOL_UP  DE_PLAY
+            XXX SC_FLOW TXTSNIP SC_SHOT OP_TERM XXX POS1 POS2 DE_LANG1    DE_LANG2  DE_STOP  DE_DEL
+            XXX SC_SPSF SC_RE XXX XXX XXX POS3 POS4   DE_LANG3          DE_SHUFFLE DE_VOL_UP  DE_PLAY
             XXX XXX XXX XXX XXX XXX XXX    XXX   DE_MUTE      DE_PREV  DE_VOL_DN  DE_NEXT
                                     DE_LCTRL  DE_LGUI  DE_LALT                      DE_SPACE   DE_RALT DE_LCTRL
                                  >;

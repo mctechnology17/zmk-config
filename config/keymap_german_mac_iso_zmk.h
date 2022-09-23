@@ -108,6 +108,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_BRI_UP &kp C_BRI_UP
 #define DE_BRI_DN &kp C_BRI_DN
 
+// LANGUAGE
+#define DE_LANG1 &kp LANG1
+#define DE_LANG2 &kp LANG2
+#define DE_LANG3 &kp LANG3
+#define DE_LANG4 &kp LANG4
+#define DE_LANG5 &kp LANG5
+#define DE_LANG6 &kp LANG6
+#define DE_LANG7 &kp LANG7
+#define DE_LANG8 &kp LANG8
+#define DE_LANG9 &kp LANG9
+
 // Apple "Globe" key
 // https://github.com/zmkfirmware/zmk/issues/947
 // #define GLOBE CAPSLOCK
