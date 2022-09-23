@@ -351,21 +351,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_FSLH &kp AMPS  // "/"
 #define DE_STAR &kp RBRC  // "*"
 #define DE_EQUAL &kp RPAR // =
-// #define DE_GRAVE &kp PLUS         // `
+#define DE_GRAVE &kp PLUS         // `
 // #define DE_HASH &kp BSLH          // #
 // #define DE_TILDE &kp LA(RBKT)     // ~
 // #define DE_PIPE &kp RA(GRAVE)     // "|"
-// #define DE_AMPS &kp CARET         // "&"
+#define DE_AMPS &kp CARET         // "&"
 #define DE_BSLH &kp RA(MINUS)     // "\"
-// #define DE_QUESTION &kp LS(MINUS) // ?
+#define DE_QUESTION &kp LS(MINUS) // ?
 // #define DE_AT &kp RA(Q)           // "@"
-// #define DE_LPAR &kp LS(N8)        // (
-// #define DE_RPAR &kp LS(N9)        // )
-// #define DE_LBKT &kp RA(N8)        // [
-// #define DE_RBKT &kp RA(N9)        // ]
+#define DE_LPAR &kp LS(N8)        // (
+#define DE_RPAR &kp LS(N9)        // )
+#define DE_LBKT &kp RA(N8)        // [
+#define DE_RBKT &kp RA(N9)        // ]
 // #define DE_LBRC &kp RA(N7)        // {
 // #define DE_RBRC &kp RA(N0)        // }
 #define DE_APOS &kp PIPE      // '
 
-// #define DE_CARET &kp HASH // ^ TODO:
+#define DE_CARET &kp HASH // ^ TODO:
 // vim: fdm=marker:
