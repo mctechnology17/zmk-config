@@ -93,6 +93,9 @@ SPDX-License-Identifier: MIT
 #define CLIPBRD &kp LA(LG(V))
 #define EMOJI &kp LC(LG(SPACE))
 #define TASKM &kp LC(LA(DEL)) // C-A-DEL
+// media_layer
+#define SC_FLOW &kp LS(LG(NUMBER_1)) // <S-D-1> ScrenFlow app for MacOS
+#define TXTSNIP &kp LS(LG(NUMBER_2)) // <S-D-2> TextSniper app for MacOS
 //}}}
 // ### keymap {{{
 / {
@@ -182,7 +185,7 @@ SPDX-License-Identifier: MIT
       // ### media_layer {{{
       media_layer {
          // .------------------------------------------------.                         .-------------------------------------------------.
-         // |        |<S-D-1>|<S-D-2>|<S-D-3>|OP_TERM|       |                         |POS1   |POS2   |LANG_1 |LANG_2 | STOP  |  DELETE |
+         // |        |SC_FLOW|TXTSNIP|<S-D-3>|OP_TERM|       |                         |POS1   |POS2   |LANG_1 |LANG_2 | STOP  |  DELETE |
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          // |        |<S-D-4>|<S-D-5>|       |       |       |                         |POS3   |POS4   |LANG_3 |SHUFFLE|VOL_UP |PLAY/PAUS|
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
@@ -194,7 +197,7 @@ SPDX-License-Identifier: MIT
          //                         XXX  XXX  XXX                      XXX     XXX XXX
          // label = "MEDIA";
          bindings = <
-            XXX &kp LS(LG(NUMBER_1)) &kp LS(LG(NUMBER_2)) &kp LS(LG(NUMBER_3)) &kp LC(LG(LA(SLASH))) XXX &kp LA(LG(NUMBER_1)) &kp LA(LG(NUMBER_2)) &kp LANG1    &kp LANG2  &kp C_STOP  &kp DEL
+            XXX SC_FLOW TXTSNIP &kp LS(LG(NUMBER_3)) &kp LC(LG(LA(SLASH))) XXX &kp LA(LG(NUMBER_1)) &kp LA(LG(NUMBER_2)) &kp LANG1    &kp LANG2  &kp C_STOP  &kp DEL
             XXX &kp LS(LG(NUMBER_4)) &kp LS(LG(NUMBER_5)) XXX XXX XXX &kp LA(LG(NUMBER_3)) &kp LA(LG(NUMBER_4))   &kp LANG3          DE_SHUFFLE &kp C_VOL_UP  &kp C_PLAY_PAUSE
             XXX XXX XXX XXX XXX XXX XXX    XXX   &kp C_MUTE      &kp K_PREV  &kp C_VOL_DN  &kp C_NEXT
                                     &kp LCTRL  &kp LGUI  &kp LALT                      &kp SPACE   &kp RALT &kp LCTRL
