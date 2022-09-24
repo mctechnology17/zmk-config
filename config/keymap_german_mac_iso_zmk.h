@@ -355,17 +355,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define DE_HASH &kp BSLH          // #
 // #define DE_TILDE &kp LA(RBKT)     // ~
 // #define DE_PIPE &kp RA(GRAVE)     // "|"
-#define DE_AMPS &kp CARET         // "&" DE_AMPR
-#define DE_BSLH &kp RA(MINUS)     // "\" DE_BSLS
-#define DE_QUESTION &kp LS(MINUS) // ? DE_QUES
+// #define DE_AMPS &kp CARET         // "&" DE_AMPR
+// #define DE_BSLH &kp RA(MINUS)     // "\" DE_BSLS
+// #define DE_QUESTION &kp LS(MINUS) // ? DE_QUES
 // #define DE_AT &kp RA(Q)           // "@"
-#define DE_LPAR &kp LS(N8)        // ( DE_LPRN
-#define DE_RPAR &kp LS(N9)        // ) DE_RPRN
-#define DE_LBKT &kp RA(N8)        // [ DE_LBRC
-#define DE_RBKT &kp RA(N9)        // ] DE_RBRC
+// #define DE_LPAR &kp LS(N8)        // ( DE_LPRN
+// #define DE_RPAR &kp LS(N9)        // ) DE_RPRN
+// #define DE_LBKT &kp RA(N8)        // [ DE_LBRC
+// #define DE_RBKT &kp RA(N9)        // ] DE_RBRC
 // #define DE_LBRC &kp RA(N7)        // { DE_LCBR
 // #define DE_RBRC &kp RA(N0)        // } DE_RCBR
-#define DE_APOS &kp PIPE      // ' DE_QUOT
+// #define DE_APOS &kp PIPE      // ' DE_QUOT
 
-#define DE_CARET &kp HASH // ^ TODO: DE_CIRC
+// #define DE_CARET &kp HASH // ^ TODO: DE_CIRC
 // vim: fdm=marker:
