@@ -139,6 +139,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
+#define DE_CARET &kp LS(LA(N6)) // ^
 #define DE_CIRC &kp GRAVE // ^ (dead)
 #define DE_1 &kp N1       // 1
 #define DE_2 &kp N2       // 2
@@ -367,5 +368,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define DE_RBRC &kp RA(N0)        // } DE_RCBR
 // #define DE_APOS &kp PIPE      // ' DE_QUOT
 
-// #define DE_CARET &kp HASH // ^ TODO: DE_CIRC
 // vim: fdm=marker:
