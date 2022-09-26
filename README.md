@@ -171,35 +171,12 @@ Agrega las siguientes lineas antes de keymap:
 #ifdef CONFIG_ZMK_RGB_UNDERGLOW
 #    include <dt-bindings/zmk/rgb.h>
 #    include <dt-bindings/led/led.h>
-&spi1 {
-	compatible = "nordic,nrf-spim";
-	status = "okay";
-	mosi-pin = <6>;
-	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-	sck-pin = <5>;
-	miso-pin = <7>;
 
-	led_strip: ws2812@0 {
-		compatible = "worldsemi,ws2812-spi";
-		label = "WS2812";
+#include <../boards/shields/corne/boards/nice_nano.overlay>
 
-		/* SPI */
-		reg = <0>; /* ignored, but necessary for SPI bindings */
-		spi-max-frequency = <4000000>;
+// Overwrite number of leds on the keyboard. A Corne has 27 per side.
+&led_strip { chain-length = <27>; };
 
-		/* WS2812 */
-		chain-length = <11>; /* arbitrary; change at will */
-		spi-one-frame = <0x70>;
-		spi-zero-frame = <0x40>;
-		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-	};
-};
-
-/ {
-	chosen {
-		zmk,underglow = &led_strip;
-	};
-};
 #endif // CONFIG_ZMK_RGB_UNDERGLOW
 ```
 Ahora aqui tienes un ejemplo de como debes mapear las teclas para controlar el RGB:
