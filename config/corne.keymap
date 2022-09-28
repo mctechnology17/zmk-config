@@ -112,14 +112,14 @@ SPDX-License-Identifier: MIT
 //}}}
 // ### keymap {{{
 / {
-   conditional_layers {
-       compatible = "zmk,conditional-layers";
-
-       tri_layer {
-           if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
-           then-layer = <EXTRA>;
-       };
-   };
+   // conditional_layers {
+       // compatible = "zmk,conditional-layers";
+//
+       // tri_layer {
+           // if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
+           // then-layer = <EXTRA>;
+       // };
+   // };
 
    keymap {
       compatible = "zmk,keymap";
@@ -273,12 +273,13 @@ SPDX-License-Identifier: MIT
       // other keys, allowing the keyboard to be transported without spurious key presses.
       // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, this layer can be
       // replaced by a native behavior in the future.
+      // &mo NONE_LOCK_LAYER   &mo LOCK_LAYER
       none_lock_layer {
           bindings = <
-              &mo NONE_LOCK_LAYER   &mo LOCK_LAYER   &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-              &none           &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-              &none           &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-                                                               &none      &none     &none       &none      &none      &none
+              &mo EXTRA  &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                                                          &none      &none     &none       &none      &none      &none
           >;
       };
       lock_layer {
