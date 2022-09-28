@@ -274,7 +274,7 @@ SPDX-License-Identifier: MIT
       // replaced by a native behavior in the future.
       none_lock_layer {
           bindings = <
-              &mo NONE_LOCK   &mo LOCK   &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &mo NONE_LOCK_LAYER   &mo LOCK_LAYER   &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
               &none           &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
               &none           &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                                                                &none      &none     &none       &none      &none      &none
