@@ -78,10 +78,11 @@ SPDX-License-Identifier: MIT
 #define FUNCTION 3
 #define MEDIA 4
 #define MOUSE 5
-#define LOCK_LAYER 6
-#define LOCK &tog LOCK_LAYER
-#define UNLOCK &tog DEFAULT
-#define TO_FUNCTION &tog FUNCTION
+// TODO:
+// #define LOCK_LAYER 6
+// #define LOCK &tog LOCK_LAYER
+// #define UNLOCK &tog DEFAULT
+// #define TO_FUNCTION &tog FUNCTION
 // combinadas para optimizar espacio
 #define MEDIA_ESC &lt MEDIA ESC
 #define MOUSE_TAB &lt MOUSE TAB
@@ -109,11 +110,14 @@ SPDX-License-Identifier: MIT
 #define POS3 &kp LA(LG(NUMBER_3)) // positions of current app with carabiner integration for MacOS
 #define POS4 &kp LA(LG(NUMBER_4)) // positions of current app with carabiner integration for MacOS
 //}}}
-&kscan0 {
-    debounce-period = <10>;
-};
+// TODO:
+// #define LOCK_LAYER 6
+// &kscan0 {
+    // debounce-period = <10>;
+// };
 // ### keymap {{{
 / {
+// TODO:
    // conditional_layers {
        // compatible = "zmk,conditional-layers";
 //
@@ -188,9 +192,9 @@ SPDX-License-Identifier: MIT
       // ### function_layer {{{
       function_layer {
          //  .------------------------------------------------.                         .-------------------------------------------------.
-         //  |    F1  |  F2   |   F3  |   F4  | SPELL |TRADUCT|                         |       |       |       |       |       | LOCK    |
+         //  |    F1  |  F2   |   F3  |   F4  | SPELL |TRADUCT|                         |       |       |       |       |       | LOCK    | TODO:
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //  |    F5  |  F6   |   F7  |   F8  |   \   |SNIPPET|                         |TASKM  |       |       |       |BRI_UP | UNLOCK  |
+         //  |    F5  |  F6   |   F7  |   F8  |   \   |SNIPPET|                         |TASKM  |       |       |       |BRI_UP | UNLOCK  | TODO:
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          //  |    F9  |   F10 |   F11 |   F12 |CLIPBRD|EMOJI  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
@@ -199,8 +203,8 @@ SPDX-License-Identifier: MIT
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          // label = "FUNCTION";
          bindings = <
-            DE_F1  DE_F2   DE_F3   DE_F4    SPELL    TRADUCT                   XXX       XXX       XXX       XXX  XXX        LOCK
-            DE_F5  DE_F6   DE_F7   DE_F8    DE_BSLS  SNIPPET                   TASKM     XXX       XXX       XXX  DE_BRI_UP  UNLOCK
+            DE_F1  DE_F2   DE_F3   DE_F4    SPELL    TRADUCT                   XXX       XXX       XXX       XXX  XXX        XXX
+            DE_F5  DE_F6   DE_F7   DE_F8    DE_BSLS  SNIPPET                   TASKM     XXX       XXX       XXX  DE_BRI_UP  XXX
             DE_F9  DE_F10  DE_F11  DE_F12   CLIPBRD  EMOJI                     DE_LSHFT  DE_LSHFT  DE_RSHFT  XXX  DE_BRI_DN  XXX
                                             DE_LCTRL DE_LGUI  DE_LALT  DE_TAB  DE_ACUT   DE_LCTRL
                                  >;
@@ -276,6 +280,8 @@ SPDX-License-Identifier: MIT
       // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, this layer can be
       // replaced by a native behavior in the future.
       // &mo NONE_LOCK_LAYER   &mo LOCK_LAYER
+// TODO:
+			/*
       lock_layer {
           bindings = <
               XXX      XXX      XXX      XXX      XXX      XXX                            XXX      XXX      XXX      XXX      XXX      XXX
@@ -284,6 +290,7 @@ SPDX-License-Identifier: MIT
                                                   XXX      XXX     XXX          XXX       XXX      ___
           >;
       };
+			*/
    };
 };
 // }}}

@@ -220,7 +220,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_QUES &kp LS(MINUS)   // ?
 #define DE_GRV  &kp LS(EQUAL) // ` (dead)
 // Row 2
-#define DE_ASTR &kp LS(RPAR) // *
+#define DE_ASTR &kp LS(RBKT) // *
+// #define DE_STAR &kp RBRC // "*" DE_ASTR
 // Row 3
 #define DE_QUOT &kp LS(BSLH) // '
 // Row 4
