@@ -279,7 +279,7 @@ SPDX-License-Identifier: MIT
       lock_layer {
           bindings = <
               &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      UNLOCK
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      TO_FUNCTION
               &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                                                           &none      &none     &none      &none       &none      &none
           >;
