@@ -110,6 +110,9 @@ SPDX-License-Identifier: MIT
 #define POS3 &kp LA(LG(NUMBER_3)) // positions of current app with carabiner integration for MacOS
 #define POS4 &kp LA(LG(NUMBER_4)) // positions of current app with carabiner integration for MacOS
 //}}}
+&kscan0 {
+    debounce-period = <10>;
+};
 // ### keymap {{{
 / {
    // conditional_layers {
@@ -277,7 +280,7 @@ SPDX-License-Identifier: MIT
       none_lock_layer {
           bindings = <
               &mo EXTRA  &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      UNLOCK
               &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                                                           &none      &none     &none       &none      &none      &none
           >;
