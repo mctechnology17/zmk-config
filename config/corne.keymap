@@ -78,6 +78,10 @@ SPDX-License-Identifier: MIT
 #define FUNCTION 3
 #define MEDIA 4
 #define MOUSE 5
+#define NONE_LOCK_LAYER 6
+#define LOCK_LAYER 7
+#define LOCK &tog LOCK_LAYER
+#define UNLOCK &tog DEFAULT
 // combinadas para optimizar espacio
 #define MEDIA_ESC &lt MEDIA ESC
 #define MOUSE_TAB &lt MOUSE TAB
@@ -107,6 +111,15 @@ SPDX-License-Identifier: MIT
 //}}}
 // ### keymap {{{
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <NONE_LOCK LOCK>;
+            then-layer = <FUNCTION>;
+        };
+    };
+
    keymap {
       compatible = "zmk,keymap";
       // ### default_layer {{{
@@ -172,9 +185,9 @@ SPDX-License-Identifier: MIT
       // ### function_layer {{{
       function_layer {
          //  .------------------------------------------------.                         .-------------------------------------------------.
-         //  |    F1  |  F2   |   F3  |   F4  | SPELL |TRADUCT|                         |       |       |       |       |       |         |
+         //  |    F1  |  F2   |   F3  |   F4  | SPELL |TRADUCT|                         |       |       |       |       |       | LOCK    |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //  |    F5  |  F6   |   F7  |   F8  |   \   |SNIPPET|                         |TASKM  |       |       |       |BRI_UP |         |
+         //  |    F5  |  F6   |   F7  |   F8  |   \   |SNIPPET|                         |TASKM  |       |       |       |BRI_UP | UNLOCK  |
          //  |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          //  |    F9  |   F10 |   F11 |   F12 |CLIPBRD|EMOJI  |                         |L_SHIFT|L_SHIFT|R_SHIFT|       | BRI_UP|         |
          //  '---------------------------------------------------------|       |----------------------------------------------------------'
@@ -183,8 +196,8 @@ SPDX-License-Identifier: MIT
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          // label = "FUNCTION";
          bindings = <
-            DE_F1  DE_F2   DE_F3   DE_F4    SPELL    TRADUCT                   XXX       XXX       XXX       XXX  XXX        XXX
-            DE_F5  DE_F6   DE_F7   DE_F8    DE_BSLS  SNIPPET                   TASKM     XXX       XXX       XXX  DE_BRI_UP  XXX
+            DE_F1  DE_F2   DE_F3   DE_F4    SPELL    TRADUCT                   XXX       XXX       XXX       XXX  XXX        LOCK
+            DE_F5  DE_F6   DE_F7   DE_F8    DE_BSLS  SNIPPET                   TASKM     XXX       XXX       XXX  DE_BRI_UP  UNLOCK
             DE_F9  DE_F10  DE_F11  DE_F12   CLIPBRD  EMOJI                     DE_LSHFT  DE_LSHFT  DE_RSHFT  XXX  DE_BRI_DN  XXX
                                             DE_LCTRL DE_LGUI  DE_LALT  DE_TAB  DE_ACUT   DE_LCTRL
                                  >;
@@ -253,6 +266,28 @@ SPDX-License-Identifier: MIT
                          };
       // }}}
 #endif // CONFIG_ZMK_RGB_UNDERGLOW
+      // in default_layer(RALT) + Backspace = lock
+      // in lock_layer(RALT) + none_lock(ESC)+lock(Q)+Enter = unlock
+      // The "soft lock" mode that effective disables
+      // other keys, allowing the keyboard to be transported without spurious key presses.
+      // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, this layer can be
+      // replaced by a native behavior in the future.
+      none_lock_layer {
+          bindings = <
+              &mo NONE_LOCK   &mo LOCK   &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none           &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none           &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                                                               &none      &none     &none       &none      &none      &none
+          >;
+      };
+      lock_layer {
+          bindings = <
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                                                          &none      &none     &none      &none       &none      &mo NONE_LOCK
+          >;
+      };
    };
 };
 // }}}
