@@ -80,6 +80,7 @@ SPDX-License-Identifier: MIT
 #define MOUSE 5
 #define NONE_LOCK_LAYER 6
 #define LOCK_LAYER 7
+#define EXTRA 8
 #define LOCK &tog LOCK_LAYER
 #define UNLOCK &tog DEFAULT
 // combinadas para optimizar espacio
@@ -111,14 +112,14 @@ SPDX-License-Identifier: MIT
 //}}}
 // ### keymap {{{
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+   conditional_layers {
+       compatible = "zmk,conditional-layers";
 
-        tri_layer {
-            if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
-            then-layer = <FUNCTION>;
-        };
-    };
+       tri_layer {
+           if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
+           then-layer = <EXTRA>;
+       };
+   };
 
    keymap {
       compatible = "zmk,keymap";
@@ -286,6 +287,14 @@ SPDX-License-Identifier: MIT
               &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
               &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                                                           &none      &none     &none      &none       &none      &mo NONE_LOCK_LAYER
+          >;
+      };
+      extra_layer {
+          bindings = <
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      UNLOCK
+              &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                                                          &none      &none     &none      &none       &none      &none
           >;
       };
    };
