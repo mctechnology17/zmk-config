@@ -115,7 +115,7 @@ SPDX-License-Identifier: MIT
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <NONE_LOCK LOCK>;
+            if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
             then-layer = <FUNCTION>;
         };
     };
