@@ -110,23 +110,23 @@ SPDX-License-Identifier: MIT
 #define POS3 &kp LA(LG(NUMBER_3)) // positions of current app with carabiner integration for MacOS
 #define POS4 &kp LA(LG(NUMBER_4)) // positions of current app with carabiner integration for MacOS
 //}}}
-// TODO:
-// #define LOCK_LAYER 6
-// &kscan0 {
-    // debounce-period = <10>;
-// };
+/* ### debounce-period = <10> {{{
+   &kscan0 {
+    debounce-period = <10>;
+};
+}}}*/
 // ### keymap {{{
 / {
-// TODO:
-   // conditional_layers {
-       // compatible = "zmk,conditional-layers";
-//
-       // tri_layer {
-           // if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
-           // then-layer = <EXTRA>;
-       // };
-   // };
+/* ### conditional_layers {{{
+   conditional_layers {
+       compatible = "zmk,conditional-layers";
 
+       tri_layer {
+           if-layers = <NONE_LOCK_LAYER LOCK_LAYER>;
+           then-layer = <EXTRA>;
+       };
+   };
+}}}*/
    keymap {
       compatible = "zmk,keymap";
       // ### default_layer {{{
@@ -279,6 +279,7 @@ SPDX-License-Identifier: MIT
                          };
       // }}}
 #endif // CONFIG_ZMK_RGB_UNDERGLOW
+      // ### TODO: lock_layer {{{
       // in default_layer(RALT) + Backspace = lock
       // in lock_layer(RALT) + none_lock(ESC)+lock(Q)+Enter = unlock
       // The "soft lock" mode that effective disables
@@ -286,7 +287,6 @@ SPDX-License-Identifier: MIT
       // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, this layer can be
       // replaced by a native behavior in the future.
       // &mo NONE_LOCK_LAYER   &mo LOCK_LAYER
-// TODO:
 			/*
       lock_layer {
           bindings = <
@@ -297,6 +297,7 @@ SPDX-License-Identifier: MIT
           >;
       };
 			*/
+			// }}}
    };
 };
 // }}}
