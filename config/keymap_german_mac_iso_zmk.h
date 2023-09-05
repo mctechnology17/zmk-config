@@ -349,6 +349,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DE_DIV  &kp LS(LA(DOT))  // ÷
 #define DE_MDSH &kp LS(LA(MINUS)) // —
 
+// DE_LN_XXX for linux and windows
+#define DE_LN_LABK &kp NUBS // <
+#define DE_LN_RABK &kp LS(NUBS) // >
+#define DE_LN_LBRC &kp RA(N5) // [
+#define DE_LN_RBRC &kp RA(N6) // ]
+#define DE_LN_LPRN &kp LS(N8) // (
+#define DE_LN_RPRN &kp LS(N9) // )
+#define DE_LN_LCBR &kp RA(N8) // {
+#define DE_LN_RCBR &kp RA(N9) // }
+#define DE_LN_FSLH &kp LS(N7) // slash
+#define DE_LN_BSLH &kp LS(RA(N7)) // backslash
+#define DE_LN_PIPE &kp RA(NUBS) // pipe
+#define DE_LN_AT &kp LS(RA(Q)) // @
+#define DE_LN_AMPS &kp LS(N6) // &
+#define DE_LN_TILDE &kp LS(RA(N8)) // ~
+#define DE_LN_CARET &kp RA(APOS) // ^
+#define DE_LN_DQUO &kp LS(N2) // "
+
 // ###############
 // #define DE_FSLH &kp AMPS  // "/" DE_SLSH
 // #define DE_STAR &kp RBRC  // "*" DE_ASTR

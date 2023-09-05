@@ -1,3 +1,5 @@
+# MC Technology's zmk-config for corne
+
 [![MC Technology](https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_extendido.GIF)](https://www.youtube.com/channel/UC_mYh5PYPHBJ5YYUj8AIkcw)
 
 <div align="center">
@@ -13,6 +15,8 @@
 
 
 - [INTRO](#INTRO)
+- [QUE CONTIENE ESTA CONFIGURACION?](#QUE-CONTIENE-ESTA-CONFIGURACION?)
+- [DIFERENCIA ENTRE PUCHI-BLE Y NICE!NANO](#DIFERENCIA-ENTRE-PUCHI-BLE-Y-NICE!NANO)
 - [INSTALACION](#INSTALACION)
 - [MODO SUSPENCION](#MODO-SUSPENCION)
 - [PANTALLA OLED](#PANTALLA-OLED)
@@ -24,41 +28,79 @@
 ----
 
 # INTRO
-Este repositorio contiene mi configuracion personal de mi teclado corne con el sofware de [ZMK](https://zmk.dev/docs),
-flashado en el microcontrolador [nice!nano_v2](https://nicekeyboards.com/nice-nano).
+Esta es mi configucion personal de mis teclados corne inalambricos con [ZMK firmware](https://github.com/zmkfirmware/zmk/).
+Testeado con [nice!nano_v2](https://nicekeyboards.com/nice-nano) y [Puchi-BLE](https://keycapsss.com/keyboard-parts/mcu-controller/202/puchi-ble-wireless-microcontroller-pro-micro-replacement?number=KC10157_SWITCH&c=18).
 
 [![nicenano_v2](https://github.com/mctechnology17/mctechnology17/blob/main/src/nicenanov2.GIF)](https://nicekeyboards.com/nice-nano/)
 
-NO ME HAGO RESPONSABLE DE NINGUN DAÑO QUE PUEDA OCASIONAR ESTE CODIGO, UTILIZALO
-BAJO TU PROPIO RIESGO.
+> **Warning**
+>
+> NO SOY RESPONSABLE DE NINGÚN DAÑO QUE ESTE CÓDIGO PUEDA CAUSAR, ÚSALO BAJO TU PROPIO RIESGO..
 
-SIENTETE LIBRE DE MODIFICAR EL CODIGO A TU GUSTO O DE OCUPAR LO QUE NECESITES
-NO OLVIDES REFERENCIAR A LOS AUTORES DE LOS CODIGOS QUE OCUPES.
 
-Caracteristicas:
- - Teclado inalambrico atraves de conexion bluetooth y usb-c
- - Teclado ergonomico y ortolineal
- - Altamente programable con el sofware de ZMK
- - Compatibilidad con Linux, Windows, MacOS, Android, IOS y mas
- - COMPLETAMENTE INALAMBRICO ENTRE LAS DOS MITADES Y CON EL PC
- - Ultra bajo consumo. Extiende la duración de la batería al límite
- - Arrastrar y soltar gracias a el cargador de arranque UF2 incluido
- - NO SE REQUIERE SOFTWARE ADICIONAL (como VIAL, QMK ToolBox etc.)
- - Y mas...
+> **Note**
+>
+> NO DUDES EN MODIFICAR EL CÓDIGO A TU GUSTO O UTILIZAR LO QUE NECESITES.
 
-Tabla de pros y contras importantes a tomar en cuenta:
-**PROS**     | **CONTRAS**
--------------|---------|
-Soporte Multi-Dispositivos BLE (HASTA 5)      |Mouse Keys (EN DESARROLLO)
-Hasta 1 semana de uso sin cargador (con 100mAh)       |Display Support (EN DESARROLLO)
-No necesitas de sofware adicional para flashar       | Tienes que hacer conectarte a internet compilar (todo se hace en github)
+| Pros                                                            |
+|-----------------------------------------------------------------|
+| movilidad y flexibilidad                                        |
+| reducción de tensión y fatiga (ergonómica y ortolineal)          |
+| productividad mejorada                                           |
+| conexión bluetooth y usb-c                                  |
+| Programable altamente personalizable con el software zmk.          |
+| compatibilidad con linux, windows, macos, android, ios y más |
+| completamente inalámbrico entre las dos mitades y con la pc      |
+| Consumo ultrabajo. extiende la duración de la batería al límite        |
+| arrastrar y soltar gracias al gestor de arranque uf2 incluido             |
+| no se requiere software adicional para flashear                       |
+| soporte para múltiples dispositivos (hasta 5)                              |
+| teclas del mouse                                                      |
+| RGB                                                             |
+| Macros                                                          |
+| Tap dance                                                       |
+| Combos                                                          |
+| hasta 1 semana de uso sin cargador (con 100mah)               |
+| soporte de pantalla [nice-view] y pantalla oled                   |
+| Editor en línea para el mapa de teclas. ver [keymap-editor]               |
+| 100% open source                                                |
+| y más...                                                     |
 
-FUNCIONANDO SIN ERRORES HASTA EL MOMENTO!
+# QUE CONTIENE ESTA CONFIGURACION?
+- [x] [ZMK firmware](https://zmk.dev/docs/user-setup)
+- [x] Compatibilidad con [nice!nano_v2](https://nicekeyboards.com/nice-nano/)
+- [x] Compatibilidad con [Puchi-BLE](https://keycapsss.com/keyboard-parts/mcu-controller/202/puchi-ble-wireless-microcontroller-pro-micro-replacement?number=KC10157_SWITCH&c=18)
+- [x] Macros o tab dance
+- [x] Combos
+- [x] RGB underglow and backlight + efectos de animación
+- [x] Pantalla OLED
+- [x] Pantalla [nice-view]
+- [x] Animaciones con [nice-view] como Bongo cat, cohete, etc.
+- [x] Modo suspensión
+- [x] Soporte para múltiples dispositivos (hasta 5)
+- [x] Teclas del mouse
+- [x] Teclas smart especiales
+- [x] Capa Lock virtual
+- [x] reset virtual por cada mitad
+- [x] bootloader virtual por cada mitad
+- [x] nombre por cada capa
+- [x] Capa de simbolos en linux, windows y macos
+- [] Editor en línea para el mapa de teclas. ver [keymap-editor]
+
+
+[![Video ref](https://packaged-media.redd.it/jdctewpzktjb1/pb/m2-res_720p.mp4?m=DASHPlaylist.mpd&v=1&e=1693947600&s=451fe9a01d3b1a879392e269f6815e799cd9b4be#t=0)]
+
+
+# DIFERENCIA ENTRE PUCHI BLE Y NICE!NANO
+- Módulo bluetooth certificado (ce, fcc y rohs)
+- Antena cerámica optimizada para alta intensidad de señal y bajos niveles de interferencia.
+- Interruptor de encendido/apagado para prolongar la vida útil de la batería (solo variante con interruptor)
+- Open Source
 
 # INSTALACION
-[Referencia ZMK](https://zmk.dev/docs/user-setup) de donde saque la informacion.
+¿De dónde sacas la información? -> [referencia a documentos zmk](https://zmk.dev/docs/user-setup)
 
-PRE-Requisitos:
+Pre requirements:
  - Tener instalado [git](https://github.com/git-guides/install-git) en tu computadora y una cuenta en [github](https://github.com/)
    - Crear un nuevo repositorio en github. [Para crear un nuevo repositorio dale click aqui](https://github.com/new)
    - Cuando se te solicite el nombre del repositorio, ingresa zmk-config (puede ser otro nombre tambien).
@@ -145,86 +187,30 @@ zmk-config # carpeta principal
 ```
 ESTA MACRO NO VIENE POR DEFECTO EN LA CONFIGURACION ESTANDAR DE ZMK, POR LO QUE DEBES AGREGARLA TU MISMO.
 
+```bash
+# activar por 30 minutos (30*60*1000ms)
+CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
+```
+
 # PANTALLA OLED
-La pantalla OLED aun no esta soportada por ZMK o mejor dicho esta en desarrollo, por lo que no se puede usar.
+El OLED ya esta soportado asi que puedes usarlo sin problemas en esta
+configuracion. Puedes ver un ejemplo que funciona en el siguiente archivo:
+[corne.conf](./config/config_ready/nice/oled_rgb/corne.conf):
 
 # RGB
-En el archicho de configuracios de las macros [corne.conf](./config/corne.conf) puedes poner la siguiente macro:
-```make
-CONFIG_ZMK_RGB_UNDERGLOW=y
-# Usar la configuración de STRIP específica para los LED que estás usando
-CONFIG_WS2812_STRIP=y
-```
-```bash
-zmk-config # carpeta principal
-├── config # carpeta de configuracion
-│   ├── corne.conf # archicho de configuracios de las macros
-```
-Ahora debes ir a la siguiente ruta y modificar el archivo [corne.keymap](./config/corne.keymap):
-```bash
-zmk-config # carpeta principal
-├── config # carpeta de configuracion
-│   ├── corne.keymap # archicho de configuracios de las teclas + RBG
-```
-Agrega las siguientes lineas antes de keymap:
-```c
-#ifdef CONFIG_ZMK_RGB_UNDERGLOW
-#    include <dt-bindings/zmk/rgb.h>
-#    include <dt-bindings/led/led.h>
-
-#include <../boards/shields/corne/boards/nice_nano.overlay>
-
-// Overwrite number of leds on the keyboard. A Corne has 27 per side.
-&led_strip { chain-length = <27>; };
-
-#endif // CONFIG_ZMK_RGB_UNDERGLOW
-```
-Ahora aqui tienes un ejemplo de como debes mapear las teclas para controlar el RGB:
-```c
-#ifdef CONFIG_ZMK_RGB_UNDERGLOW
-      mouse_layer {
-         //   .------------------------------------------------.                         .-------------------------------------------------.
-         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |RGBBRI-|RGBBRI+|WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |        |CLICK_1|CLICK_2|BT_CLR |BT_PRV | BT_NXT|                         |RGBSAT-|RGBSAT+|       |CLICK_1| UP    |CLICK_2  |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |RGBHUE-|RGBHUE+| RESET | LEFT  | DOWN  | RIGHT   |
-         //   '---------------------------------------------------------|       |----------------------------------------------------------'
-         //                            |EP_ON  | EP_OFF|         EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
-         //                            '--------------------------------'       '--------------------------------'
-         bindings = <
-            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &none  &none  &none  &none
-            &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &rgb_ug RGB_SAD  &rgb_ug RGB_SAI   &none  &none  &none  &none
-            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &rgb_ug RGB_HUD  &rgb_ug RGB_HUI   &reset  &none  &none  &none
-                                    &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG                      &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-                                 >;
-                         };
-#else
-      mouse_layer {
-         //   .------------------------------------------------.                         .-------------------------------------------------.
-         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |        |CLICK_1|CLICK_2|BT_CLR |BT_PRV | BT_NXT|                         |       |       |       |CLICK_1| UP    |CLICK_2  |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |       |       | RESET | LEFT  | DOWN  | RIGHT   |
-         //   '---------------------------------------------------------|       |----------------------------------------------------------'
-         //                            |EP_ON  | EP_OFF|         EP_TOG |       |       |        |               |
-         //                            '--------------------------------'       '--------------------------------'
-         bindings = <
-            &none &none &none &out OUT_USB &out OUT_BLE  &out OUT_TOG &none    &none   &none  &none  &none  &none
-            &none &none &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none  &none   &none  &none  &none  &none
-            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  &none  &reset  &none  &none  &none
-                                    &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG                      &none  &none  &none
-                                 >;
-                         };
-#endif // CONFIG_ZMK_RGB_UNDERGLOW
-```
-RECUERDA QUE EL RGB GASTA DEMASIADA ENERGIA, LO MEJOR ES NO ACTIVARLO!
+El RGB con oled ya esta soportado asi que puedes usarlo sin problemas en esta
+configuracion. Simplemete debes agregar habilitarlo en, esta habilitado por
+defecto para 42 teclas y 12 LEDs por debajo. Puedes ver un ejemplo que funciona
+en el siguiente archivo:
+[corne.conf](./config/config_ready/nice/oled_rgb/corne.conf):
 
 # OTROS CONSEJOS IMPORTANTES
+- Puedes agregar una tecla de reset en cada mitad, eso es util para cuando se te desconecten/desincronicen las mitades, o pase algo inusual. De esa manera se carga el firmware de nuevo. Ver referencia en [corne.keymap](./config/corne.keymap)
+- Puedes agregar un activador de bootloader en cada mitad en caso de que no tengas acceso al boton de bootloader, es  util en caso de que tu carcasa no este optimizada o de que simplemente quiera esa opcion. Ver referencia en [corne.keymap](./config/corne.keymap)
 - Si se te desconectaron/desincronizaron ambas mitades solo tienes que presionar el boton de reset de ambas mitades 10 veces seguidas y se volveran a conectar.
 - Si quires volver a flashar el firware solo tienes que conectar el teclado(osea una mitad primero, normalmente la izquierda) presionar el boton de reset 2 veces seguidas
   y tu dispositivo se reconocera como una unidad de almecenamiento de disco duro, luego solo arrastra el archivo a flashear y listo. Haz lo mismo con la otra mitad.
+- Recuerda que si tu corne solo tiene algunas luces RGB funcionales puedes activar solo las que tengas funcionales, no es necesario que actives todas las luces. Ver referencia en [led_strip](./config/corne.keymap)
 
 # DONACION
 Si disfrutas de mi trabajo, siéntete libre de donar o convertirte en patrocinador.
@@ -256,7 +242,9 @@ Copyright (c) 2020 The ZMK Contributors
 [youtube]: https://www.youtube.com/c/mctechnology17
 [instagram]: https://www.instagram.com/mctechnology17/
 [facebook]: https://m.facebook.com/mctechnology17/
-[reddit]:https://www.reddit.com/user/mctechnology17
+[reddit]: https://www.reddit.com/user/mctechnology17
+[nice-view]: https://nicekeyboards.com/nice-view
+[keymap-editor]: https://nickcoutsos.github.io/keymap-editor/
 
 [vim-executor]: https://github.com/mctechnology17/vim-executor
 [vim-better-header]: https://github.com/mctechnology17/vim-better-header

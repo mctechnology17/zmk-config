@@ -1,4 +1,5 @@
 Makefile
+build/justin/*
 
 # MacOS
 .DS_Store
