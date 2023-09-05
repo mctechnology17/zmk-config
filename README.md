@@ -88,7 +88,7 @@ Testeado con [nice!nano_v2](https://nicekeyboards.com/nice-nano) y [Puchi-BLE](h
 - [] Editor en línea para el mapa de teclas. ver [keymap-editor]
 
 
-[![Video Refencia](src/demo.mov)](https://www.youtube.com/c/mctechnology17)
+[![Video Refencia](./src/demo.mov)](https://www.youtube.com/c/mctechnology17)
 
 
 # DIFERENCIA ENTRE PUCHI BLE Y NICE!NANO
