@@ -88,8 +88,7 @@ Testeado con [nice!nano_v2](https://nicekeyboards.com/nice-nano) y [Puchi-BLE](h
 - [] Editor en línea para el mapa de teclas. ver [keymap-editor]
 
 
-[![Video Refencia](./src/demo.mov)](https://www.youtube.com/c/mctechnology17)
-
+<h1 align="center"><img src="./src/demo.mov"></h1>
 
 # DIFERENCIA ENTRE PUCHI BLE Y NICE!NANO
 - Módulo bluetooth certificado (ce, fcc y rohs)
