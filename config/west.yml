@@ -4,12 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: AakashDabas
-      url-base: https://github.com/AakashDabas
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
-      remote: AakashDabas
-      revision: animated_widgets
+      remote: mctechnology17
+      revision: main
       import: app/west.yml
   self:
     path: config
