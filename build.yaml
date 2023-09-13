@@ -51,13 +51,14 @@
 # pressing the reset buttons at the same time.
 ---
 include:
-  - board: nice_nano_v2 # puchi_ble_v1 nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view # con display
-    # shield: corne_left  # con OLED display
-    # - board: puchi_ble_v1 # puchi_ble_v1 nice_nano_v2
-  - board: nice_nano_v2 # puchi_ble_v1 nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view # con display
+  - board: puchi_ble_v1 # puchi_ble_v1 nice_nano_v2
+    shield: corne_left  # con OLED display
+    # shield: corne_left nice_view_adapter nice_view # con display
+    # - board: nice_nano_v2 # puchi_ble_v1 nice_nano_v2
+  - board: puchi_ble_v1 # puchi_ble_v1 nice_nano_v2
+    shield: corne_right # con OLED display
+    # shield: corne_right nice_view_adapter nice_view # con display
+    # - board: nice_nano_v2 # puchi_ble_v1 nice_nano_v2
     # shield: corne_right # con OLED display
-    # - board: puchi_ble_v1 # puchi_ble_v1 nice_nano_v2
     # - board: puchi_ble_v1
     # shield: settings_reset

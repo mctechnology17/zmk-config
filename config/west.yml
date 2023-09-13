@@ -2,14 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: mctechnology17
+      remote: zmkfirmware
       revision: main
+      remote: petejohanson
+      revision: power/domains-and-device-runtime
       import: app/west.yml
   self:
     path: config
