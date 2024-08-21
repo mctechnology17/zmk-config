@@ -5,245 +5,456 @@
 <div align="center">
 
   [<img align="center" alt="MC Technology | YouTube" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/youtube.png" />][youtube]
-  [<img align="center" alt="@mctechnology17 | Twitter" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/twitter.png" />][twitter]
-  [<img align="center" alt="@mctechnology17 | Instagram" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/instagram.png" />][instagram]
   [<img align="center" alt="MC Technology17 | Facebook" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/facebook.png" />][facebook]
-  [<img align="center" alt="@mctechnology17 | Reddit" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/reddit.png" />][reddit]
+  [<img align="center" alt="MC Technology17 | Reddit" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/reddit.png" />][reddit]
 
 </div>
 <br>
 
 
 - [INTRO](#INTRO)
-- [QUE CONTIENE ESTA CONFIGURACION?](#QUE-CONTIENE-ESTA-CONFIGURACION?)
-- [DIFERENCIA ENTRE PUCHI-BLE Y NICE!NANO](#DIFERENCIA-ENTRE-PUCHI-BLE-Y-NICE!NANO)
-- [INSTALACION](#INSTALACION)
-- [MODO SUSPENCION](#MODO-SUSPENCION)
-- [PANTALLA OLED](#PANTALLA-OLED)
+- [QUICK START](#QUICK-START)
+- [LOCAL INSTALLATION](#LOCAL-INSTALLATION)
+- [DISPLAY](#DISPLAY)
 - [RGB](#RGB)
-- [OTROS CONSEJOS IMPORTANTES](#OTROS-CONSEJOS-IMPORTANTES)
-- [DONACION](#DONACION)
-- [LICENSE](#LICENSE)
+- [DONGLE](#DONGLE)
+- [USEFUL TIPS](#USEFUL-TIPS)
+- [RELATED PROJECTS](#RELATED-PROJECTS)
+- [DONGLE DESIGNS](#DONGLE-DESIGNS)
+- [INSPIRATIONS](#INSPIRATIONS)
+- [MY OTHER PROJECTS](#MY-OTHER-PROJECTS)
 
 ----
 
+If you already have your corne configured with this repository and want to make
+a modification to your keymap, you can do it with the online [keymap-editor](https://nickcoutsos.github.io/keymap-editor/).
+
+
 # INTRO
-Esta es mi configucion personal de mis teclados corne inalambricos con [ZMK firmware](https://github.com/zmkfirmware/zmk/).
-Testeado con [nice!nano_v2](https://nicekeyboards.com/nice-nano) y [Puchi-BLE](https://keycapsss.com/keyboard-parts/mcu-controller/202/puchi-ble-wireless-microcontroller-pro-micro-replacement?number=KC10157_SWITCH&c=18).
 
-[![nicenano_v2](https://github.com/mctechnology17/mctechnology17/blob/main/src/nicenanov2.GIF)](https://nicekeyboards.com/nice-nano/)
-
-> **Warning**
+> [!CAUTION]
 >
-> NO SOY RESPONSABLE DE NINGÚN DAÑO QUE ESTE CÓDIGO PUEDA CAUSAR, ÚSALO BAJO TU PROPIO RIESGO..
+> I AM NOT RESPONSIBLE FOR ANY DAMAGE THIS CODE MAY CAUSE, USE IT AT YOUR OWN
+> RISK.
 
-
-> **Note**
+> [!NOTE]
 >
-> NO DUDES EN MODIFICAR EL CÓDIGO A TU GUSTO O UTILIZAR LO QUE NECESITES.
-
-| Pros                                                            |
-|-----------------------------------------------------------------|
-| movilidad y flexibilidad                                        |
-| reducción de tensión y fatiga (ergonómica y ortolineal)          |
-| productividad mejorada                                           |
-| conexión bluetooth y usb-c                                  |
-| Programable altamente personalizable con el software zmk.          |
-| compatibilidad con linux, windows, macos, android, ios y más |
-| completamente inalámbrico entre las dos mitades y con la pc      |
-| Consumo ultrabajo. extiende la duración de la batería al límite        |
-| arrastrar y soltar gracias al gestor de arranque uf2 incluido             |
-| no se requiere software adicional para flashear                       |
-| soporte para múltiples dispositivos (hasta 5)                              |
-| teclas del mouse                                                      |
-| RGB                                                             |
-| Macros                                                          |
-| Tap dance                                                       |
-| Combos                                                          |
-| hasta 1 semana de uso sin cargador (con 100mah)               |
-| soporte de pantalla [nice-view] y pantalla oled                   |
-| Editor en línea para el mapa de teclas. ver [keymap-editor]               |
-| 100% open source                                                |
-| y más...                                                     |
-
-# QUE CONTIENE ESTA CONFIGURACION?
-- [x] [ZMK firmware](https://zmk.dev/docs/user-setup)
-- [x] Compatibilidad con [nice!nano_v2](https://nicekeyboards.com/nice-nano/)
-- [x] Compatibilidad con [Puchi-BLE](https://keycapsss.com/keyboard-parts/mcu-controller/202/puchi-ble-wireless-microcontroller-pro-micro-replacement?number=KC10157_SWITCH&c=18)
-- [x] Macros o tab dance
-- [x] Combos
-- [x] RGB underglow and backlight + efectos de animación
-- [x] Pantalla OLED
-- [x] Pantalla [nice-view]
-- [x] Animaciones con [nice-view] como Bongo cat, cohete, etc.
-- [x] Modo suspensión
-- [x] Soporte para múltiples dispositivos (hasta 5)
-- [x] Teclas del mouse
-- [x] Teclas smart especiales
-- [x] Capa Lock virtual
-- [x] reset virtual por cada mitad
-- [x] bootloader virtual por cada mitad
-- [x] nombre por cada capa
-- [x] Capa de simbolos en linux, windows y macos
-- [] Editor en línea para el mapa de teclas. ver [keymap-editor]
+>
+> FEEL FREE TO MODIFY THE CODE TO YOUR LIKING OR USE WHATEVER YOU NEED. I
+> DECIDED TO REVOKE MANY CHANGES AND RETURN TO THE BASE MAPPING, SO THAT
+> ADVANCED AND NON-ADVANCED  USERS CAN USE THIS REPOSITORY AS A BASE FOR THEIR
+> CONFIGURATIONS. IF YOU HAVE ANY QUESTIONS, DON'T HESITATE TO ASK. IF YOU HAVE
+> ANY SUGGESTIONS, FEEL FREE TO SUGGEST.
 
 
-[![demo](src/demo.GIF)](https://www.youtube.com/c/mctechnology17)
+The objective of this repository is to serve as a base for configuring your
+Corne keyboard with the firmware [ZMK firmware] in a simple and fast way.
+without having to configure everything from scratch. Many of us are fascinated
+by customizing our keyboards, but sometimes we don't have the time or
+experience to do it. That is why I have decided to create this repository so
+that you can have a base configuration and you can modify it to your liking.
 
-# DIFERENCIA ENTRE PUCHI BLE Y NICE!NANO
-- Módulo bluetooth certificado (ce, fcc y rohs)
-- Antena cerámica optimizada para alta intensidad de señal y bajos niveles de interferencia.
-- Interruptor de encendido/apagado para prolongar la vida útil de la batería (solo variante con interruptor)
-- Open Source
+This base includes the most recent corne configurations, featuring a setup for
+the Corne dongle with/without an OLED screen.
+You can also use your keyboard without a dongle of course. with any of the
+plates or screens you have.
 
-# INSTALACION
-¿De dónde sacas la información? -> [referencia a documentos zmk](https://zmk.dev/docs/user-setup)
+Tested with **[puchi_ble_v1]** (used as a dongle and as
+peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
+**clones of nice_nano_v2** (used as a dongle and as peripherals), and the
+**[seeeduino_xiao_ble]** (used only as a dongle).
 
-Pre requirements:
- - Tener instalado [git](https://github.com/git-guides/install-git) en tu computadora y una cuenta en [github](https://github.com/)
-   - Crear un nuevo repositorio en github. [Para crear un nuevo repositorio dale click aqui](https://github.com/new)
-   - Cuando se te solicite el nombre del repositorio, ingresa zmk-config (puede ser otro nombre tambien).
-   - El repositorio puede ser público o privado
-   - No marcar ninguna de las opciones para inicializar el repositorio con un README u otros archivos.
-   - Haz clic en "Crear repositorio"
- - Opcional tener instalado en tu computadora VSC (Visual Studio Code)
-   u otro editor de texto de tu preferencia, yo uso `nvim/vim`
- - Opcional puedes de preferencia usar `git` con SSH
-   eso te evitara tener que poner tu usuario y contraseña cada vez que tengas que hacer un `git push`
-   en otras palabras despues de cada modificacion que le hagas al codigo
+| Main Pros                                                                                       |
+|-------------------------------------------------------------------------------------------------|
+| mobility and flexibility                                                                        |
+| reduction of tension and fatigue (ergonomic and ortholinear)                                    |
+| improved productivity                                                                           |
+| bluetooth and usb-c connection                                                                  |
+| Highly customizable programmable with [ZMK firmware].                                           |
+| compatibility with linux, windows, macos, android, ios and more                                 |
+| completely wireless between the two halves and with the PC                                      |
+| ultra-low consumption. extends battery life to the limit                                        |
+| drag and drop thanks to the included uf2 bootloader                                             |
+| no additional software required for flashing                                                    |
+| support for multiple devices (up to 5)                                                          |
+| mouse keys                                                                                      |
+| rgb                                                                                             |
+| macros                                                                                          |
+| tap dance                                                                                       |
+| combos                                                                                          |
+| up to 1 week of use without charger (with 100mah)                                               |
+| support [nice-view] screen and oled screen                                                      |
+| online editor for keymap. see               [keymap-editor]                                     |
+| 100% open source                                                                                |
+| support for puchi-ble dongle, nice!nano v2, nice!nano v2 clones, seeeduino xiao ble and more... |
+| support with dongle with display 128x32, 128x64 and 128x128                                     |
+| and more...                                                                                     |
 
-```bash
-# 0. crea una repositorio con el nombre de zmk-config en tu cuenta de github
-# 1. luego abre la terminal y pega esto:
-bash -c "$(curl -fsSL https://zmk.dev/setup.sh)"
-# 2. se abre una opcion con muchos teclados, seleciona el 13 (corne)
-13 # enter
-# 3. se abre una opcion a elegir el MCU (Microcontrolador), seleciona el 4 (nice!nano v2)
-4 # enter
-# 4. ¿Copiar en el mapa de teclas estándar para personalizarlo? [Yn]:
-Y # enter
-# 5. Datos de tu GitHub
-mctechnology17 # AQUI TU USUARIO DE GITHUB
-CONTRASEÑA # AQUI TU CONTRASEÑA DE GITHUB
-# 6. Nombre del repositorio
-ENTER # simplemente enter, dejamos la por defecto zmk-config
-# 7. insertar el repositorio
-git@github.com:mctechnology17/zmk-config.git # mctechnology17 -> AQUI TU USUARIO DE GITHUB
-# 8. Continuar?
-Y # enter
-```
-Despues de concluir los pasos anteriores con exito, puedes ir a la ruta dinde se encuentra el repositorio
-con el siguiente comando y modificar el codigo a tu gusto:
-```bash
-cd ~/zmk-config/config
+# QUICK START
+> [!NOTE]
+>
+> 1. With this configuration you can use the corne keyboard practically
+> immediately, you just have to follow the following steps and that's it.
+>
+> 2. If you need precompiled files you can download them from the [firmware
+>    folder](./firmware)
+>
+> 3. If you have any problems, you just have to flash the reset firmwares that
+>    are in the [firmware](./firmware) folder and that's it.
+>
+> 4. Disable the builds you don't need in the file [build.yaml](./build.yaml),
+>    by default they are all activated.
 
-# vista de como esta estructurado el repositorio
-zmk-config # carpeta principal
-├── build.yaml # archivo de configuracion para el compilado NO MODIFICAR
-├── config # carpeta de configuracion
-│   ├── corne.conf # archicho de configuracios de las macros
-│   ├── corne.keymap # archicho de configuracios de las teclas
-│   └── west.yml # config para conectarse con https://github.com/zmkfirmware NO MODIFICAR
-└── README.md
-```
+1. Fork this repository (I appreciate if you follow me on [github] and [youtube])
+2. Modify the keyboard mapping with [keymap-editor]. If you want to read about
+   the features of this editor you can do so
+   [here](https://github.com/nickcoutsos/keymap-editor).
+3. Save changes and commit (optional)
+4. Go to actions on github and download the artifacts
+   - Actions(click) -> All Workflows (click)-> Initial User Config. (here you
+     scroll to the bottom and click)
+   - Here is something called artifacts, click to download the file, it is a .zip
+   - now go to download on your computer (or wherever you have downloads by default):
+   - unzip the .zip file
+   - Connect the nice!nano v2 microcontroller to the USB-C port of your computer
+   - the microcontroller is recognized as a storage device
+5. Flash the firmware to the keyboard with the uf2 files (drag and drop and with dongle)
+   - xiao_corne_dongle_xiao_dongle_display.uf2 for [seeeduino_xiao_ble] as a dongle
+   - nice_corne_left_peripheral.uf2 for [nice_nano_v2] as a peripheral
+   - nice_corne_right.uf2 for [nice_nano_v2] as a peripheral
+6. Flash the firmware to the keyboard with the uf2 files (drag and drop and without dongle)
+   - nice_corne_left.uf2 for [nice_nano_v2] as a master side
+   - nice_corne_right.uf2 for [nice_nano_v2] as a peripheral
+7. If you need help, you can ask in the [ZMK Discord]
+8. Enjoy your new keyboard
 
-Si no modificaste nada puedes simplemente ir a tu repositorio en github y dale a refrescar a la pagina.
+Here you can see the visual changes to the configuration:
+> [!NOTE]
+>
+> This .svg image is automatically generated every time a change is made with
+> the keymap editor. Github's workflows are responsible for building and
+> generating the .svg file. You just have to go to the
+> [keymap-drawer](./keymap-drawer)  folder and open the .svg file with your
+> preferred browser if you want to see the files. The keymap-drawer
+> configuration file is located in
+> [config](./config/config_keymap-drawer.yaml).
+> The file for the workflows is in [workflows](./.github/workflows/keymap-drawer.yaml) in case you want to modify it.
 
-Ahora ve a esta ruta en tu repositorio de github:
- - Actions(click) -> All Workflows (click)-> Initial User Config. (aqui haces scroll hasta abajo y click)
- - Aqui hay algo que se llama Artifacts, dale click para descargar el archivo, es un .zip
+[![keymap-drawer-demo](keymap-drawer/corne.svg)](https://www.youtube.com/c/mctechnology17)
 
-Ahora ve a descarga en tu computadora(o donde tengas por defecto las descargas):
- - Descomprime el archivo .zip
- - Conecta el microcontrolador nice!nano v2 al puerto usb-c de tu computadora
- - El microcontrolador se reconocera como un dispositivo de almacenamiento
- - Copia el archivo corne_left-nice_nano_v2-zmk.uf2 que descomprimiste en la carpeta del dispositivo de almacenamiento
- - Conecta el otro microcontrolador nice!nano v2 al puerto usb-c de tu computadora
- - Ahora copia el otro archivo corne_right-nice_nano_v2-zmk.uf2 que descomprimiste en la carpeta del dispositivo de almacenamiento
- - Listo, ya tienes tu teclado corne configurado con la configuracion estandar de ZMK
- - Ahora puedes modificar el codigo a tu gusto y volver a compilarlo
+If you want to customize this image with shapes/colors/etc. You can see these references:
+[^1] [^2] [^3]
 
-Si quieres usar mi configuracion solo debes clonar este repositorio y reemplazar los archivos `corne.conf` y `corne.keymap`
-que se encuentran en la siguiente ruta:
-```bash
-zmk-config # carpeta principal
-├── config # carpeta de configuracion
-│   ├── corne.conf # archicho de configuracios de las macros
-│   ├── corne.keymap # archicho de configuracios de las teclas
-```
 
-# MODO SUSPENCION
-En el archicho de configuracios de las macros [corne.conf](./config/corne.conf) puedes poner la siguiente macro:
-```make
-CONFIG_ZMK_SLEEP=y
-```
-Esta macro te permite poner el teclado en modo de suspencion, para despertarlo solo debes presionar cualquier tecla.
-Es muy util para preservar la vida de la bateria.
-```bash
-zmk-config # carpeta principal
-├── config # carpeta de configuracion
-│   ├── corne.conf # archicho de configuracios de las macros
-```
-ESTA MACRO NO VIENE POR DEFECTO EN LA CONFIGURACION ESTANDAR DE ZMK, POR LO QUE DEBES AGREGARLA TU MISMO.
+# LOCAL INSTALLATION
+Before making any modifications, please see the [ZMK documentation]
+documentation.
+
+Example of an advanced configuration hier -> [^4]
+
+Below is a list of features currently included in this branch[^5] _on top of_
+the official ZMK master branch.
+
+- **pointer movement/scrolling** - PR #2027
+- **tri-state (aka swapper)** - PR [#1366](https://github.com/zmkfirmware/zmk/pull/1366)
+- **smart-word** (PR [#1451](https://github.com/zmkfirmware/zmk/pull/1451))
+- **on-release-for-tap-preferred** - [tweak](https://github.com/celejewski/zmk/commit/d7a8482712d87963e59b74238667346221199293) by Andrzej
+- **zen-tweaks** - [display & battery improvements](https://github.com/caksoylar/zmk/tree/caksoylar/zen-v1%2Bv2) by Cem Aksoylar
+
+
+1. Clone _your fork_ of this repository.
+
+   ```bash
+   # Replace `mctechnology17` with your username
+   git clone https://github.com/mctechnology17/zmk-config.git
+   ```
+
+2. Enter the repository.
+
+   ```bash
+   cd zmk-config
+   ```
+
+Here you have a preview of how the repository is organized:
 
 ```bash
-# activar por 30 minutos (30*60*1000ms)
-CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
+zmk-config # main folder
+├── LICENSE # license
+├── Makefile # file for compilation
+├── README.md # readme this file
+├── build.yaml # config file for compilation on the github server
+├── config # configuration folder
+│   ├── boards
+│   │   ├── ... # other boards
+│   │   ├── nice_nano_v2.overlay
+│   │   ├── puchi_ble_v1.overlay
+│   │   └── shields
+│   │       ├── corne
+│   │       │   ├── Kconfig.defconfig # modify if you want to add a new shield
+│   │       │   ├── Kconfig.shield # modify if you want to add a new shield
+│   │       │   ├── boards
+│   │       │   │   ├── ... # other boards
+│   │       │   ├── corne.conf # general configurations of the corne
+│   │       │   ├── corne.dtsi # default dtsi
+│   │       │   ├── corne.keymap # default keymap
+│   │       │   ├── corne.zmk.yml # modify if you want to add a new shield
+│   │       │   ├── corne_dongle_pro_micro.conf # conf dongle pro_micro pinout
+│   │       │   ├── corne_dongle_pro_micro.overlay # properties/displays dongle
+│   │       │   ├── corne_dongle_xiao.conf # conf dongle xiao pinout
+│   │       │   ├── corne_dongle_xiao.overlay # properties/displays dongle
+│   │       │   ├── corne_left.conf # conf left
+│   │       │   ├── corne_left_peripheral.conf # config left peripheral
+│   │       │   ├── corne_right.conf # conf right
+│   │       │   ├── ... # other files
+│   │       └── dongle_display
+│   │           ├── ... # here you can modify the screen widgets
+│   │           └── widgets
+│   │               └── # here you can modify the screen widgets
+│   ├── config_keymap-drawer.yaml # config file keymap-drawer
+│   ├── corne.conf # general configurations of the corne
+│   ├── corne.keymap # your keymap file
+│   ├── keymap_german_mac_iso_zmk.h # example of definition for german mac iso
+│   └── west.yml # conf to connect with the repository
+├── firmware
+│   └── *.uf2 # all the firmwares
+├── keymap-drawer # folder with the keymap-drawer
+│   ├── corne.svg # img of the keymap
+│   └── corne.yaml # keymap file yaml format for keymap-drawer
+└── src
+    └── ... # other files
 ```
 
-# PANTALLA OLED
-El OLED ya esta soportado asi que puedes usarlo sin problemas en esta
-configuracion. Puedes ver un ejemplo que funciona en el siguiente archivo:
-[corne.conf](./config/config_ready/nice/oled_rgb/corne.conf):
+To compile with make, just run the following command:
+
+> [!IMPORTANT]
+>
+> 1. You have to have [docker](https://www.docker.com/products/docker-desktop/)
+>    installed on your computer to use this command.
+> 2. Check the [makefile](./makefile) file for build options.
+
+
+```bash
+make codebase_urob # clones urob's zmk firmware and initializes it
+make corne_urob # compile all the *.uf2 of the corne and copy them to the firmware folder
+```
+
+# DISPLAY
+1. ePAPER [nice-view]
+   - the [nice-view] screen is compiled by default in this repository.
+2. OLED
+   - the oled screen for the dongle is enabled by default in this repository.
+   - If you want to enable the OLED screen for the halves, you can do so by modifying the `.conf` files for their respective halves.
+   - Remember to disable the [nice-view] screens to avoid conflict in the compilation.
+
+> [!IMPORTANT]
+>
+> 1. To modify the dongle's OLED screen you can modify the `.overlay` file as follows for its respective board:
+[corne_dongle_xiao.overlay](./config/boards/shields/corne/corne_dongle_xiao.overlay) and
+[corne_dongle_pro_micro.overlay](./config/boards/shields/corne/corne_dongle_pro_micro.overlay). There you can find as a comment examples for the 128x32, 128x64, 128x128 screens and [nice-view] for the dongle screen.
+> 3. For the 128x128 OLED screen model sh1107 there are no default drivers in Zephyr, so neither in ZMK, but you can add it yourself with this small tutorial (This tutorial is the same for the OLED screens mentioned above):
+
+You just have to modify the following line:
+```dts
+// replace the following lines for the 128x64 screen by default
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};
+// for this (i.e. just copy and paste) replace the 128x64 screen with the 128x128 sh1107 screen
+&pro_micro_i2c {
+    status = "okay";
+    oled: sh1106@3c {
+        compatible = "sinowealth,sh1106";
+        reg = <0x3c>;
+        width = <120>;
+        height = <128>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <119>;
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+        };
+};
+
+```
+
 
 # RGB
-El RGB con oled ya esta soportado asi que puedes usarlo sin problemas en esta
-configuracion. Simplemete debes agregar habilitarlo en, esta habilitado por
-defecto para 42 teclas y 12 LEDs por debajo. Puedes ver un ejemplo que funciona
-en el siguiente archivo:
-[corne.conf](./config/config_ready/nice/oled_rgb/corne.conf):
+> [!WARNING]
+>
+> 1. If you use [nice-view] you cannot use rgb, since [nice-view] uses the same
+>    pinout as rgb.
 
-# OTROS CONSEJOS IMPORTANTES
-- Puedes agregar una tecla de reset en cada mitad, eso es util para cuando se te desconecten/desincronicen las mitades, o pase algo inusual. De esa manera se carga el firmware de nuevo. Ver referencia en [corne.keymap](./config/corne.keymap)
-- Puedes agregar un activador de bootloader en cada mitad en caso de que no tengas acceso al boton de bootloader, es  util en caso de que tu carcasa no este optimizada o de que simplemente quiera esa opcion. Ver referencia en [corne.keymap](./config/corne.keymap)
-- Si se te desconectaron/desincronizaron ambas mitades solo tienes que presionar el boton de reset de ambas mitades 10 veces seguidas y se volveran a conectar.
-- Si quires volver a flashar el firware solo tienes que conectar el teclado(osea una mitad primero, normalmente la izquierda) presionar el boton de reset 2 veces seguidas
-  y tu dispositivo se reconocera como una unidad de almecenamiento de disco duro, luego solo arrastra el archivo a flashear y listo. Haz lo mismo con la otra mitad.
-- Recuerda que si tu corne solo tiene algunas luces RGB funcionales puedes activar solo las que tengas funcionales, no es necesario que actives todas las luces. Ver referencia en [led_strip](./config/corne.keymap)
+If you are interested in using RGB on your keyboard you can see the
+configuration in the branch
+[power/domains-and-device-runtime](https://github.com/mctechnology17/zmk-config/tree/power/domains-and-device-runtime)
+from this same repository.
 
-# DONACION
-Si disfrutas de mi trabajo, siéntete libre de donar o convertirte en patrocinador.
+Here is an example of what it looks like:
+[![rgb-demo](src/demo.GIF)](https://www.youtube.com/c/mctechnology17)
+
+# DONGLE
+> [!TIP]
+>
+> 1. You can connect the display to the dongle directly to the i2c port of the
+> handwired style dongle, or you can connect it to a usb-c port of the pcb
+> style dongle.
+> 2. You can see the connections in the following diagram for [seeeduino_xiao_ble](./src/pinout-seeeduino_xiao_ble.png) and for the boards with [pro_micro](./src/pinout-pro_micro.png) connections as the [nice_nano_v2] and the [puchi_ble_v1].
+> 3. You can print a case for the dongle, you can see the designs below in the section [Dongle Designs](#Dongle-Designs).
+> 4. You can print a pcb for the dongle, you can see the designs in the section [Dongle Designs](#Dongle-Designs).
+> 5. You can program a macro that references the `&bootloader` action so that the dongle enters bootloader mode and you can flash the firmware again. The macros are executed on the master so this action causes the dongle to enter bootloader mode. Thanks @chadtrans for the tip!
+
+In the following image you can see how you can connect the OLED screen to the
+dongle:
+[![dongle-demo](src/dongle.jpg)](https://www.youtube.com/c/mctechnology17)
+
+Information about this image:
+- The photo shows a [seeeduino_xiao_ble] dongle with an OLED 128x128 sh1107 display connected to the handwired style i2c port. This dongle acts as master.
+- The left side acts as peripheral in this case, the board is a [puchi_ble_v1].
+- The right side acts as a peripheral in this case, the board is a [nice_nano_v2].
+- The photo shows a clone [nice_nano_v2] dongle with an OLED display connected to a traditional i2c port in a pcb style. This dongle is only for sample photo and is not connected to any device shown in the photo.
+
+Macro example to enter bootloader mode. On  your
+[corne.keymap](./config/corne.keymap) file you can add the following macro (Thanks @chadtrans for the tip!):
+> [!TIP]
+>
+> 1. You can program this macro with the online editor [keymap-editor]
+
+```c
+// this is the manual way to do it
+#define MACRO(name, keys)           \
+name: name##_macro {                \
+	compatible = "zmk,behavior-macro";\
+	#binding-cells = <0>;             \
+	tap-ms = <1>;                     \
+	wait-ms = <1>;                    \
+	bindings = <keys>;                \
+};
+MACRO(dongle_boot, &bootloader)
+/ {
+   keymap {
+      compatible = "zmk,keymap";
+     config_layer {
+        display-name = "CON";
+        bindings = <
+	... // other bindings
+	&dongle_boot
+	... // other bindings
+};
+```
+
+# USEFUL TIPS
+> [!TIP]
+>
+> Below are some useful tips for using your corne keyboard with this
+> configuration.
+
+- You can add a reset key on each half, that's useful for when your halves disconnect/desynchronize, or something unusual happens. That way the firmware is loaded again. see reference in [corne.keymap](./config/corne.keymap)
+- You can add a bootloader activator on each half in case you don't have access to the bootloader button, it is useful in case your case is not optimized or you just want that option. see reference in [corne.keymap](./config/corne.keymap)
+- If both halves were disconnected/unsynchronized, you just have to press the reset button on both halves 10 times in a row and they will reconnect.
+- If you want to flash the firmware again you just have to connect the keyboard (that is, one half first, usually the left one) press the reset button 2 times in a row
+  and your device is recognized as a hard disk storage drive, then just drag the file to flash and that's it. do the same with the other half.
+- Remember that if your corne only has some functional RGB lights you can activate only the ones that you have functional, it is not necessary to activate all the lights. see reference in [led strip](./config/corne.keymap)
+- You can combine the boards, for example: on the left you can have a [nice_nano_v2], on the right a [puchi_ble_v1] and on the dongle a [seeeduino_xiao_ble] or some clone [nice_nano_v2], or any combination you can think of.
+
+# RELATED PROJECTS
+
+I used this project as a reference to configure the dongles with OLED screen:
+- [cygnus](https://github.com/rain2813/zmk-cygnus-oled.git) by @rain2813
+- [zmk keyboard Macintosh dongle display](https://makerworld.com/en/models/403660) by @rain2813
+- [corne with dongle](https://github.com/tomgroenwoldt/zmk-config.git) by @tomgroenwoldt
+- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display.git) by @englmaxi
+- [zmk-config for module](https://github.com/englmaxi/zmk-config/tree/master/boards/shields) by @englmaxi
+- [zmk-config for dongle pro micro](https://github.com/joaopedropio/zmk-swoop/tree/dongle-sdd1306) by @joaopedropio
+
+In the following animations created by @englmaxi you can see what the dongle
+looks like with the 128x64 OLED screen:
+
+![output](https://github.com/englmaxi/zmk-config/assets/43675074/8d268f23-1a4f-44c3-817e-c36dc96a1f8b)
+
+In that animation you can see the connection or output with the computer, that
+is, if it is through a USB or Bluetooth port. Also information about the status
+of both batteries.
+
+![mods](https://github.com/englmaxi/zmk-config/assets/43675074/af9ec3f5-8f61-4629-abed-14ba0047f0bd)
+
+In this animation you can see the actions of the modifier keys, such as
+control, shift, alt, windows/mac, etc.
+
+# DONGLE DESIGNS
+- [case1](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case1.zip) by @englmaxi
+- [case2](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case2.zip) by @englmaxi
+- [Cyberdeck](https://github.com/rafaelromao/keyboards/tree/main/stls/Dongle) by @rafaelromao
+- [Dongle PCB](https://github.com/spe2/zmk_dongle_hardware) by @spe2
+- [Macintosh](https://makerworld.com/en/models/403660) by @rain2813
+- [Redox](https://makerworld.com/en/models/242951) by @rurounikexin
+- [ZMK Display Dongle](https://makerworld.com/en/models/496738) by @yingeling
+
+An example of Dongle Designs (by @rain2813):
+[![dongle-designs-demo](src/macintosh.png)](https://www.youtube.com/c/mctechnology17)
+
+# INSPIRATIONS
+
+- [englmaxi/zmk-config](https://github.com/englmaxi/zmk-config)
+- [caksoylar/zmk-config](https://github.com/caksoylar/zmk-config)
+- [joelspadin/zmk-locale-generator](https://github.com/joelspadin/zmk-locale-generator)
+- [minusfive/zmk-config](https://github.com/minusfive/zmk-config)
+- [infused-kim/zmk-config](https://github.com/infused-kim/zmk-config)
+- [urob/zmk-config](https://github.com/urob/zmk-config)
+
+# MY OTHER PROJECTS:
+- [qmk-config] will be updated soon
+- [qmk_userspace] will be updated soon
+- [vimtools] swiss army knife for vim (features and settings that will make your life easier)
+- [gm] cross-platform git manager with friendly user interface
+- [vim-better-header] the best automated template
+- [vim-executor] multilanguage code executor
+
+If you enjoy my contributions, feel free to donate. I appreciate if you follow me on [github] and [youtube]
 - [paypal]
 - [sponsor]
 
-Emsamblador y creador/mantenedor de vimtools, GitManager y más,
-que son herramientas de trabajo fáciles de integrar, pero muy potentes que te permiten
-mejore su flujo de trabajo, integrándose con todos los sistemas operativos y todas las
-shells(zsh, fish, bash, etc.) posibles.
+[^1]: Keymap-drawer, https://github.com/caksoylar/keymap-drawer https://keymap-drawer.streamlit.app/
+[^2]: caksoylar zmk-config example for keymap-drawer https://github.com/caksoylar/zmk-config
+[^3]: Install pipx, https://pipx.pypa.io/stable/
+[^4]: Urob zmk-config, https://github.com/urob/zmk-config
+[^5]: Urob ZMK Firmware: Personal fork, https://github.com/urob/zmk/
 
-Aquí puedes ver otros proyecto publicado recientemente:
-- [vimtools] navaja suiza para vim (funciones y configuraciones que te facilitarán la vida)
-- [gm] administrador multiplataforma GIT con una interfaz de usuario amigable
-- [vim-better-header] la mejor plantilla automatizada
-- [vim-executor] Ejecutador de código multilenguaje
-
-# 🏆 Trofeos de perfil de GitHub
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=mctechnology17&no-frame=true&theme=onedark&rank=SECRET,SSS,SS,S,AAA,AA,A)](https://github.com/ryo-ma/github-profile-trophy)
-
-# [LICENSE](LICENSE)
-
-Released under the MIT License
-
-Copyright (c) 2020 The ZMK Contributors
-
+[qmk-config]: https://github.com/mctechnology17/qmk-config
+[qmk_userspace]: https://github.com/mctechnology17/qmk_userspace
+[github]: https://github.com/mctechnology17
 [twitter]: https://twitter.com/mctechnology17
 [youtube]: https://www.youtube.com/c/mctechnology17
 [instagram]: https://www.instagram.com/mctechnology17/
 [facebook]: https://m.facebook.com/mctechnology17/
 [reddit]: https://www.reddit.com/user/mctechnology17
 [nice-view]: https://nicekeyboards.com/nice-view
+[puchi_ble_v1]: (https://keycapsss.com/keyboard-parts/mcu-controller/202/puchi-ble-wireless-microcontroller-pro-micro-replacement?number=KC10157_SWITCH&c=18)
+[seeeduino_xiao_ble]: (https://keycapsss.com/keyboard-parts/mcu-controller/212/seeed-studio-xiao-nrf52840-rp2040-esp32c3?number=KC10167_NRF)
+[nice_nano_v2]: (https://nicekeyboards.com/nice-nano)
 [keymap-editor]: https://nickcoutsos.github.io/keymap-editor/
+[ZMK firmware]: https://github.com/zmkfirmware/zmk/
+[ZMK documentation]: https://zmk.dev/docs/user-setup
+[ZMK keycodes]: https://zmk.dev/docs/codes
+[ZMK Discord]: https://zmk.dev/community/discord/invite
+[git]: (https://github.com/git-guides/install-git)
 
 [vim-executor]: https://github.com/mctechnology17/vim-executor
 [vim-better-header]: https://github.com/mctechnology17/vim-better-header

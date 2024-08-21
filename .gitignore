@@ -1,10 +1,16 @@
-Makefile
-build/justin/*
+# zmk
+zmk/
+
+# sketchybar
+sketchybar/dotfiles/
+sketchybar/dotfiles
+sketchybar/dotfiles/*
 
 # MacOS
 .DS_Store
 vim-tools_notiz.vim
 .DS_Store
+./*/.DS_Store
 .vscode
 # .vimspector.json
 push.sh
@@ -72,7 +78,7 @@ node_modules
 *.pyc
 .idea/
 /.idea
-build/
+# build/
 __pycache__
 
 # Rust

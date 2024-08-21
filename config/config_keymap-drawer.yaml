@@ -1,0 +1,360 @@
+# configuration for https://github.com/caksoylar/keymap-drawer
+draw_config:
+  footer_text: 'Keymap View: <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>'
+  # dark_mode: auto
+  n_columns: 1
+  # draw_key_sides: true # draw a square in the middle of the keys
+  key_w: 60.0
+  key_h: 56.0
+  split_gap: 30.0
+  combo_w: 28.0
+  combo_h: 26.0
+  key_rx: 6.0
+  key_ry: 6.0
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 40.0
+  outer_pad_h: 56.0
+  line_spacing: 1.2
+  arc_radius: 6.0
+  append_colon_to_layer_header: true
+  small_pad: 2.0
+  svg_extra_style: |
+    /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
+
+    svg.keymap {
+      font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+      font-size: 16px;
+      font-weight: bold;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Color accent for held keys
+    red = #f00
+    green = #0f0
+    blue = #00f
+    yellow = #ff0
+    cyan = #0ff
+    magenta = #f0f
+    white = #fff
+    black = #000
+    grey = #888
+    light grey = #ccc
+    #ffc
+    */
+    rect.held, rect.combo.held {
+        fill: #f00;
+    }
+
+    /* Technique borrowed and extended from https://github.com/englmaxi/zmk-config/blob/master/keymap-drawer/config.yaml */
+    .sym_sub_text.tap {
+      translate: -5px 2px;
+      font-size: 20px;
+    }
+    .sym_sub_text.shifted {
+      translate: 10px 13px;
+      font-size: 10px;
+      opacity: 1.0;
+    }
+    .combo.sym_sub_text.tap {
+      translate: -1px 1px;
+    }
+    .combo.sym_sub_text.shifted {
+      translate: 7px 5px;
+      font-size: 10px;
+      opacity: 1.0;
+    }
+
+    /* Toggle */
+    .toggle.shifted {
+      translate: -10px 12px;
+    }
+
+    .toggle.hold {
+      translate: 13px -23px;
+    }
+
+    /* Variant for tap-dances */
+    .tap_dance.tap {
+      translate: -7px 0px;
+      font-size: 12px;
+    }
+    .tap_dance.shifted {
+      translate: 7px 17px;
+      font-size: 12px;
+      opacity: 1.0;
+    }
+
+    /* Variant for symbol next to symbol */
+    .sym_by_sym.tap {
+      translate: -6px 0px;
+    }
+    .sym_by_sym.shifted {
+      translate: 10px 12px;
+      opacity: 1.0;
+    }
+
+    .combo.sym_by_sym.tap {
+      translate: -35px 0px;
+    }
+    .combo.sym_by_sym.shifted {
+      translate: 35px 20px;
+      opacity: 1.0;
+    }
+
+    .combo.sym_by_sym.hold {
+      visibility: hidden;
+    }
+
+    /* hide hold box for combo sym_by_sym */
+    .combo.sym_by_sym.hold > path[stroke="none"][fill="none"] {
+      visibility: hidden;
+    }
+
+  shrink_wide_legends: 6
+  glyph_tap_size: 18
+  glyph_hold_size: 15
+  glyph_shifted_size: 15
+  glyphs: {}
+  glyph_urls:
+    tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
+    tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
+    mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
+    mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
+    material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
+  use_local_cache: true
+parse_config:
+  raw_binding_map:
+    '&sys_reset': Reset
+    '&bootloader': Boot
+    '&swapper': Win Next
+    '&caps_word': Caps Word
+    '&inv_qm': ¿
+
+    '&kp LC(LG(LEFT))': Desk Left
+    '&kp LC(LG(RIGHT))': Desk Right
+    '&kp LC(TAB)': Tab Right
+    '&kp LC(LS(TAB))': Tab Left
+    '&kp LA(F4)': Win Close
+    '&kp LC(F4)': Tab Close
+    '&kp LS(TAB)': Win Prev
+    '&kp LS(INS)': Paste
+    '&kp LG(L)': Lock
+
+    '&out OUT_USB': Out USB
+    '&out OUT_BLE': Out BLE
+
+    '&bt BT_SEL 0': BT 1
+    '&bt BT_SEL 1': BT 2
+    '&bt BT_SEL 2': BT 3
+    '&bt BT_SEL 3': BT 4
+    '&bt BT_SEL 4': BT 5
+
+    '&mmv MOVE_UP': Mouse ↑
+    '&mmv MOVE_DOWN': Mouse ↓
+    '&mmv MOVE_LEFT': Mouse ←
+    '&mmv MOVE_RIGHT': Mouse →
+
+    '&msc SCRL_UP': Scroll ↑
+    '&msc SCRL_DOWN': Scroll ↓
+    '&msc SCRL_LEFT': Scroll ←
+    '&msc SCRL_RIGHT': Scroll →
+
+    '&mkp MCLK': Middle Click
+    '&mkp MB4': Back Click
+    '&mkp MB5': Forward Click
+
+  qmk_keycode_map:
+    XXXXXXX: ''
+    'NO': ''
+    MINUS: '-'
+    MINS: '-'
+    EQUAL: '='
+    EQL: '='
+    LEFT_BRACKET: '['
+    LBRC: '['
+    RIGHT_BRACKET: ']'
+    RBRC: ']'
+    BACKSLASH: \
+    BSLS: \
+    NONUS_HASH: '#'
+    NUHS: '#'
+    SEMICOLON: ;
+    SCLN: ;
+    QUOTE: ''''
+    QUOT: ''''
+    GRAVE: '`'
+    GRV: '`'
+    COMMA: ','
+    COMM: ','
+    DOT: .
+    SLASH: /
+    SLSH: /
+    TILDE: '~'
+    TILD: '~'
+    EXCLAIM: '!'
+    EXLM: '!'
+    AT: '@'
+    HASH: '#'
+    DOLLAR: $
+    DLR: $
+    PERCENT: '%'
+    PERC: '%'
+    CIRCUMFLEX: ^
+    CIRC: ^
+    AMPERSAND: '&'
+    AMPR: '&'
+    ASTERISK: '*'
+    ASTR: '*'
+    LEFT_PAREN: (
+    LPRN: (
+    RIGHT_PAREN: )
+    RPRN: )
+    UNDERSCORE: _
+    UNDS: _
+    PLUS: +
+    LEFT_CURLY_BRACE: '{'
+    LCBR: '{'
+    RIGHT_CURLY_BRACE: '}'
+    RCBR: '}'
+    PIPE: '|'
+    COLON: ':'
+    COLN: ':'
+    DOUBLE_QUOTE: '"'
+    DQUO: '"'
+    DQT: '"'
+    LEFT_ANGLE_BRACKET: <
+    LABK: <
+    LT: <
+    RIGHT_ANGLE_BRACKET: '>'
+    RABK: '>'
+    GT: '>'
+    QUESTION: '?'
+    QUES: '?'
+
+  zmk_combos:
+    combo_tab:    {align: top, o: 0.15}
+    combo_del:    {align: top, o: 0.15}
+    combo_f12:    {align: bottom}
+    combo_btclr:  {align: bottom}
+    combo_play:   {align: right}
+    combo_capswd: {draw_separate: true}
+    combo_semi:   {draw_separate: true}
+    combo_grave:  {draw_separate: true}
+    combo_lpar:   {draw_separate: true}
+    combo_rpar:   {draw_separate: true}
+    combo_lbkt:   {draw_separate: true}
+    combo_rbkt:   {draw_separate: true}
+    combo_tab:    {draw_separate: true}
+    combo_del:    {draw_separate: true}
+    combo_esc:    {draw_separate: true}
+    combo_ret:    {draw_separate: true}
+    combo_lock:   {draw_separate: true}
+    combo_bslh:   {draw_separate: true}
+    combo_slsh:   {draw_separate: true}
+
+  zmk_keycode_map:
+    # custom mappings
+    C_VOL_UP: Vol Up
+    C_VOL_DN: Vol Down
+    C_AL_CALC: Calc
+    # C_PP: Play Pause
+
+    LCTRL: Ctrl
+    RCTRL: Ctrl
+    LALT: Alt
+    RALT: Alt
+    LGUI: Gui
+    RGUI: Gui
+    LSHFT: Shift
+    RSHFT: Shift
+    ESC: Esc
+    SPACE: ␣
+    BSPC: ⌫
+    RET: ⏎
+    TAB: ↹
+    DEL: ⌦
+
+    PG_UP: Page Up
+    PG_DN: Page Down
+    INS: Insert
+    HOME: Home
+    END: End
+    CAPS: Caps Lock
+    PSCRN: Print Scrn
+    PAUSE_BREAK: Pause Break
+
+    UP: ↑
+    DOWN: ↓
+    LEFT: ←
+    RIGHT: →
+
+    C_PP: ⏯
+    C_NEXT: ⏭️
+    C_PREV: ⏮️
+
+    # defaults
+    # AMPERSAND: '&'
+    # AMPS: '&'
+    APOS: "'"
+    APOSTROPHE: "'"
+    ASTERISK: '*'
+    ASTRK: '*'
+    AT: '@'
+    AT_SIGN: '@'
+    BACKSLASH: \
+    BSLH: \
+    CARET: ^
+    COLON: ':'
+    COMMA: ','
+    DLLR: $
+    DOLLAR: $
+    DOT: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    EQUAL: '='
+    EXCL: '!'
+    EXCLAMATION: '!'
+    FSLH: /
+    GRAVE: '`'
+    GREATER_THAN: '>'
+    GT: '>'
+    HASH: '#'
+    LBKT: '['
+    LBRC: '{'
+    LEFT_BRACE: '{'
+    LEFT_BRACKET: '['
+    LEFT_PARENTHESIS: (
+    LESS_THAN: <
+    LPAR: (
+    LT: <
+    MINUS: '-'
+    NON_US_BACKSLASH: \
+    NON_US_BSLH: '|'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    PERCENT: '%'
+    PERIOD: .
+    PIPE: '|'
+    PIPE2: '|'
+    PLUS: +
+    POUND: '#'
+    PRCNT: '%'
+    QMARK: '?'
+    QUESTION: '?'
+    RBKT: ']'
+    RBRC: '}'
+    RIGHT_BRACE: '}'
+    RIGHT_BRACKET: ']'
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    SEMI: ;
+    SEMICOLON: ;
+    SINGLE_QUOTE: ''''
+    SLASH: /
+    SQT: ''''
+    STAR: '*'
+    TILDE: '~'
+    TILDE2: '~'
+    UNDER: _
+    UNDERSCORE: _

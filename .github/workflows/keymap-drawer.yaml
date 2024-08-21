@@ -1,0 +1,25 @@
+#     keymap -c config/config_keymap-drawer.yaml parse -c 12 -z config/corne.keymap > keymap-drawer/corne.yaml
+#     keymap -c config/config_keymap-drawer.yaml draw keymap-drawer/corne.yaml > keymap-drawer/corne.svg
+
+# Example for using the keymap-drawer ZMK user config workflow
+name: Draw ZMK keymaps
+on:
+  workflow_dispatch: # can be triggered manually
+  push: # automatically run on changes to following paths
+    paths:
+      - "config/*.keymap"
+      - "config/config_keymap-drawer.yaml"
+      - .github/workflows/keymap-drawer.yaml
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write # allow workflow to commit to the repo
+    with:
+      amend_commit: true
+      keymap_patterns: "config/*.keymap" # path to the keymaps to parse
+      config_path: "config/config_keymap-drawer.yaml" # config file, ignored if not exists
+      output_folder: "keymap-drawer" # path to save produced SVG and keymap YAML files
+      parse_args: "" # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
+      draw_args: "" # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
