@@ -5,7 +5,8 @@
 # Email: mctechnology170318@gmail.com
 # GitHub: https://github.com/mctechnology17
 # Brief: Makefile for ZMK firmware with Docker
-# Board: nice_nano_v2 puchi_ble_v1 seeeduino_xiao_ble
+# Shields: corne sofle splitkb_aurora_sofle
+# Boards: nice_nano_v2 puchi_ble_v1 seeeduino_xiao_ble
 # =========================================
 #                              ╔═╦═╦═╗
 #                       ╔════╗ ║║║║║╔╝
@@ -18,10 +19,22 @@
 # to update the branch
 # https://hub.docker.com/r/zmkfirmware/zmk-dev-arm/tags
 # https://github.com/zmkfirmware/zmk/blob/main/.devcontainer/Dockerfile
-# docker pull zmkfirmware/zmk-dev-arm:3.5
-# extra_conf_file_oled_rgb= -DEXTRA_CONF_FILE=${PWD}/config/config_ready/nice/oled_rgb/corne.conf
+# docker pull zmkfirmware/zmk-dev-arm:3.2-branch
+#
+# CUSTOM BRANCH EXAMPLE:
+# git clone https://github.com/petejohanson/zmk -b v3.4.0+zmk-fixes
+#
+# WIDGET BRANCH ANIMATED
+# cmake-args: -DKEYMAP_FILE=../../config/other-corne.keymap -DCONFIG_ZMK_KEYBOARD_NAME=\"other-corne\" -DEXTRA_CONF_FILE=../../config/other-corne.conf
+# /Users/marcos/zmk-privat/config/config_ready/nice/oled_rgb/corne.conf
+# -DKEYMAP_FILE=../../config/other-corne.keymap -DCONFIG_ZMK_KEYBOARD_NAME=\"other-corne\" -DEXTRA_CONF_FILE=../../config/other-corne.conf
+# module:
+# https://github.com/caksoylar/zmk-rgbled-widget
 
 ### config
+# extra_conf_file_oled_rgb= -DEXTRA_CONF_FILE=${PWD}/config/config_ready/nice/oled_rgb/corne.conf
+extra_modules_dir=${PWD}
+extra_modules= -DZMK_EXTRA_MODULES="/boards"
 config=${PWD}/config
 nice_mount=/Volumes/NICENANO
 puchi_mount=/Volumes/NRF52BOOT
@@ -38,8 +51,9 @@ docker_opts= \
 	--tty \
 	--name zmk-$@ \
 	--workdir /zmk \
-	--volume zmk:/zmk \
 	--volume "${config}:/zmk-config:Z" \
+	--volume "${PWD}/zmk:/zmk:Z" \
+	--volume "${extra_modules_dir}:/boards:Z" \
 	${zmk_image}
 
 ### name
@@ -58,15 +72,15 @@ keyboard_name_xiao_dongle_oled= '-DCONFIG_ZMK_KEYBOARD_NAME="Xiao_Dongle_O"'
 keyboard_name_xiao_dongle_view= '-DCONFIG_ZMK_KEYBOARD_NAME="Xiao_Dongle_V"'
 
 ### west
-west_built_puchi_ble_v1= \
+west_built_puchi= \
 	    west build /zmk/app \
 	    --pristine --board "${puchi}"
 
-west_built_nice_nano_v2= \
+west_built_nice= \
 	    west build /zmk/app \
 	    --pristine --board "${nice}"
 
-west_built_seeeduino_xiao_ble= \
+west_built_xiao= \
 	    west build /zmk/app \
 	    --pristine --board "${xiao}"
 
@@ -111,9 +125,9 @@ uf2_copy_puchi_corne_left=/zmk/build/zephyr/zmk.uf2 \
 			  firmware/puchi_corne_left.uf2
 uf2_copy_puchi_corne_right=/zmk/build/zephyr/zmk.uf2 \
 			   firmware/puchi_corne_right.uf2
-uf2_copy_puchi_corne_left_peripheral=/zmk/build/zephyr/zmk.uf2 \
+uf2_copy_puchi_corne_left_peripheral_view=/zmk/build/zephyr/zmk.uf2 \
 				    firmware/puchi_corne_left_peripheral.uf2
-uf2_copy_puchi_corne_dongle_pro_micro=/zmk/build/zephyr/zmk.uf2 \
+uf2_copy_niceuf2_copy_puchi_corne_dongle_pro_micro=/zmk/build/zephyr/zmk.uf2 \
 				    firmware/puchi_corne_dongle_pro_micro.uf2
 uf2_copy_puchi_corne_dongle_pro_micro_dongle_display=/zmk/build/zephyr/zmk.uf2 \
 				    firmware/puchi_corne_dongle_pro_micro_dongle_display.uf2
@@ -140,12 +154,11 @@ uf2_copy_xiao_corne_dongle_xiao_rgbled_adapter=/zmk/build/zephyr/zmk.uf2 \
 uf2_copy_xiao_corne_dongle_xiao_dongle_display_rgbled_adapter=/zmk/build/zephyr/zmk.uf2 \
 				    firmware/xiao_corne_dongle_xiao_dongle_display_rgbled_adapter.uf2
 ### chmod
-# many times you cannot copy the uf2 file so try this solution
 uf2_chmod_puchi_corne_settings_reset=chmod go+wrx \
 				     firmware/puchi_corne_settings_reset.uf2
 uf2_chmod_puchi_corne_left=chmod go+wrx firmware/puchi_corne_left.uf2
 uf2_chmod_puchi_corne_right=chmod go+wrx firmware/puchi_corne_right.uf2
-uf2_chmod_puchi_corne_left_peripheral=chmod go+wrx firmware/puchi_corne_left_peripheral.uf2
+uf2_chmod_puchi_corne_left_peripheral_view=chmod go+wrx firmware/puchi_corne_left_peripheral.uf2
 uf2_chmod_puchi_corne_dongle_pro_micro=chmod go+wrx firmware/puchi_corne_dongle_pro_micro.uf2
 uf2_chmod_puchi_corne_dongle_pro_micro_dongle_display=chmod go+wrx firmware/puchi_corne_dongle_pro_micro_dongle_display.uf2
 uf2_chmod_nice_corne_settings_reset=chmod go+wrx \
@@ -163,313 +176,141 @@ uf2_chmod_xiao_corne_dongle_xiao_dongle_display=chmod go+wrx firmware/xiao_corne
 uf2_chmod_xiao_corne_dongle_xiao_rgbled_adapter=chmod go+wrx firmware/xiao_corne_dongle_xiao_rgbled_adapter.uf2
 uf2_chmod_xiao_corne_dongle_xiao_dongle_display_rgbled_adapter=chmod go+wrx firmware/xiao_corne_dongle_xiao_dongle_display_rgbled_adapter.uf2
 
-codebase_default:
+clone_zmk_default:
+	if [ ! -d zmk ]; then git clone https://github.com/zmkfirmware/zmk; fi
+
+codebase_default: clone_zmk_default
 	docker run ${docker_opts} sh -c '\
-		git clone https://github.com/zmkfirmware/zmk /zmk/; \
 		west init -l /zmk/app/; \
 		west update'
+clone_zmk_urob:
+	if [ ! -d zmk ]; then git clone https://github.com/urob/zmk; fi
 
-codebase_urob:
+codebase_urob: clone_zmk_urob
 	docker run ${docker_opts} sh -c '\
-		git clone https://github.com/urob/zmk /zmk/; \
 		west init -l /zmk/app/; \
 		west update'
-
-### CODEBASE_DEFAULT START
-### CODEBASE_DEFAULT END
 
 ### CODEBASE_UROB START
-xiao_corne_dongle_rgbled_adapter_urob:
+only_nice_corne_left_view_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_xiao_corne_dongle_xiao_rgbled_adapter} \
-		${keyboard_name_xiao_dongle}
-	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_rgbled_adapter}
-	${uf2_chmod_xiao_corne_dongle_xiao_rgbled_adapter}
-
-xiao_corne_dongle_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_xiao_corne_dongle_xiao_dongle_display} \
-		${keyboard_name_xiao_dongle_oled}
-	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_dongle_display}
-	${uf2_chmod_xiao_corne_dongle_xiao_dongle_display}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_view} \
-		${keyboard_name_nice}
+		${west_built_nice} ${shield_corne_left_view} \
+		${keyboard_name_nice} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_nice_corne_left}
 	${uf2_chmod_nice_corne_left}
+only_nice_corne_right_view_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right_view}
+		${west_built_nice} ${shield_corne_right_view} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_nice_corne_right}
 	${uf2_chmod_nice_corne_right}
+only_puchi_corne_left_view_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_peripheral_view}
+		${west_built_puchi} ${shield_corne_left_view} \
+		${keyboard_name_puchi} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_puchi_corne_left}
+	${uf2_chmod_puchi_corne_left}
+only_puchi_corne_right_view_urob:
+	docker run --rm ${docker_opts} \
+		${west_built_puchi} ${shield_corne_right} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_puchi_corne_right}
+	${uf2_chmod_puchi_corne_right}
+only_nice_corne_left_peripheral_view_urob:
+	docker run --rm ${docker_opts} \
+		${west_built_nice} ${shield_corne_left_peripheral_view} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_nice_corne_left_peripheral_view}
 	${uf2_chmod_nice_corne_left_peripheral_view}
-
-only_xiao_dongle_urob:
+only_puchi_corne_left_peripheral_view_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_xiao_corne_dongle_xiao_dongle_display} \
-		${keyboard_name_xiao_dongle_oled}
-	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_dongle_display}
-	${uf2_chmod_xiao_corne_dongle_xiao_dongle_display}
-only_nice_dongle_urob:
+		${west_built_puchi} ${shield_corne_left_peripheral_view} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_puchi_corne_left_peripheral_view}
+	${uf2_chmod_puchi_corne_left_peripheral_view}
+only_nice_corne_dongle_pro_micro_dongle_display_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro_dongle_display} \
-		${keyboard_name_nice_dongle_oled}
+		${west_built_nice} ${shield_corne_dongle_pro_micro_dongle_display} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro_dongle_display}
 	${uf2_chmod_nice_corne_dongle_pro_micro_dongle_display}
-only_puchi_dongle_urob:
+only_puchi_corne_dongle_pro_micro_dongle_display_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_dongle_pro_micro_dongle_display} \
-		${keyboard_name_puchi_dongle_oled}
+		${west_built_puchi} ${shield_corne_dongle_pro_micro_dongle_display} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_puchi_corne_dongle_pro_micro_dongle_display}
 	${uf2_chmod_puchi_corne_dongle_pro_micro_dongle_display}
+only_corne_xiao_corne_dongle_xiao_dongle_display_urob:
+	docker run --rm ${docker_opts} \
+		${west_built_xiao} ${shield_xiao_corne_dongle_xiao_dongle_display} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_dongle_display}
+	${uf2_chmod_xiao_corne_dongle_xiao_dongle_display}
+only_nice_settings_reset_urob:
+	docker run --rm ${docker_opts} \
+		${west_built_nice} ${shield_settings_reset}
+	docker cp ${urob}:${uf2_copy_nice_corne_settings_reset}
+	${uf2_chmod_nice_corne_settings_reset}
+only_puchi_settings_reset_urob:
+	docker run --rm ${docker_opts} \
+		${west_built_puchi} ${shield_settings_reset}
+	docker cp ${urob}:${uf2_copy_puchi_corne_settings_reset}
+	${uf2_chmod_puchi_corne_settings_reset}
+only_xiao_settings_reset_urob:
+	docker run --rm ${docker_opts} \
+		${west_built_xiao} ${shield_settings_reset}
+	docker cp ${urob}:${uf2_copy_xiao_corne_settings_reset}
+	${uf2_chmod_xiao_corne_settings_reset}
 
-only_dongle_urob: only_xiao_dongle_urob only_nice_dongle_urob only_puchi_dongle_urob
-	@echo "only dongle urob and not other shields"
-
-corne_dongle_pro_micro_urob:
+### MC: TODO: excluded for the moment START
+only_corne_left_peripheral_oled_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro} \
-		${keyboard_name_nice_dongle}
-	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro}
-	${uf2_chmod_nice_corne_dongle_pro_micro}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro_dongle_display} \
-		${keyboard_name_nice_dongle_oled}
-	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro_dongle_display}
-	${uf2_chmod_nice_corne_dongle_pro_micro_dongle_display}
-
-corne_dongle_pro_micro_display_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro} \
-		${keyboard_name_nice_dongle}
-	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro}
-	${uf2_chmod_nice_corne_dongle_pro_micro}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro_dongle_display} \
-		${keyboard_name_nice_dongle_oled}
-	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro_dongle_display}
-	${uf2_chmod_nice_corne_dongle_pro_micro_dongle_display}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left} \
-		${keyboard_name_nice_oled}
-	docker cp ${urob}:${uf2_copy_nice_corne_left}
-	${uf2_chmod_nice_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right}
-	docker cp ${urob}:${uf2_copy_nice_corne_right}
-	${uf2_chmod_nice_corne_right}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_peripheral_oled}
+		${west_built_nice} ${shield_corne_left_peripheral_oled} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_nice_corne_left_peripheral_oled}
 	${uf2_chmod_nice_corne_left_peripheral_oled}
-
-# full compilation
-corne_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_view} \
-		${keyboard_name_nice}
-	docker cp ${urob}:${uf2_copy_nice_corne_left}
-	${uf2_chmod_nice_corne_left}
+		${west_built_puchi} ${shield_corne_left_peripheral_oled} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_puchi_corne_left_peripheral_oled}
+	${uf2_chmod_puchi_corne_left_peripheral_oled}
+only_corne_dongle_pro_micro_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_right}
-	${uf2_chmod_nice_corne_right}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left_view} \
-		${keyboard_name_puchi_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left}
-	${uf2_chmod_puchi_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_right}
-	${uf2_chmod_puchi_corne_right}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_peripheral_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_left_peripheral_view}
-	${uf2_chmod_nice_corne_left_peripheral_view}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left_peripheral_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left_peripheral}
-	${uf2_chmod_puchi_corne_left_peripheral}
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_xiao_corne_dongle_xiao} \
-		${keyboard_name_xiao_dongle}
-	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao}
-	${uf2_chmod_xiao_corne_dongle_xiao}
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_xiao_corne_dongle_xiao_dongle_display} \
-		${keyboard_name_xiao_dongle_oled}
-	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_dongle_display}
-	${uf2_chmod_xiao_corne_dongle_xiao_dongle_display}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro} \
-		${keyboard_name_nice_dongle}
+		${west_built_nice} ${shield_corne_dongle_pro_micro} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro}
 	${uf2_chmod_nice_corne_dongle_pro_micro}
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_dongle_pro_micro_dongle_display} \
-		${keyboard_name_nice_dongle_oled}
-	docker cp ${urob}:${uf2_copy_nice_corne_dongle_pro_micro_dongle_display}
-	${uf2_chmod_nice_corne_dongle_pro_micro_dongle_display}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_dongle_pro_micro} \
-		${keyboard_name_puchi_dongle}
+		${west_built_puchi} ${shield_corne_dongle_pro_micro} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_puchi_corne_dongle_pro_micro}
 	${uf2_chmod_puchi_corne_dongle_pro_micro}
+only_corne_xiao_corne_dongle_xiao_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_dongle_pro_micro_dongle_display} \
-		${keyboard_name_puchi_dongle_oled}
-	docker cp ${urob}:${uf2_copy_puchi_corne_dongle_pro_micro_dongle_display}
-	${uf2_chmod_puchi_corne_dongle_pro_micro_dongle_display}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_nice_corne_settings_reset}
-	${uf2_chmod_nice_corne_settings_reset}
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_xiao_corne_settings_reset}
-	${uf2_chmod_xiao_corne_settings_reset}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_puchi_corne_settings_reset}
-	${uf2_chmod_puchi_corne_settings_reset}
-
-corne_view_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_view} \
-		${keyboard_name_nice}
-	docker cp ${urob}:${uf2_copy_nice_corne_left}
-	${uf2_chmod_nice_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_right}
-	${uf2_chmod_nice_corne_right}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left_view} \
-		${keyboard_name_puchi_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left}
-	${uf2_chmod_puchi_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_right}
-	${uf2_chmod_puchi_corne_right}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_peripheral_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_left_peripheral_view}
-	${uf2_chmod_nice_corne_left_peripheral_view}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left_peripheral_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left_peripheral}
-	${uf2_chmod_puchi_corne_left_peripheral}
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_xiao_corne_dongle_xiao} \
-		${keyboard_name_xiao_dongle}
+		${west_built_xiao} ${shield_xiao_corne_dongle_xiao} ${extra_modules}
 	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao}
 	${uf2_chmod_xiao_corne_dongle_xiao}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_nice_corne_settings_reset}
-	${uf2_chmod_nice_corne_settings_reset}
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_xiao_corne_settings_reset}
-	${uf2_chmod_xiao_corne_settings_reset}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_puchi_corne_settings_reset}
-	${uf2_chmod_puchi_corne_settings_reset}
+### MC: TODO: excluded for the moment END
 
-nice_corne_view_urob:
+### MC: rgbled_adapter TODO: START
+only_corne_xiao_corne_dongle_xiao_rgbled_adapter_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_view} \
-		${keyboard_name_nice}
-	docker cp ${urob}:${uf2_copy_nice_corne_left}
-	${uf2_chmod_nice_corne_left}
+		${west_built_xiao} ${shield_xiao_corne_dongle_xiao_rgbled_adapter} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_rgbled_adapter}
+	${uf2_chmod_xiao_corne_dongle_xiao_rgbled_adapter}
+only_corne_xiao_corne_dongle_xiao_dongle_display_rgbled_adapter_urob:
 	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_right}
-	${uf2_chmod_nice_corne_right}
+		${west_built_xiao} ${shield_xiao_corne_dongle_xiao_dongle_display_rgbled_adapter} ${extra_modules}
+	docker cp ${urob}:${uf2_copy_xiao_corne_dongle_xiao_dongle_display_rgbled_adapter}
+	${uf2_chmod_xiao_corne_dongle_xiao_dongle_display_rgbled_adapter}
+### MC: rgbled_adapter TODO: END
 
-corne_left_peripheral_view_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_peripheral_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_left_peripheral_view}
-	${uf2_chmod_nice_corne_left_peripheral_view}
-
-nice_corne_view_left_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left_view} \
-		${keyboard_name_nice}
-	docker cp ${urob}:${uf2_copy_nice_corne_left}
-	${uf2_chmod_nice_corne_left}
-
-nice_corne_view_right_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_nice_corne_right}
-	${uf2_chmod_nice_corne_right}
-
-nice_corne_oled_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_left} \
-		${keyboard_name_nice_oled}
-	docker cp ${urob}:${uf2_copy_nice_corne_left}
-	${uf2_chmod_nice_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_corne_right}
-	docker cp ${urob}:${uf2_copy_nice_corne_right}
-	${uf2_chmod_nice_corne_right}
-
-puchi_corne_view_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left_view} \
-		${keyboard_name_puchi_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left}
-	${uf2_chmod_puchi_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_right}
-	${uf2_chmod_puchi_corne_right}
-
-puchi_corne_view_left_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left_view} \
-		${keyboard_name_puchi_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left}
-	${uf2_chmod_puchi_corne_left}
-
-puchi_corne_view_right_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_right_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_right}
-	${uf2_chmod_puchi_corne_right}
-
-puchi_corne_oled_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_left} \
-		${keyboard_name_puchi_view}
-	docker cp ${urob}:${uf2_copy_puchi_corne_left}
-	${uf2_chmod_puchi_corne_left}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_corne_right}
-	docker cp ${urob}:${uf2_copy_puchi_corne_right}
-	${uf2_chmod_puchi_corne_right}
-
-reset_urob:
-	docker run --rm ${docker_opts} \
-		${west_built_nice_nano_v2} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_nice_corne_settings_reset}
-	${uf2_chmod_nice_corne_settings_reset}
-	docker run --rm ${docker_opts} \
-		${west_built_seeeduino_xiao_ble} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_xiao_corne_settings_reset}
-	${uf2_chmod_xiao_corne_settings_reset}
-	docker run --rm ${docker_opts} \
-		${west_built_puchi_ble_v1} ${shield_settings_reset}
-	docker cp ${urob}:${uf2_copy_puchi_corne_settings_reset}
-	${uf2_chmod_puchi_corne_settings_reset}
+only_corne_left_view_urob: only_nice_corne_left_view_urob \
+	only_puchi_corne_left_view_urob
+only_corne_right_view_urob: only_nice_corne_right_view_urob \
+	only_puchi_corne_right_view_urob
+only_corne_left_peripheral_view_urob: only_nice_corne_left_peripheral_view_urob \
+	only_puchi_corne_left_peripheral_view_urob
+only_corne_dongle_pro_micro_dongle_display_urob: only_nice_corne_dongle_pro_micro_dongle_display_urob \
+						only_puchi_corne_dongle_pro_micro_dongle_display_urob
+settings_reset_urob: only_nice_settings_reset_urob \
+	only_puchi_settings_reset_urob \
+	only_xiao_settings_reset_urob
+corne_urob: only_corne_left_view_urob \
+	only_corne_right_view_urob \
+	only_corne_left_peripheral_view_urob \
+	only_corne_dongle_pro_micro_dongle_display_urob \
+	only_corne_xiao_corne_dongle_xiao_dongle_display_urob \
+	settings_reset_urob
 ### CODEBASE_UROB END
 
 # Open a shell within the ZMK environment
@@ -497,13 +338,17 @@ puchi_corne_flash_right:
 	@ while [ ! -d ${puchi_mount} ]; do sleep 1; printf "."; done; printf "\n"
 	cp -av firmware/puchi_corne_right.uf2 ${puchi_mount}
 
-clean:
-	docker ps -aq --filter name='^zmk' | xargs -r docker container rm
-	docker volume list -q --filter name='zmk' | xargs -r docker volume rm
-
-clean_docker:
-	docker ps -aq --filter name='^zmk' | xargs -r docker container rm
-	docker volume list -q --filter name='zmk' | xargs -r docker volume rm
-
 clean_firmware:
 	find firmware/*.uf2 -type f -delete
+
+clean_zmk:
+	if [ -d zmk ]; then rm -rfv zmk; fi
+
+clean: clean_zmk
+	docker ps -aq --filter name='^zmk' | xargs -r docker container rm
+	docker volume list -q --filter name='zmk' | xargs -r docker volume rm
+
+clean_all: clean clean_firmware
+	@echo "cleaning all"
+
+# vim: set ft=make fdm=marker:

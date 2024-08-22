@@ -351,12 +351,15 @@ MACRO(dongle_boot, &bootloader)
 / {
    keymap {
       compatible = "zmk,keymap";
+     ... // other layers
      config_layer {
         display-name = "CON";
         bindings = <
 	... // other bindings
 	&dongle_boot
 	... // other bindings
+     };
+     ... // other layers
 };
 ```
 
