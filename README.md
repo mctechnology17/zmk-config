@@ -21,10 +21,15 @@
 - [USEFUL TIPS](#USEFUL-TIPS)
 - [RELATED PROJECTS](#RELATED-PROJECTS)
 - [DONGLE DESIGNS](#DONGLE-DESIGNS)
+- [ZMK STUDIO](#ZMK-STUDIO)
+- [MODULE INTEGRATION](#MODULE-INTEGRATION)
 - [INSPIRATIONS](#INSPIRATIONS)
 - [MY OTHER PROJECTS](#MY-OTHER-PROJECTS)
 
 ----
+
+If you already have your corne configured with this repository and want to make
+a modification to your keymap, you can do it with the online [ZMK-STUDIO](https://zmk.studio/).
 
 If you already have your corne configured with this repository and want to make
 a modification to your keymap, you can do it with the online [keymap-editor](https://nickcoutsos.github.io/keymap-editor/).
@@ -56,7 +61,7 @@ that you can have a base configuration and you can modify it to your liking.
 
 This base includes the most recent corne configurations, featuring a setup for
 the Corne dongle with/without an OLED screen.
-You can also use your keyboard without a dongle of course. with any of the
+You can also use your keyboard WITH / WITHOUT a dongle of course. with any of the
 plates or screens you have.
 
 Tested with **[puchi_ble_v1]** (used as a dongle and as
@@ -105,10 +110,19 @@ peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
 > 4. Disable the builds you don't need in the file [build.yaml](./build.yaml),
 >    by default they are all activated.
 
+
+### zmk-studio
+This repository includes the necessary configuration to use zmk-studio without
+the need to configure anything else. You just have to follow the steps below:
+- fork this repository y flash the firmware to the keyboard with the uf2 files (see as below en normal procedure)
+- connect the master (dongle or central) to the PC
+- Modify the keyboard mapping on the go with [ZMK Studio
+  Web](https://zmk.studio/) and enjoy the changes!
+
+### normal procedure
 1. Fork this repository (I appreciate if you follow me on [github] and [youtube])
 2. Modify the keyboard mapping with [keymap-editor]. If you want to read about
-   the features of this editor you can do so
-   [here](https://github.com/nickcoutsos/keymap-editor).
+   the features of this editor you can do so here: [ZMK Studio Web](https://zmk.studio/) or [keymap-editor](https://github.com/nickcoutsos/keymap-editor).
 3. Save changes and commit (optional)
 4. Go to actions on github and download the artifacts
    - Actions(click) -> All Workflows (click)-> Initial User Config. (here you
@@ -118,11 +132,11 @@ peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
    - unzip the .zip file
    - Connect the nice!nano v2 microcontroller to the USB-C port of your computer
    - the microcontroller is recognized as a storage device
-5. Flash the firmware to the keyboard with the uf2 files (drag and drop and with dongle)
+5. Flash the firmware to the keyboard with the uf2 files (drag and drop and WITH dongle)
    - xiao_corne_dongle_xiao_dongle_display.uf2 for [seeeduino_xiao_ble] as a dongle
    - nice_corne_left_peripheral.uf2 for [nice_nano_v2] as a peripheral
    - nice_corne_right.uf2 for [nice_nano_v2] as a peripheral
-6. Flash the firmware to the keyboard with the uf2 files (drag and drop and without dongle)
+6. Flash the firmware to the keyboard with the uf2 files (drag and drop and WITHOUT dongle)
    - nice_corne_left.uf2 for [nice_nano_v2] as a master side
    - nice_corne_right.uf2 for [nice_nano_v2] as a peripheral
 7. If you need help, you can ask in the [ZMK Discord]
@@ -183,33 +197,33 @@ zmk-config # main folder
 ├── Makefile # file for compilation
 ├── README.md # readme this file
 ├── build.yaml # config file for compilation on the github server
-├── config # configuration folder
-│   ├── boards
-│   │   ├── ... # other boards
-│   │   ├── nice_nano_v2.overlay
-│   │   ├── puchi_ble_v1.overlay
-│   │   └── shields
-│   │       ├── corne
-│   │       │   ├── Kconfig.defconfig # modify if you want to add a new shield
-│   │       │   ├── Kconfig.shield # modify if you want to add a new shield
-│   │       │   ├── boards
-│   │       │   │   ├── ... # other boards
-│   │       │   ├── corne.conf # general configurations of the corne
-│   │       │   ├── corne.dtsi # default dtsi
-│   │       │   ├── corne.keymap # default keymap
-│   │       │   ├── corne.zmk.yml # modify if you want to add a new shield
-│   │       │   ├── corne_dongle_pro_micro.conf # conf dongle pro_micro pinout
-│   │       │   ├── corne_dongle_pro_micro.overlay # properties/displays dongle
-│   │       │   ├── corne_dongle_xiao.conf # conf dongle xiao pinout
-│   │       │   ├── corne_dongle_xiao.overlay # properties/displays dongle
-│   │       │   ├── corne_left.conf # conf left
-│   │       │   ├── corne_left_peripheral.conf # config left peripheral
-│   │       │   ├── corne_right.conf # conf right
-│   │       │   ├── ... # other files
-│   │       └── dongle_display
-│   │           ├── ... # here you can modify the screen widgets
-│   │           └── widgets
-│   │               └── # here you can modify the screen widgets
+│   boards
+│   ├── ... # other boards
+│   ├── nice_nano_v2.overlay
+│   ├── puchi_ble_v1.overlay
+│   └── shields
+│       ├── corne
+│       │   ├── Kconfig.defconfig # modify if you want to add a new shield
+│       │   ├── Kconfig.shield # modify if you want to add a new shield
+│       │   ├── boards
+│       │   │   ├── ... # other boards
+│       │   ├── corne.conf # general configurations of the corne
+│       │   ├── corne.dtsi # default dtsi
+│       │   ├── corne.keymap # default keymap
+│       │   ├── corne.zmk.yml # modify if you want to add a new shield
+│       │   ├── corne_dongle_pro_micro.conf # conf dongle pro_micro pinout
+│       │   ├── corne_dongle_pro_micro.overlay # properties/displays dongle
+│       │   ├── corne_dongle_xiao.conf # conf dongle xiao pinout
+│       │   ├── corne_dongle_xiao.overlay # properties/displays dongle
+│       │   ├── corne_left.conf # conf left
+│       │   ├── corne_left_peripheral.conf # config left peripheral
+│       │   ├── corne_right.conf # conf right
+│       │   ├── ... # other files
+│       └── dongle_display
+│           ├── ... # here you can modify the screen widgets
+│           └── widgets
+│               └── # here you can modify the screen widgets
+│   config # configuration folder
 │   ├── config_keymap-drawer.yaml # config file keymap-drawer
 │   ├── corne.conf # general configurations of the corne
 │   ├── corne.keymap # your keymap file
@@ -413,6 +427,56 @@ control, shift, alt, windows/mac, etc.
 An example of Dongle Designs (by @rain2813):
 [![dongle-designs-demo](src/macintosh.png)](https://www.youtube.com/c/mctechnology17)
 
+# ZMK STUDIO
+
+This repository includes the necessary configuration to use zmk-studio without
+the need to configure anything else. You just have to follow the steps below:
+- fork this repository y flash the firmware to the keyboard with the uf2 files
+- connect the master (dongle or central) to the PC
+- Modify the keyboard mapping on the go with [ZMK Studio
+  Web](https://zmk.studio/) and enjoy the changes!
+
+> [!TIP]
+>
+> 1. For zmk-studio it is necessary to enable the `&studio_unlock` macro but you
+> can skip this if you use `CONFIG_ZMK_STUDIO_LOCKING=n` in your zmk
+> configuration. This is enabled by default in this repository.
+> 2. Remember that this has to be activated on the master and the dongle:
+> `snippet: studio-rpc-usb-uart`
+> 3. with the `cmake-args: -DCONFIG_ZMK_USB=y` flag you can activate the master
+>    (dongle or central) to connect always defaults to usb.
+> 4. The zmk-studio only connects with USB on the web and only BLE in the app,
+>    it is useful to have a toggle key to switch between BLE and USB. (this is
+>    what I understood, if not, please correct me)
+
+Useful links:
+- [ZMK Studio Web](https://zmk.studio/)
+- [ZMK Studio Unlock Behavior](https://zmk.dev/docs/keymaps/behaviors/studio-unlock/)
+- [ZMK Studio Testing Steps / click hier for more ...](https://discord.com/channels/719497620560543766/719544534500900886/1296241576263024641):
+	* [Set up ZMK Studio](https://zmk.dev/docs/development/hardware-integration/studio-setup) for your device, if needed.
+	* [Build with ZMK Studio enabled](https://zmk.dev/docs/features/studio) and flash to the device.
+	* Test ZMK Studio by loading https://zmk.studio/ or installing the app from the latest release at https://github.com/zmkfirmware/zmk-studio/releases/
+
+### Reporting
+
+Please report any and all testing results, even successful results in [Discord
+zmk-studio](https://discord.com/channels/719497620560543766/722441502948851741.)
+If you have a genuine bug to report, please file a new [GitHub
+Issue](https://github.com/zmkfirmware/zmk-studio/issues/new/choose). With any
+bugs or testing results, please include all the relevant details, including the
+host OS, app/browser details, keyboard used, link to your config repo, etc.
+
+# MODULE INTEGRATION
+> [!TIP]
+>
+> 1. You can activate or deactivate the animation with: CONFIG_NICE_VIEW_GEM_ANIMATION=n
+> the animation is not activated by default in this repository for saving
+> battery. This is activated only in the peripheries and the corne master, not
+> in the dongles, because this module shows the status of the batteries in the
+> peripheries
+
+See module details here for more information and more configurations: [nice-view-gem](https://github.com/M165437/nice-view-gem)
+
 # INSPIRATIONS
 
 - [englmaxi/zmk-config](https://github.com/englmaxi/zmk-config)
@@ -433,6 +497,10 @@ An example of Dongle Designs (by @rain2813):
 If you enjoy my contributions, feel free to donate. I appreciate if you follow me on [github] and [youtube]
 - [paypal]
 - [sponsor]
+
+# TODO
+- [ ] Add more features to the repository
+- [ ] Update the documentation
 
 [^1]: Keymap-drawer, https://github.com/caksoylar/keymap-drawer https://keymap-drawer.streamlit.app/
 [^2]: caksoylar zmk-config example for keymap-drawer https://github.com/caksoylar/zmk-config

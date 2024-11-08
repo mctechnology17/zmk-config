@@ -56,12 +56,18 @@ include:
 
     # nice
   - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view
+    # required: https://github.com/M165437/nice-view-gem
+    # shield: corne_left nice_view_adapter nice_view
+    shield: corne_left nice_view_adapter nice_view_gem
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_View\"
     artifact-name: nice_corne_left
+    snippet: studio-rpc-usb-uart
     # shield: corne_left # for OLED no nice_view
   - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view
+    # required: https://github.com/M165437/nice-view-gem
+    # shield: corne_right nice_view_adapter nice_view
+    shield: corne_right nice_view_adapter nice_view_gem
+    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=n
     artifact-name: nice_corne_right
     # shield: corne_right # for OLED no nice_view
 
@@ -70,6 +76,7 @@ include:
     shield: corne_left nice_view_adapter nice_view
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_View\"
     artifact-name: puchi_corne_left
+    snippet: studio-rpc-usb-uart
     # shield: corne_left # for OLED no nice_view
   - board: puchi_ble_v1
     shield: corne_right nice_view_adapter nice_view
@@ -78,7 +85,10 @@ include:
 
     # peripheral_left
   - board: nice_nano_v2
-    shield: corne_left_peripheral nice_view_adapter nice_view
+    # required: https://github.com/M165437/nice-view-gem
+    shield: corne_left_peripheral nice_view_adapter nice_view_gem
+    # shield: corne_left_peripheral nice_view_adapter nice_view
+    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=n
     artifact-name: nice_corne_left_peripheral
   - board: puchi_ble_v1
     shield: corne_left_peripheral nice_view_adapter nice_view
@@ -87,36 +97,45 @@ include:
     # Xiao_Dongle
   - board: seeeduino_xiao_ble
     shield: corne_dongle_xiao
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\"
+    #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\" -DCONFIG_ZMK_STUDIO=y
     artifact-name: xiao_corne_dongle_xiao
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     shield: corne_dongle_xiao dongle_display
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle_O\"
     artifact-name: xiao_corne_dongle_xiao_dongle_display
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
 
     # ProMicro_Dongle
   - board: nice_nano_v2
     shield: corne_dongle_pro_micro
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle\"
     artifact-name: nice_corne_dongle_pro_micro
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: corne_dongle_pro_micro dongle_display
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle_O\"
     artifact-name: nice_corne_dongle_pro_micro_dongle_display
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
   - board: puchi_ble_v1
     shield: corne_dongle_pro_micro
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle\"
     artifact-name: puchi_corne_dongle_pro_micro
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
   - board: puchi_ble_v1
-    shield: corne_dongle_pro_micro dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle_O\"
-    artifact-name: puchi_corne_dongle_pro_micro_dongle_display
-    snippet: zmk-usb-logging
+    # required: https://github.com/M165437/nice-view-gem
+    # shield: corne_dongle_pro_micro nice_view_adapter dongle_display_view_pro_micro
+    shield: corne_dongle_pro_micro nice_view_adapter nice_view_gem
+    #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle_V\"  -DCONFIG_ZMK_STUDIO=y
+    snippet: studio-rpc-usb-uart
+    artifact-name: puchi_corne_dongle_pro_micro_dongle_display_view
+    # snippet: zmk-usb-logging
 
     # settings_reset
   - board: nice_nano_v2

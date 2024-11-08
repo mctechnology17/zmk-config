@@ -82,8 +82,8 @@ layers:
   - '|'
   - '~'
   - Gui
-  - {t: ▽, type: trans}
+  - '&studio_unlock'
   - ␣
   - ⏎
-  - {type: held}
+  - {t: '&studio_unlock', type: held}
   - Alt

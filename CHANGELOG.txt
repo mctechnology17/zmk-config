@@ -1,8 +1,17 @@
 Changelog file for Structures extra.
 https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 
+# FEATURES 0.0.2-beta1 (Nov 08, 2024)
+=======================================
+
 # FEATURES 0.0.1-beta1 (Aug 22, 2024)
 =======================================
++ NEW FEATURES
+- [x] zmk-studio support
+- [x] Add zmk modules from the community
+- [x] Add better keymap-drawer customization
+- [x] NiceView support for seeeduino_xiao_ble
+- [x] Dongle with NiceView support for all nrf52840
 
 # List of exciting new features
 + NEW FEATURES
@@ -22,7 +31,3 @@ https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 - [ ] Add EXTRA_CONF_FILE for each device
 - [ ] Add build for rgb + oled display
 - [ ] Add build for rgb + oled display + dongle
-- [ ] Add zmk modules from the community
-- [ ] Add better keymap-drawer customization
-- [ ] NiceView support for seeeduino_xiao_ble
-- [ ] Dongle with NiceView support for all nrf52840
