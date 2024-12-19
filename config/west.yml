@@ -1,18 +1,32 @@
 manifest:
   remotes:
-    # - name: urob
-    # url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: m165437 #new entry
-      url-base: https://github.com/M165437 #new entry
+    # nice_view_gem
+    - name: m165437
+      url-base: https://github.com/M165437
+    # dongle_display
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
+    # nice_oled
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: nice-view-gem #new entry
-      remote: m165437 #new entry
-      revision: main #new entry
+    # nice_view_gem
+    - name: nice-view-gem
+      remote: m165437
+      revision: main
+    # dongle_display
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: main
+    # nice_oled
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
   self:
     path: config

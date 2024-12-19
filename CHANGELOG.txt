@@ -1,8 +1,13 @@
 Changelog file for Structures extra.
 https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 
-# FEATURES 0.0.2-beta1 (Nov 08, 2024)
+# FEATURES 0.0.2-beta1 (Dec 19, 2024)
 =======================================
++ NEW FEATURES
+- [x] nice!oled support
+- [x] dongle_display as modul support
+- [x] oled display changed 128x32 to 128x64 for xiao
+- [x] readme updated
 
 # FEATURES 0.0.1-beta1 (Aug 22, 2024)
 =======================================

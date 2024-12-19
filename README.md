@@ -28,12 +28,34 @@
 
 ----
 
-If you already have your corne configured with this repository and want to make
+- If you already have your corne configured with this repository and want to make
 a modification to your keymap, you can do it with the online [ZMK-STUDIO](https://zmk.studio/).
 
-If you already have your corne configured with this repository and want to make
+- If you already have your corne configured with this repository and want to make
 a modification to your keymap, you can do it with the online [keymap-editor](https://nickcoutsos.github.io/keymap-editor/).
 
+- If you already have a repository and you want only the dongle option of this repository with support for `zmk-studio`, just add this repository as a module to your configuration, here is a basic example (just copy and paste into your file `west.yml`):
+
+```yaml
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    # include corne with dongle pro_micro and xiao compatible
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    # include corne with dongle pro_micro and xiao compatible
+    - name: zmk-config
+      remote: mctechnology17
+      revision: main
+  self:
+    path: config
+```
 
 # INTRO
 
@@ -111,7 +133,7 @@ peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
 >    by default they are all activated.
 
 
-### zmk-studio
+### zmk-studio (quick start)
 This repository includes the necessary configuration to use zmk-studio without
 the need to configure anything else. You just have to follow the steps below:
 - fork this repository y flash the firmware to the keyboard with the uf2 files (see as below en normal procedure)
@@ -165,16 +187,6 @@ Before making any modifications, please see the [ZMK documentation]
 documentation.
 
 Example of an advanced configuration hier -> [^4]
-
-Below is a list of features currently included in this branch[^5] _on top of_
-the official ZMK master branch.
-
-- **pointer movement/scrolling** - PR #2027
-- **tri-state (aka swapper)** - PR [#1366](https://github.com/zmkfirmware/zmk/pull/1366)
-- **smart-word** (PR [#1451](https://github.com/zmkfirmware/zmk/pull/1451))
-- **on-release-for-tap-preferred** - [tweak](https://github.com/celejewski/zmk/commit/d7a8482712d87963e59b74238667346221199293) by Andrzej
-- **zen-tweaks** - [display & battery improvements](https://github.com/caksoylar/zmk/tree/caksoylar/zen-v1%2Bv2) by Cem Aksoylar
-
 
 1. Clone _your fork_ of this repository.
 
@@ -469,13 +481,13 @@ host OS, app/browser details, keyboard used, link to your config repo, etc.
 # MODULE INTEGRATION
 > [!TIP]
 >
-> 1. You can activate or deactivate the animation with: CONFIG_NICE_VIEW_GEM_ANIMATION=n
-> the animation is not activated by default in this repository for saving
-> battery. This is activated only in the peripheries and the corne master, not
-> in the dongles, because this module shows the status of the batteries in the
-> peripheries
+> 1. Remember that animations consume energy, so if you want to conserve your battery, turn off the animations!
+> 2. Please consult the documentation of each module that you are going to use, here I leave you the links for each one.
 
-See module details here for more information and more configurations: [nice-view-gem](https://github.com/M165437/nice-view-gem)
+See module details here for more information and more configurations:
+- [nice_view_gem](https://github.com/M165437/nice-view-gem)
+- [nice_oled](https://github.com/mctechnology17/zmk-nice-oled)
+- [dongle_display](https://github.com/englmaxi/zmk-dongle-display)
 
 # INSPIRATIONS
 
@@ -487,6 +499,13 @@ See module details here for more information and more configurations: [nice-view
 - [urob/zmk-config](https://github.com/urob/zmk-config)
 
 # MY OTHER PROJECTS:
+- [nice!oled](https://github.com/mctechnology17/zmk-nice-oled): nice_oled
+  vertical widgets for oled screens with zmk (for split and non-split
+  keyboards)
+- [dongle_display!view](https://github.com/mctechnology17/zmk-dongle-display-view): This is a mix between display_dongle and nice!view that allows you to use the nice!view display with your dongle.
+- [oled_adapter](https://github.com/mctechnology17/zmk-oled-adapter): This
+  module is an adapter for 128x32, 128x64 and 128x128 OLED screens, to be used
+  on keyboards with ZMK without having to modify the shields of the keyboards.
 - [qmk-config] will be updated soon
 - [qmk_userspace] will be updated soon
 - [vimtools] swiss army knife for vim (features and settings that will make your life easier)

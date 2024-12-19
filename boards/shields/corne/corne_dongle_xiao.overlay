@@ -79,22 +79,24 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
     // TODO: per-key RGB node(s)?
 };
 
+// 128x64 OLED
 &xiao_i2c {
     status = "okay";
-    oled: sh1106@3c {
-        compatible = "sinowealth,sh1106";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
-        width = <120>;
-        height = <128>;
+        width = <128>;
+        height = <64>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <119>;
+        multiplex-ratio = <63>;
         segment-remap;
         com-invdir;
         inversion-on;
         prechargep = <0x22>;
-        };
+    };
 };
 
 /*
