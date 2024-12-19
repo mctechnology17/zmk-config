@@ -23,6 +23,7 @@
 - [DONGLE DESIGNS](#DONGLE-DESIGNS)
 - [ZMK STUDIO](#ZMK-STUDIO)
 - [MODULE INTEGRATION](#MODULE-INTEGRATION)
+- [THIS REPOSITORY AS A MODULE](#THIS-REPOSITORY-AS-A-MODULE)
 - [INSPIRATIONS](#INSPIRATIONS)
 - [MY OTHER PROJECTS](#MY-OTHER-PROJECTS)
 
@@ -34,28 +35,7 @@ a modification to your keymap, you can do it with the online [ZMK-STUDIO](https:
 - If you already have your corne configured with this repository and want to make
 a modification to your keymap, you can do it with the online [keymap-editor](https://nickcoutsos.github.io/keymap-editor/).
 
-- If you already have a repository and you want only the dongle option of this repository with support for `zmk-studio`, just add this repository as a module to your configuration, here is a basic example (just copy and paste into your file `west.yml`):
-
-```yaml
-manifest:
-  remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    # include corne with dongle pro_micro and xiao compatible
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
-  projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
-    # include corne with dongle pro_micro and xiao compatible
-    - name: zmk-config
-      remote: mctechnology17
-      revision: main
-  self:
-    path: config
-```
+- If you already have a repository and you want only the dongle option of this repository with support for `zmk-studio`, just add this repository as a module to your configuration, look the section [THIS REPOSITORY AS A MODULE](#THIS-REPOSITORY-AS-A-MODULE).
 
 # INTRO
 
@@ -488,6 +468,45 @@ See module details here for more information and more configurations:
 - [nice_view_gem](https://github.com/M165437/nice-view-gem)
 - [nice_oled](https://github.com/mctechnology17/zmk-nice-oled)
 - [dongle_display](https://github.com/englmaxi/zmk-dongle-display)
+
+# THIS REPOSITORY AS A MODULE
+1. In the `config/west.yml` file, add a new remote and its related project.
+```yaml
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    # include corne with dongle pro_micro and xiao compatible
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    # include corne with dongle pro_micro and xiao compatible
+    - name: zmk-config
+      remote: mctechnology17
+      revision: main
+  self:
+    path: config
+```
+
+2. In the `build.yaml` file, add the `corne_dongle_pro_micro` or the `corne_dongle_xiao` shield.
+
+```yaml
+---
+include:
+  # example with xiao dongle without display
+  - board: seeeduino_xiao_ble
+    shield: corne_dongle_xiao
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\" -DCONFIG_ZMK_STUDIO=y
+    artifact-name: xiao_corne_dongle_xiao
+    snippet: studio-rpc-usb-uart
+  # ... the rest of the shields
+```
+
+3. Build the firmware, flash it to your keyboard, and enjoy!
 
 # INSPIRATIONS
 
