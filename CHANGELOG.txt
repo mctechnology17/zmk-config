@@ -1,6 +1,12 @@
 Changelog file for Structures extra.
 https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 
+# FEATURES 0.0.2-beta2 (Jan 03, 2025)
+=======================================
++ NEW FEATURES
+- [x] sofle support
+- [x] readme updated
+
 # FEATURES 0.0.2-beta1 (Dec 19, 2024)
 =======================================
 + NEW FEATURES

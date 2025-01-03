@@ -1,0 +1,19 @@
+file_format: "1"
+id: sofle
+name: Sofle
+type: shield
+url: https://github.com/josefadamcik/SofleKeyboard
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+  - underglow
+  - studio
+siblings:
+  - sofle_left
+  - sofle_right
+  - sofle_left_peripheral
+  - sofle_dongle_xiao
+  - sofle_dongle_pro_micro

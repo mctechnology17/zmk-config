@@ -54,6 +54,7 @@
 ---
 include:
 
+  ### CORNE START ###
     ### nice_view START ###
     # nice_nano_v2 + nice_view_gem
   - board: nice_nano_v2
@@ -164,8 +165,42 @@ include:
     artifact-name: puchi_corne_dongle_view
     # snippet: zmk-usb-logging
     ### Pro Micro END ###
+  ### CORNE END ###
 
-    ### settings_reset START ###
+  ### SOFLEV2 SOFLEV1 SOFLEPLUS START ###
+  # nice!oled sofle
+  - board: nice_nano_v2
+    shield: sofle_left nice_oled
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Sofle_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_sofle_left_oled
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano_v2
+    shield: sofle_right nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_sofle_right_oled
+
+  # peripheral_left
+  - board: nice_nano_v2
+    shield: sofle_left_peripheral nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_sofle_left_peripheral_oled
+
+  # Xiao_Dongle
+  - board: seeeduino_xiao_ble
+    shield: sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: xiao_sofle_dongle_xiao_oled
+    snippet: studio-rpc-usb-uart
+
+  # ProMicro_Dongle
+  - board: nice_nano_v2
+    shield: sofle_dongle_pro_micro dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_sofle_dongle_oled
+    snippet: studio-rpc-usb-uart
+  ### SOFLEV2 SOFLEV1 SOFLEPLUS END ###
+
+  ### SETTINGS_RESET START ###
   - board: nice_nano_v2
     shield: settings_reset
     artifact-name: nice_settings_reset
@@ -175,4 +210,4 @@ include:
   - board: puchi_ble_v1
     shield: settings_reset
     artifact-name: puchi_settings_reset
-    ### settings_reset END ###
+  ### SETTINGS_RESET END ###
