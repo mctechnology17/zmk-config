@@ -185,18 +185,25 @@ include:
     cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_sofle_left_peripheral_oled
 
-  # Xiao_Dongle
+  # Xiao_Dongle + oled adapter
   - board: seeeduino_xiao_ble
     shield: sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: xiao_sofle_dongle_xiao_oled
     snippet: studio-rpc-usb-uart
 
-  # ProMicro_Dongle
+  # ProMicro_Dongle + dongle_display
   - board: nice_nano_v2
     shield: sofle_dongle_pro_micro dongle_display
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_sofle_dongle_oled
+    snippet: studio-rpc-usb-uart
+
+  # ProMicro_Dongle + dongle_display!view
+  - board: puchi_ble_v1
+    shield: sofle_dongle_pro_micro nice_view_adapter dongle_display_view_pro_micro
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_PV\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: puchi_sofle_dongle_view
     snippet: studio-rpc-usb-uart
   ### SOFLEV2 SOFLEV1 SOFLEPLUS END ###
 

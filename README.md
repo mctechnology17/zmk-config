@@ -468,6 +468,8 @@ See module details here for more information and more configurations:
 - [nice_view_gem](https://github.com/M165437/nice-view-gem)
 - [nice_oled](https://github.com/mctechnology17/zmk-nice-oled)
 - [dongle_display](https://github.com/englmaxi/zmk-dongle-display)
+- [dongle_display!view](https://github.com/mctechnology17/zmk-dongle-display-view)
+- [oled Adapter](https://github.com/mctechnology17/zmk-oled-adapter)
 
 # THIS REPOSITORY AS A MODULE
 1. In the `config/west.yml` file, add a new remote and its related project.

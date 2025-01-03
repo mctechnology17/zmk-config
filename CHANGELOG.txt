@@ -5,6 +5,8 @@ https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 =======================================
 + NEW FEATURES
 - [x] sofle support
+- [x] dongle_display!view support
+- [x] oled Adapter support
 - [x] readme updated
 
 # FEATURES 0.0.2-beta1 (Dec 19, 2024)
