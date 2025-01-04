@@ -325,7 +325,11 @@ Here is an example of what it looks like:
 > 2. You can see the connections in the following diagram for [seeeduino_xiao_ble](./src/pinout-seeeduino_xiao_ble.png) and for the boards with [pro_micro](./src/pinout-pro_micro.png) connections as the [nice_nano_v2] and the [puchi_ble_v1].
 > 3. You can print a case for the dongle, you can see the designs below in the section [Dongle Designs](#Dongle-Designs).
 > 4. You can print a pcb for the dongle, you can see the designs in the section [Dongle Designs](#Dongle-Designs).
-> 5. You can program a macro that references the `&bootloader` action so that the dongle enters bootloader mode and you can flash the firmware again. The macros are executed on the master so this action causes the dongle to enter bootloader mode. Thanks @chadtrans for the tip!
+> 5. You can program a combo that references the `&bootloader` action so that the dongle enters bootloader mode and you can flash the firmware again. The macros are executed on the master so this action causes the dongle to enter bootloader mode.
+
+> [!WARNING]
+>
+> The tip number 5 used to work with doing a "macro". @chadtrans was the one who gave the tip (thank you!). But this behavior was fixed and now is only executed in the device that called the macro, since it was not actually a planned feature. But combos do work and the developers are discussing (like in issue [2500](https://github.com/zmkfirmware/zmk/issues/2500)) about the best way for this behavior to work.
 
 In the following image you can see how you can connect the OLED screen to the
 dongle:
@@ -338,34 +342,21 @@ Information about this image:
 - The photo shows a clone [nice_nano_v2] dongle with an OLED display connected to a traditional i2c port in a pcb style. This dongle is only for sample photo and is not connected to any device shown in the photo.
 
 Macro example to enter bootloader mode. On  your
-[corne.keymap](./config/corne.keymap) file you can add the following macro (Thanks @chadtrans for the tip!):
+[corne.keymap](./config/corne.keymap) file you can add the following combo:
 > [!TIP]
 >
 > 1. You can program this macro with the online editor [keymap-editor]
 
 ```c
-// this is the manual way to do it
-#define MACRO(name, keys)           \
-name: name##_macro {                \
-	compatible = "zmk,behavior-macro";\
-	#binding-cells = <0>;             \
-	tap-ms = <1>;                     \
-	wait-ms = <1>;                    \
-	bindings = <keys>;                \
-};
-MACRO(dongle_boot, &bootloader)
 / {
-   keymap {
-      compatible = "zmk,keymap";
-     ... // other layers
-     config_layer {
-        display-name = "CON";
-        bindings = <
-	... // other bindings
-	&dongle_boot
-	... // other bindings
-     };
-     ... // other layers
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1 2>; // Pressing the 3 first keys on the keyboard will trigger &bootloader
+            bindings = <&bootloader>;
+        };
+    };
 };
 ```
 
