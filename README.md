@@ -345,7 +345,7 @@ Macro example to enter bootloader mode. On  your
 [corne.keymap](./config/corne.keymap) file you can add the following combo:
 > [!TIP]
 >
-> 1. You can program this macro with the online editor [keymap-editor]
+> 1. You can program this combo with the online editor [keymap-editor]
 
 ```c
 / {
