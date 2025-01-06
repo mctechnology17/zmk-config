@@ -150,19 +150,91 @@ parse_config:
     '&bt BT_SEL 3': BT 4
     '&bt BT_SEL 4': BT 5
 
-    '&mmv MOVE_UP': Mouse ↑
-    '&mmv MOVE_DOWN': Mouse ↓
-    '&mmv MOVE_LEFT': Mouse ←
-    '&mmv MOVE_RIGHT': Mouse →
+    # Display
+    'DISPLAY_UP': {t: $$mdi:television-classic$$, h: $$mdi:arrow-up$$, type: tap_dance}
+    'DISPLAY_DOWN': {t: $$mdi:television-classic$$, h: $$mdi:arrow-down$$, type: tap_dance}
+    'DISPLAY_LEFT': {t: $$mdi:television-classic$$, h: $$mdi:arrow-left$$, type: tap_dance}
+    'DISPLAY_RIGHT': {t: $$mdi:television-classic$$, h: $$mdi:arrow-right$$, type: tap_dance}
+    'DISPLAY_SPACE': {t: $$mdi:television-classic$$, h: $$mdi:keyboard-space$$, type: tap_dance}
 
-    '&msc SCRL_UP': Scroll ↑
-    '&msc SCRL_DOWN': Scroll ↓
-    '&msc SCRL_LEFT': Scroll ←
-    '&msc SCRL_RIGHT': Scroll →
 
-    '&mkp MCLK': Middle Click
-    '&mkp MB4': Back Click
-    '&mkp MB5': Forward Click
+    # Rgb
+    '&rgb_ug RGB_TOG': {t: $$mdi:led-on$$, h: $$mdi:toggle-switch$$, s: $$mdi:led-outline$$, type: toggle}
+    '&rgb_ug RGB_VAI': {t: $$mdi:led-on$$, s: $$tabler:brightness-up$$, type: sym_by_sym}
+    '&rgb_ug RGB_VAD': {t: $$mdi:led-outline$$, s: $$tabler:brightness-down$$, type: sym_by_sym}
+    '&rgb_ug RGB_BRD': {t: $$mdi:led-on$$, s: $$tabler:brightness-up$$, type: sym_by_sym}
+    '&rgb_ug RGB_BRI': {t: $$mdi:led-outline$$, s: $$tabler:brightness-down$$, type: sym_by_sym}
+    '&rgb_ug RGB_SAI': {t: $$mdi:led-outline$$, s: $$mdi:eyedropper$$, type: sym_by_sym}
+    '&rgb_ug RGB_SAD': {t: $$mdi:led-on$$, s: $$mdi:eyedropper$$, type: sym_by_sym}
+    '&rgb_ug RGB_HUI': {t: $$mdi:led-on$$, s: $$mdi:palette$$, type: sym_by_sym}
+    '&rgb_ug RGB_HUD': {t: $$mdi:led-outline$$, s: $$mdi:palette$$, type: sym_by_sym}
+    '&rgb_ug RGB_RMOD': {t: $$mdi:led-on$$, h: $$mdi:page-previous-outline$$, type: tap_dance}
+    '&rgb_ug RGB_MOD': {t: $$mdi:led-on$$, h: $$mdi:page-next-outline$$, type: tap_dance}
+    '&rgb_ug RGB_EFF': {t: $$mdi:led-on$$, h: $$mdi:page-previous-outline$$, type: tap_dance}
+    '&rgb_ug RGB_EFR': {t: $$mdi:led-on$$, h: $$mdi:page-next-outline$$, type: tap_dance}
+    '&rgb_ug RGB_SPI': {t: $$mdi:led-on$$, h: $$mdi:speedometer$$, type: sym_by_sym}
+    '&rgb_ug RGB_SPD': {t: $$mdi:led-on$$, h: $$mdi:speedometer-slow$$, type: sym_by_sym}
+    '&rgb_ug RGB_UP': {t: $$mdi:led-on$$, h: $$mdi:arrow-up$$, type: tap_dance}
+    '&rgb_ug RGB_DOWN': {t: $$mdi:led-on$$, h: $$mdi:arrow-down$$, type: tap_dance}
+    '&rgb_ug RGB_LEFT': {t: $$mdi:led-on$$, h: $$mdi:arrow-left$$, type: tap_dance}
+    '&rgb_ug RGB_RIGHT': {t: $$mdi:led-on$$, h: $$mdi:arrow-right$$, type: tap_dance}
+    '&rgb_ug RGB_SPACE': {t: $$mdi:led-on$$, h: $$mdi:keyboard-space$$, type: tap_dance}
+    '&rgb_ug RGB_COLOR_HSB(0,0,100)': {t: $$mdi:led-on$$, h: $$mdi:palette$$, type: tap_dance}
+    '&rgb_ug RGB_COLOR_HSB(224,100,100)': {t: $$mdi:led-on$$, h: $$mdi:palette$$, type: tap_dance}
+
+    # Mouse
+    'U_WH_L': {t: $$mdi:mouse-outline$$, h: $$mdi:arrow-left$$, type: tap_dance}
+    'U_WH_R': {t: $$mdi:mouse-outline$$, h: $$mdi:arrow-right$$, type: tap_dance}
+    'U_WH_U': {t: $$mdi:mouse-outline$$, h: $$mdi:arrow-up$$, type: tap_dance}
+    'U_WH_D': {t: $$mdi:mouse-outline$$, h: $$mdi:arrow-down$$, type: tap_dance}
+    'U_MS_L': {t: $$mdi:mouse$$, h: $$mdi:arrow-left$$, type: tap_dance}
+    'U_MS_D': {t: $$mdi:mouse$$, h: $$mdi:arrow-down$$, type: tap_dance}
+    'U_MS_R': {t: $$mdi:mouse$$, h: $$mdi:arrow-right$$, type: tap_dance}
+    'U_MS_U': {t: $$mdi:mouse$$, h: $$mdi:arrow-up$$, type: tap_dance}
+    'CLICK_LEFT': $$mdi:cursor-default-click$$
+    'CLICK_RIGHT': $$mdi:cursor-default-click-outline$$
+    'CLICK_MIDDLE': $$mdi:cursor-default-click-outline$$
+    # '&mmv MOVE_UP': Mouse ↑
+    # '&mmv MOVE_DOWN': Mouse ↓
+    # '&mmv MOVE_LEFT': Mouse ←
+    # '&mmv MOVE_RIGHT': Mouse →
+
+    # '&msc SCRL_UP': Scroll ↑
+    # '&msc SCRL_DOWN': Scroll ↓
+    # '&msc SCRL_LEFT': Scroll ←
+    # '&msc SCRL_RIGHT': Scroll →
+
+    # '&mkp MCLK': Middle Click
+    # '&mkp MB4': Back Click
+    # '&mkp MB5': Forward Click
+
+
+    # layers
+    'MEDIA_ESC': {t: $$mdi:keyboard-esc$$, h: $$mdi:music-note$$}
+    'MOUSE_TAB': {t: $$mdi:keyboard-tab$$, h: $$mdi:mouse$$}
+    'NUMBER_SPACE': {t: $$mdi:keyboard-space$$, h: $$mdi:numeric$$}
+    '&mo _FUNCTION': $$mdi:function-variant$$
+    '&mo _CONFIG': $$mdi:cog$$
+    '&mo _LOCK': $$mdi:lock$$
+    '&mo _SYMBOL': $$mdi:symbol$$
+    '&mo _DISPLAY': $$mdi:television-classic$$
+    '&mo _OLED': $$mdi:television-classic$$
+    '&mo _LINUX': $$mdi:linux$$
+    '&mo _RGB': $$mdi:led-on$$
+    'DE_CAPS': $$mdi:keyboard-caps$$
+    'TAB': $$mdi:keyboard-tab$$
+    '&mt LSHFT COMMA': {t: $$mdi:google-downasaur$$, h: $$mdi:apple-keyboard-shift$$, type: tap_dance}
+
+    # CONTROL CMD/WINDOWS SHIFT ALT/META/OPTION
+    '&kp LSHFT': $$mdi:apple-keyboard-shift$$
+    '&kp LCTRL': $$mdi:apple-keyboard-control$$
+    '&kp RCTRL': $$mdi:apple-keyboard-control$$
+    '&kp LGUI': $$mdi:apple-keyboard-command$$
+    '&kp RGUI': $$mdi:apple-keyboard-command$$
+    '&kp LALT': $$mdi:apple-keyboard-option$$
+    '&kp RALT': $$mdi:apple-keyboard-option$$
+    '&kp RSHFT': $$mdi:apple-keyboard-shift$$
+    '&kp BSPC': $$mdi:backspace-outline$$
 
   qmk_keycode_map:
     XXXXXXX: ''
@@ -254,6 +326,7 @@ parse_config:
     combo_slsh:   {draw_separate: true}
 
   zmk_keycode_map:
+
     # custom mappings
     C_VOL_UP: Vol Up
     C_VOL_DN: Vol Down

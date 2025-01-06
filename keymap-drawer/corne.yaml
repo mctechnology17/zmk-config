@@ -1,7 +1,8 @@
 layout: {qmk_keyboard: corne_rotated, layout_name: LAYOUT_split_3x6_3}
 layers:
-  default: [↹, Q, W, E, R, T, Y, U, I, O, P, ⌫, Ctrl, A, S, D, F, G, H, J, K, L, ;, '''', Shift, Z, X, C, V, B, N, M, ',', ., /, Esc, Gui, lower, ␣, ⏎, raise, Alt]
-  lower:
+  BAS: [↹, Q, W, E, R, T, Y, U, I, O, P, '$$mdi:backspace-outline$$', '$$mdi:apple-keyboard-control$$', A, S, D, F, G, H, J, K, L, ;, '''', '$$mdi:apple-keyboard-shift$$',
+    Z, X, C, V, B, N, M, ',', ., /, Esc, '$$mdi:apple-keyboard-command$$', LOW, ␣, ⏎, RAI, '$$mdi:apple-keyboard-option$$']
+  LOW:
   - ↹
   - '1'
   - '2'
@@ -13,7 +14,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - ⌫
+  - $$mdi:backspace-outline$$
   - BT CLR
   - BT 1
   - BT 2
@@ -26,7 +27,7 @@ layers:
   - →
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Shift
+  - $$mdi:apple-keyboard-shift$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -38,13 +39,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Gui
+  - $$mdi:apple-keyboard-command$$
   - {type: held}
   - ␣
   - ⏎
   - {t: ▽, type: trans}
-  - Alt
-  raise:
+  - $$mdi:apple-keyboard-option$$
+  RAI:
   - ↹
   - '!'
   - '@'
@@ -56,8 +57,8 @@ layers:
   - KP MULTIPLY
   - (
   - )
-  - ⌫
-  - Ctrl
+  - $$mdi:backspace-outline$$
+  - $$mdi:apple-keyboard-control$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp LCLK'
@@ -69,7 +70,7 @@ layers:
   - ']'
   - \
   - '`'
-  - Shift
+  - $$mdi:apple-keyboard-shift$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -81,9 +82,9 @@ layers:
   - '}'
   - '|'
   - '~'
-  - Gui
+  - $$mdi:apple-keyboard-command$$
   - '&studio_unlock'
   - ␣
   - ⏎
   - {t: '&studio_unlock', type: held}
-  - Alt
+  - $$mdi:apple-keyboard-option$$

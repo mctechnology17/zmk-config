@@ -14,18 +14,26 @@
 
 - [INTRO](#INTRO)
 - [QUICK START](#QUICK-START)
+  - [keymap corne](#keymap-corne)
+  - [keymap sofle](#keymap-sofle)
+  - [keymap splitkb_aurora_sofle](#keymap-splitkb_aurora_sofle)
+  - [keymap lily58](#keymap-lily58)
 - [LOCAL INSTALLATION](#LOCAL-INSTALLATION)
 - [DISPLAY](#DISPLAY)
 - [RGB](#RGB)
+  - [rgb with niceview](#rgb-with-niceview)
+  - [rgb with niceview in two step](#rgb-with-niceview-in-two-step)
 - [DONGLE](#DONGLE)
 - [USEFUL TIPS](#USEFUL-TIPS)
-- [RELATED PROJECTS](#RELATED-PROJECTS)
-- [DONGLE DESIGNS](#DONGLE-DESIGNS)
 - [ZMK STUDIO](#ZMK-STUDIO)
 - [MODULE INTEGRATION](#MODULE-INTEGRATION)
+   - [modules used in this repository](#modules-used-in-this-repository)
+   - [list of useful modules](#list-of-useful-modules)
 - [THIS REPOSITORY AS A MODULE](#THIS-REPOSITORY-AS-A-MODULE)
 - [INSPIRATIONS](#INSPIRATIONS)
 - [MY OTHER PROJECTS](#MY-OTHER-PROJECTS)
+- [RELATED PROJECTS](#RELATED-PROJECTS)
+- [DONGLE DESIGNS](#DONGLE-DESIGNS)
 
 ----
 
@@ -156,7 +164,14 @@ Here you can see the visual changes to the configuration:
 > [config](./config/config_keymap-drawer.yaml).
 > The file for the workflows is in [workflows](./.github/workflows/keymap-drawer.yaml) in case you want to modify it.
 
-[![keymap-drawer-demo](keymap-drawer/corne.svg)](https://www.youtube.com/c/mctechnology17)
+## keymap corne
+[![keymap-drawer-demo-corne](keymap-drawer/corne.svg)](https://www.youtube.com/c/mctechnology17)
+## keymap sofle
+[![keymap-drawer-demo-sofle](keymap-drawer/sofle.svg)](https://www.youtube.com/c/mctechnology17)
+## keymap splitkb_aurora_sofle
+[![keymap-drawer-demo-splitkb_aurora_sofle](keymap-drawer/splitkb_aurora_sofle.svg)](https://www.youtube.com/c/mctechnology17)
+## keymap lily58
+[![keymap-drawer-demo-lily58](keymap-drawer/lily58.svg)](https://www.youtube.com/c/mctechnology17)
 
 If you want to customize this image with shapes/colors/etc. You can see these references:
 [^1] [^2] [^3]
@@ -245,12 +260,25 @@ make corne_urob # compile all the *.uf2 of the corne and copy them to the firmwa
 ```
 
 # DISPLAY
-1. ePAPER [nice-view]
+1. ePAPER
+   - The nice!view is a SSD1306 OLED replacement boasting >1,000x power savings
+     while keeping a 30Hz refresh rate. It has a similar pinout to SSD1306
+     OLEDs with one extra pin making it easy to add on to existing boards.
    - the [nice-view] screen is compiled by default in this repository.
 2. OLED
+   - SSD1306 / sh1107 / sh1106 OLED displays are one of the most common in
+     mechanical keyboard kits. They're often used to display information about
+     your keyboard, such as which layer is active, or if any modifiers like
+     Caps Lock, Num Lock or Scroll Lock are on. Of course, you can display
+     anything you want, including images and animations.
+   - These displays work over I2C and should be powered with 5V. They are
+     compatible with Pro Micro-based kits.
    - the oled screen for the dongle is enabled by default in this repository.
-   - If you want to enable the OLED screen for the halves, you can do so by modifying the `.conf` files for their respective halves.
+   - If you want to enable the OLED screen for the halves, you can do so by
+     modifying the `.conf` files for their respective halves.
    - Remember to disable the [nice-view] screens to avoid conflict in the compilation.
+3. FULL COLOR LCD SCREEN
+   - [Prospector](https://github.com/carrefinho/prospector) is a desktop ZMK dongle with full color LCD screen.
 
 > [!IMPORTANT]
 >
@@ -301,7 +329,6 @@ You just have to modify the following line:
 
 ```
 
-
 # RGB
 > [!WARNING]
 >
@@ -315,6 +342,26 @@ from this same repository.
 
 Here is an example of what it looks like:
 [![rgb-demo](src/demo.GIF)](https://www.youtube.com/c/mctechnology17)
+
+## rgb with niceview
+Points to take into account if you want to use niceview with RGB:
+- In a nutshell, the problem is that the backlight and the nice!view display
+  use the same pin on the pcb, causing conflicts.
+- The common solution is to solder the backlight to pin 008 and set it to the keymap.
+- However, this means that both the screen and backlight share the same power
+  source, which can drain the battery quickly.
+- There is no ideal solution, but some options include redesigning the boards
+  to separate the power or powering the display directly from a gpio pin.
+
+## rgb with niceview in two step
+1. solder the nice!view display to pin 008
+2. set the display to use pin 008 in the keymap
+3. recompile the firmware and enjoy the nice!view display with RGB
+```c
+&nice_view_spi {
+    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;  // use D0 (008) for CS (no 006)
+};
+```
 
 # DONGLE
 > [!TIP]
@@ -337,36 +384,42 @@ Information about this image:
 - The right side acts as a peripheral in this case, the board is a [nice_nano_v2].
 - The photo shows a clone [nice_nano_v2] dongle with an OLED display connected to a traditional i2c port in a pcb style. This dongle is only for sample photo and is not connected to any device shown in the photo.
 
-Macro example to enter bootloader mode. On  your
-[corne.keymap](./config/corne.keymap) file you can add the following macro (Thanks @chadtrans for the tip!):
+Combo example to enter bootloader mode. On  your
+[corne.keymap](./config/corne.keymap) file you can add the following combo (Thanks @VictorSCamargo for the tip!):
 > [!TIP]
 >
-> 1. You can program this macro with the online editor [keymap-editor]
+> 1. You can program this `combo` with the online editor [keymap-editor]
+> 2. These examples were tested using a `corne` keyboard, so the numbers `0 1 2` correspond to the keys on the left of the first row of the keyboard and the numbers `9 10 11` correspond to the 3 right keys at the top of columns 3, 4 and 5. see the reference below `COMBO` for more details.
+> 3. You can combine both forms of combos and in both cases the keyboard that is the master (dongle or central) is the one that executes the action, in this case the dongle or the left master enters bootloader mode.
+
+1. This is the manual way to do it using `c` code:
 
 ```c
 // this is the manual way to do it
-#define MACRO(name, keys)           \
-name: name##_macro {                \
-	compatible = "zmk,behavior-macro";\
-	#binding-cells = <0>;             \
-	tap-ms = <1>;                     \
-	wait-ms = <1>;                    \
-	bindings = <keys>;                \
-};
-MACRO(dongle_boot, &bootloader)
-/ {
-   keymap {
-      compatible = "zmk,keymap";
-     ... // other layers
-     config_layer {
-        display-name = "CON";
-        bindings = <
-	... // other bindings
-	&dongle_boot
-	... // other bindings
-     };
-     ... // other layers
-};
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+    combo_##NAME { \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <LAYERS>; \
+    };
+// for the right side
+// COMBO NAME = combo_bootloader_right,
+// BINDINGS = &bootloader,
+// KEYPOSITION = 9 10 11,
+// LAYERS = 0
+COMBO(combo_bootloader_right,        &bootloader,     9 10 11,           0);
+```
+
+2. This is the manual way to do it using `dts` code:
+
+```dts
+// for the left side
+combo_bootloader_left {
+        timeout-ms = <50>;
+        key-positions = <0 1 2>; // Pressing the 3 first keys on the keyboard will trigger &bootloader
+        bindings = <&bootloader>;
+        };
+   };
 ```
 
 # USEFUL TIPS
@@ -382,42 +435,6 @@ MACRO(dongle_boot, &bootloader)
   and your device is recognized as a hard disk storage drive, then just drag the file to flash and that's it. do the same with the other half.
 - Remember that if your corne - sofle - lily58 only has some functional RGB lights you can activate only the ones that you have functional, it is not necessary to activate all the lights. see reference in [led strip](./config/corne.keymap)
 - You can combine the boards, for example: on the left you can have a [nice_nano_v2], on the right a [puchi_ble_v1] and on the dongle a [seeeduino_xiao_ble] or some clone [nice_nano_v2], or any combination you can think of.
-
-# RELATED PROJECTS
-
-I used this project as a reference to configure the dongles with OLED screen:
-- [cygnus](https://github.com/rain2813/zmk-cygnus-oled.git) by @rain2813
-- [zmk keyboard Macintosh dongle display](https://makerworld.com/en/models/403660) by @rain2813
-- [corne with dongle](https://github.com/tomgroenwoldt/zmk-config.git) by @tomgroenwoldt
-- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display.git) by @englmaxi
-- [zmk-config for module](https://github.com/englmaxi/zmk-config/tree/master/boards/shields) by @englmaxi
-- [zmk-config for dongle pro micro](https://github.com/joaopedropio/zmk-swoop/tree/dongle-sdd1306) by @joaopedropio
-
-In the following animations created by @englmaxi you can see what the dongle
-looks like with the 128x64 OLED screen:
-
-![output](https://github.com/englmaxi/zmk-config/assets/43675074/8d268f23-1a4f-44c3-817e-c36dc96a1f8b)
-
-In that animation you can see the connection or output with the computer, that
-is, if it is through a USB or Bluetooth port. Also information about the status
-of both batteries.
-
-![mods](https://github.com/englmaxi/zmk-config/assets/43675074/af9ec3f5-8f61-4629-abed-14ba0047f0bd)
-
-In this animation you can see the actions of the modifier keys, such as
-control, shift, alt, windows/mac, etc.
-
-# DONGLE DESIGNS
-- [case1](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case1.zip) by @englmaxi
-- [case2](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case2.zip) by @englmaxi
-- [Cyberdeck](https://github.com/rafaelromao/keyboards/tree/main/stls/Dongle) by @rafaelromao
-- [Dongle PCB](https://github.com/spe2/zmk_dongle_hardware) by @spe2
-- [Macintosh](https://makerworld.com/en/models/403660) by @rain2813
-- [Redox](https://makerworld.com/en/models/242951) by @rurounikexin
-- [ZMK Display Dongle](https://makerworld.com/en/models/496738) by @yingeling
-
-An example of Dongle Designs (by @rain2813):
-[![dongle-designs-demo](src/macintosh.png)](https://www.youtube.com/c/mctechnology17)
 
 # ZMK STUDIO
 
@@ -464,12 +481,27 @@ host OS, app/browser details, keyboard used, link to your config repo, etc.
 > 1. Remember that animations consume energy, so if you want to conserve your battery, turn off the animations!
 > 2. Please consult the documentation of each module that you are going to use, here I leave you the links for each one.
 
+## modules used in this repository
 See module details here for more information and more configurations:
-- [nice_view_gem](https://github.com/M165437/nice-view-gem)
-- [nice_oled](https://github.com/mctechnology17/zmk-nice-oled)
-- [dongle_display](https://github.com/englmaxi/zmk-dongle-display)
-- [dongle_display!view](https://github.com/mctechnology17/zmk-dongle-display-view)
-- [oled Adapter](https://github.com/mctechnology17/zmk-oled-adapter)
+- [**nice_view_gem**](https://github.com/M165437/nice-view-gem) a sleek customization for the nice!view shield
+- [**nice_oled**](https://github.com/mctechnology17/zmk-nice-oled) vertical widgets for oled screens with zmk for split and non-split keyboards using the standard [oled screen](https://keycapsss.com/keyboard-parts/parts/80/0.91-oled-lcd-display-128x32-ssd1306-i2c) 128x32.
+- [**zmk-dongle-display**](https://github.com/englmaxi/zmk-dongle-display) to show the peripheral battery percentage (and more!) on the display of the dongle.
+- [**dongle_display!view**](https://github.com/mctechnology17/zmk-dongle-display-view) to show the peripheral battery percentage (and more!) on the display of the dongle using the nice!view display.
+- [**oled Adapter**](https://github.com/mctechnology17/zmk-oled-adapter) to use the 128x32, 128x64 and 128x128 OLED screens on keyboards with ZMK without having to modify the shields of the keyboards.
+
+## list of useful modules
+Additional features are provided by the following [modules](https://zmk.dev/docs/features/modules):
+
+- [**zmk-antecedent-morph**](https://github.com/ssbb/zmk-antecedent-morph) to change the behavior of a key based on the previously pressed key. This is used to type `<=`, `>=`, `!=`, `=>`, `->`, `|>`, `./` and `#include ` more comfortably.
+- [**zmk-locales**](https://github.com/joelspadin/zmk-locales) to provide key codes for non-US keyboard locales.
+- [**zmk-rgbled-widgets**](https://github.com/caksoylar/zmk-rgbled-widget) to show the connection and battery status with the built-in LEDs of the Xiao BLE controller.
+- [**zmk-led_indicator**](https://github.com/englmaxi/zmk-config/tree/main/boards/shields/led_indicator) to show the connection and battery status with the built-in LEDs to be used with the single LED of the nice!nano. Based on the [**zmk-rgbled-widgets**](https://github.com/caksoylar/zmk-rgbled-widget)
+- [**zmk-tri-state**](https://github.com/urob/zmk-tri-state) to define a custom <kbd>swapper</kbd> and a <kbd>select-word</kbd> behavior.
+- [**zmk-layer-listeners**](https://github.com/ssbb/zmk-layer-listeners) - call something on layer enter/leave. I use it for haptic feedback and to reset nav layer toggled keys on leave.
+- [**zmk-deadkey-slayer**](https://github.com/ssbb/zmk-deadkey-slayer) - drop invalid keycodes. I use them quite a lot as a markers, way to reset sticky keys, etc. so they aren't sent to the host (in which case eg MacOS disconnects device after some limit)
+- [**zmk-raw-hid**](https://github.com/zzeneg/zmk-raw-hid) - raw HID - Custom nice!view widget that adds time, layout and volume information. This data is received from host computer with companion app over HID interface (aka Raw HID from QMK).
+- [**zmk-nice-view-hid**](https://github.com/zzeneg/zmk-nice-view-hid) - Custom nice!view widget that adds time, layout and volume information. This data is received from host computer with companion app over HID interface (aka Raw HID from QMK).
+- [**zmk-hid-host**](https://github.com/zzeneg/qmk-hid-host) - HID host - Custom nice!view widget that adds time, layout and volume information. This data is received from host computer with companion app over HID interface (aka Raw HID from QMK).
 
 # THIS REPOSITORY AS A MODULE
 1. In the `config/west.yml` file, add a new remote and its related project.
@@ -537,6 +569,42 @@ include:
 If you enjoy my contributions, feel free to donate. I appreciate if you follow me on [github] and [youtube]
 - [paypal]
 - [sponsor]
+
+# RELATED PROJECTS
+
+I used this project as a reference to configure the dongles with OLED screen:
+- [cygnus](https://github.com/rain2813/zmk-cygnus-oled.git) by @rain2813
+- [zmk keyboard Macintosh dongle display](https://makerworld.com/en/models/403660) by @rain2813
+- [corne with dongle](https://github.com/tomgroenwoldt/zmk-config.git) by @tomgroenwoldt
+- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display.git) by @englmaxi
+- [zmk-config for module](https://github.com/englmaxi/zmk-config/tree/master/boards/shields) by @englmaxi
+- [zmk-config for dongle pro micro](https://github.com/joaopedropio/zmk-swoop/tree/dongle-sdd1306) by @joaopedropio
+
+In the following animations created by @englmaxi you can see what the dongle
+looks like with the 128x64 OLED screen:
+
+![output](https://github.com/englmaxi/zmk-config/assets/43675074/8d268f23-1a4f-44c3-817e-c36dc96a1f8b)
+
+In that animation you can see the connection or output with the computer, that
+is, if it is through a USB or Bluetooth port. Also information about the status
+of both batteries.
+
+![mods](https://github.com/englmaxi/zmk-config/assets/43675074/af9ec3f5-8f61-4629-abed-14ba0047f0bd)
+
+In this animation you can see the actions of the modifier keys, such as
+control, shift, alt, windows/mac, etc.
+
+# DONGLE DESIGNS
+- [case1](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case1.zip) by @englmaxi
+- [case2](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case2.zip) by @englmaxi
+- [Cyberdeck](https://github.com/rafaelromao/keyboards/tree/main/stls/Dongle) by @rafaelromao
+- [Dongle PCB](https://github.com/spe2/zmk_dongle_hardware) by @spe2
+- [Macintosh](https://makerworld.com/en/models/403660) by @rain2813
+- [Redox](https://makerworld.com/en/models/242951) by @rurounikexin
+- [ZMK Display Dongle](https://makerworld.com/en/models/496738) by @yingeling
+
+An example of Dongle Designs (by @rain2813):
+[![dongle-designs-demo](src/macintosh.png)](https://www.youtube.com/c/mctechnology17)
 
 # TODO
 - [ ] Add more features to the repository

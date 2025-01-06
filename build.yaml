@@ -185,27 +185,86 @@ include:
     cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_sofle_left_peripheral_oled
 
-  # Xiao_Dongle + oled adapter
+  # Xiao_Dongle
   - board: seeeduino_xiao_ble
     shield: sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: xiao_sofle_dongle_xiao_oled
     snippet: studio-rpc-usb-uart
 
-  # ProMicro_Dongle + dongle_display
+  # ProMicro_Dongle
   - board: nice_nano_v2
     shield: sofle_dongle_pro_micro dongle_display
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_sofle_dongle_oled
     snippet: studio-rpc-usb-uart
-
-  # ProMicro_Dongle + dongle_display!view
-  - board: puchi_ble_v1
-    shield: sofle_dongle_pro_micro nice_view_adapter dongle_display_view_pro_micro
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_PV\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: puchi_sofle_dongle_view
-    snippet: studio-rpc-usb-uart
   ### SOFLEV2 SOFLEV1 SOFLEPLUS END ###
+
+  ### LILY58 START ###
+  # nice!oled lily58
+  - board: nice_nano_v2
+    shield: lily58_left nice_oled
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_lily58_left_oled
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano_v2
+    shield: lily58_right nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_lily58_right_oled
+
+  # peripheral_left
+  - board: nice_nano_v2
+    shield: lily58_left_peripheral nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_lily58_left_peripheral_oled
+
+  # Xiao_Dongle
+  - board: seeeduino_xiao_ble
+    shield: lily58_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58Dongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: xiao_lily58_dongle_xiao_oled
+    snippet: studio-rpc-usb-uart
+
+  # ProMicro_Dongle
+  - board: nice_nano_v2
+    shield: lily58_dongle_pro_micro dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58Dongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_lily58_dongle_oled
+    snippet: studio-rpc-usb-uart
+  ### LILY58 END ###
+
+  ### SPLITKB AURORA SOFLE START ###
+  # nice!oled splitkb_aurora_sofle
+  - board: nice_nano_v2
+    shield: splitkb_aurora_sofle_left nice_oled
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_Sofle_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_splitkb_aurora_sofle_left_oled
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano_v2
+    shield: splitkb_aurora_sofle_right nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_splitkb_aurora_sofle_right_oled
+
+  # peripheral_left
+  - board: nice_nano_v2
+    shield: splitkb_aurora_sofle_left_peripheral nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_splitkb_aurora_sofle_left_peripheral_oled
+
+  # Xiao_Dongle
+  - board: seeeduino_xiao_ble
+    shield: splitkb_aurora_sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: xiao_splitkb_aurora_sofle_dongle_xiao_oled
+    snippet: studio-rpc-usb-uart
+
+  # ProMicro_Dongle
+  - board: nice_nano_v2
+    shield: splitkb_aurora_sofle_dongle_pro_micro dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_splitkb_aurora_sofle_dongle_oled
+    snippet: studio-rpc-usb-uart
+  ### SPLITKB AURORA SOFLE END ###
 
   ### SETTINGS_RESET START ###
   - board: nice_nano_v2

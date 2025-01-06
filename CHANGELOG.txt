@@ -1,6 +1,16 @@
 Changelog file for Structures extra.
 https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 
+# FEATURES 0.0.2-beta3 (Jan 06, 2025)
+=======================================
++ NEW FEATURES
+- [x] lily58 support (see boards/shields/lily58/)
+- [x] splitkb_aurora_sofle support (boards/shields/splitkb_aurora_sofle/)
+- [x] readme updated
+- [x] build.yaml updated
+- [x] config_keymap-drawer.yaml updated
+- [x] corne.keymap updated (The option to see the layer on the screen was added)
+
 # FEATURES 0.0.2-beta2 (Jan 03, 2025)
 =======================================
 + NEW FEATURES
