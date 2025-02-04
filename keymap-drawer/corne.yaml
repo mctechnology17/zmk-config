@@ -1,9 +1,50 @@
 layout: {qmk_keyboard: corne_rotated, layout_name: LAYOUT_split_3x6_3}
 layers:
-  BAS: [↹, Q, W, E, R, T, Y, U, I, O, P, '$$mdi:backspace-outline$$', '$$mdi:apple-keyboard-control$$', A, S, D, F, G, H, J, K, L, ;, '''', '$$mdi:apple-keyboard-shift$$',
-    Z, X, C, V, B, N, M, ',', ., /, Esc, '$$mdi:apple-keyboard-command$$', LOW, ␣, ⏎, RAI, '$$mdi:apple-keyboard-option$$']
-  LOW:
+  base:
   - ↹
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - VOLUME UP
+  - $$mdi:apple-keyboard-shift$$
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - /
+  - {t: Vol Down, h: function}
+  - $$mdi:apple-keyboard-control$$
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - ;
+  - Ctl+MUTE
+  - {t: ↹, h: accent}
+  - {t: ESCAPE, h: number}
+  - ␣
+  - Alt+⏎
+  - {t: DELETE, h: symbol}
+  - {t: BACKSPACE, h: nav}
+  number:
+  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
@@ -14,77 +55,301 @@ layers:
   - '8'
   - '9'
   - '0'
-  - $$mdi:backspace-outline$$
-  - BT CLR
-  - BT 1
-  - BT 2
-  - BT 3
-  - BT 4
-  - BT 5
-  - ←
-  - ↓
-  - ↑
-  - →
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-shift$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-command$$
-  - {type: held}
-  - ␣
-  - ⏎
-  - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-option$$
-  RAI:
-  - ↹
   - '!'
   - '@'
   - '#'
   - $
   - '%'
   - ^
-  - AMPS
-  - KP MULTIPLY
-  - (
-  - )
-  - $$mdi:backspace-outline$$
-  - $$mdi:apple-keyboard-control$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&mkp LCLK'
-  - {t: ▽, type: trans}
-  - '&mkp RCLK'
-  - '-'
-  - '='
-  - '['
-  - ']'
+  - LEFT ARROW
+  - DOWN ARROW
+  - UP ARROW
+  - →
+  - F10
+  - LEFT ALT
   - \
-  - '`'
-  - $$mdi:apple-keyboard-shift$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - _
-  - +
-  - '{'
-  - '}'
   - '|'
-  - '~'
-  - $$mdi:apple-keyboard-command$$
-  - '&studio_unlock'
+  - <
+  - '>'
+  - +
+  - KP DIVIDE
+  - ←
+  - ↓
+  - →
+  - KP MINUS
+  - F20
+  - {t: ▽, type: trans}
+  - {type: held}
   - ␣
   - ⏎
-  - {t: '&studio_unlock', type: held}
-  - $$mdi:apple-keyboard-option$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  symbol:
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - AMPERSAND
+  - '*'
+  - (
+  - )
+  - F10
+  - LEFT ALT
+  - \
+  - '|'
+  - <
+  - '>'
+  - +
+  - KP DIVIDE
+  - KP ASTERISK
+  - KP EQUAL
+  - KP PLUS
+  - KP MINUS
+  - F20
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ␣
+  - ⏎
+  - {type: held}
+  - {t: ▽, type: trans}
+  accent:
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - '#'
+  - ^
+  - ''
+  - ^
+  - {t: '&U_acute_down', s: '&U_acute_up'}
+  - {t: '&A_tilde_down', s: '&A_tilde_up'}
+  - {t: '&O_tilde_down', s: '&O_tilde_up'}
+  - ;
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '`'
+  - '"'
+  - ''''
+  - '!'
+  - '~'
+  - '`'
+  - {t: '&I_acute_down', s: '&I_acute_up'}
+  - {t: '&A_acute_down', s: '&A_acute_up'}
+  - {t: '&O_acute_down', s: '&O_acute_up'}
+  - {t: '&E_acute_down', s: '&E_acute_up'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - '&ac_ccdi'
+  - ''
+  - ''
+  - {t: '&A_grave_down', s: '&A_grave_up'}
+  - {t: '&E_circ_down', s: '&E_circ_up'}
+  - {t: '&A_circ_down', s: '&A_circ_up'}
+  - {t: '&O_circ_down', s: '&O_circ_up'}
+  - '~'
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ENTER
+  - $$mdi:backspace-outline$$
+  - ⌦
+  function:
+  - {t: ▽, type: trans}
+  - BT CLR ALL
+  - BT 1
+  - BT 2
+  - BT 3
+  - OUT TOG
+  - SCROLL UP
+  - F1
+  - F2
+  - F3
+  - F4
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - SCROLL DOWN
+  - F5
+  - F6
+  - F7
+  - F8
+  - {type: held}
+  - Reset
+  - Boot
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  game:
+  - ↹
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&desktop'
+  - LEFT SHIFT
+  - A
+  - S
+  - D
+  - F
+  - G
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - LEFT SHIFT
+  - {t: ▽, type: trans}
+  - '&search'
+  - {t: base, h: toggle}
+  - $$mdi:apple-keyboard-control$$
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - MUTE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT GUI
+  - {t: base, h: toggle}
+  - Alt+M
+  - {t: ESCAPE, h: fgame}
+  - ␣
+  - {t: ▽, type: trans}
+  - RIGHT WIN
+  - {t: ▽, type: trans}
+  nav:
+  - {t: ▽, type: trans}
+  - Page Up
+  - AMPS
+  - '*'
+  - (
+  - '}'
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - UP ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Page Down
+  - $
+  - '%'
+  - ^
+  - +
+  - VOLUME DOWN
+  - LEFT ARROW
+  - ↓
+  - →
+  - $$mdi:apple-keyboard-command$$
+  - '&desktop'
+  - {t: ▽, type: trans}
+  - '~'
+  - '!'
+  - '@'
+  - '#'
+  - '|'
+  - MUTE
+  - '&guileft'
+  - '&gui_up'
+  - '&guiright'
+  - {t: ▽, type: trans}
+  - '&search'
+  - (
+  - )
+  - _
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  fgame:
+  - {t: F5, h: toggle}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - L
+  - L
+  - O
+  - Y
+  - K
+  - G
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Win Close
+  - F10
+  - ''
+  - {t: base, h: toggle}
+  - ''
+  - '6'
+  - '7'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: base, h: toggle}
+  - J
+  - {t: I, type: held}
+  - M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [15, 16]
+  k: function
+  l: [base]
+- p: [11, 23, 35]
+  k: {t: game, h: toggle}
+  l: [base]
+- p: [41, 36]
+  k: function
