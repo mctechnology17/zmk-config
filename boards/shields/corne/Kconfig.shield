@@ -7,8 +7,8 @@ config SHIELD_CORNE_LEFT
 config SHIELD_CORNE_RIGHT
     def_bool $(shields_list_contains,corne_right)
 
-config SHIELD_CORNE_DONGLE_XIAO
-    def_bool $(shields_list_contains,corne_dongle_xiao)
+# config SHIELD_CORNE_DONGLE_XIAO
+#   def_bool $(shields_list_contains,corne_dongle_xiao)
 
 config SHIELD_CORNE_LEFT_PERIPHERAL
     def_bool $(shields_list_contains,corne_left_peripheral)
