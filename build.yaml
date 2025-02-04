@@ -14,15 +14,7 @@ include:
     cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
     artifact-name: nice_corne_right_view
 
-    # puchi_ble_v1 + nice_view_gem
-  - board: puchi_ble_v1
-    shield: corne_left   
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_View\"
-    artifact-name: puchi_corne_left_view
-    snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1
-    shield: corne_right nice_view_adapter nice_view
-    artifact-name: puchi_corne_right_view
+    
 
     # peripheral_left + nice_nano_v2 + nice_view_gem
   - board: nice_nano_v2
@@ -30,12 +22,6 @@ include:
     cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
     artifact-name: nice_corne_left_peripheral_view
 
-    # peripheral_left + puchi_ble_v1 + nice_view_gem
-  - board: puchi_ble_v1
-    shield: corne_left_peripheral   
-    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
-    artifact-name: puchi_corne_left_peripheral_view
-    ### nice_view END ###
 
     ###   START ###
     # nice_nano_v2 +  
@@ -48,26 +34,12 @@ include:
     shield: corne_right  
     artifact-name: nice_corne_right_oled
 
-    # puchi_ble_v1 +  
-  - board: puchi_ble_v1
-    shield: corne_left  
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_Oled\"
-    artifact-name: puchi_corne_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1
-    shield: corne_right 
-    artifact-name: puchi_corne_right_oled
 
     # peripheral_left + nice_nano_v2 +  
   - board: nice_nano_v2
     shield: corne_left_peripheral  
     artifact-name: nice_corne_left_peripheral_oled
 
-    # peripheral_left + puchi_ble_v1 +  
-  - board: puchi_ble_v1
-    shield: corne_left_peripheral  
-    artifact-name: puchi_corne_left_peripheral_oled
-    ###   END ###
 
    
     ### ProMicro_Dongle START ###
@@ -84,18 +56,7 @@ include:
     artifact-name: nice_corne_dongle_oled
     snippet: studio-rpc-usb-uart
     # snippet: zmk-usb-logging
-  - board: puchi_ble_v1
-    shield: corne_dongle_pro_micro
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle\"
-    artifact-name: puchi_corne_dongle
-    snippet: studio-rpc-usb-uart
-    # snippet: zmk-usb-logging
-  - board: puchi_ble_v1
-    shield: corne_dongle_pro_micro   
-    #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle_V\"  -DCONFIG_ZMK_STUDIO=y
-    snippet: studio-rpc-usb-uart
-    artifact-name: puchi_corne_dongle_view
+ 
     # snippet: zmk-usb-logging
     ### Pro Micro END ###
   ### CORNE END ###
@@ -106,7 +67,4 @@ include:
     shield: settings_reset
     artifact-name: nice_settings_reset
   
-  - board: puchi_ble_v1
-    shield: settings_reset
-    artifact-name: puchi_settings_reset
-  ### SETTINGS_RESET END ###
+
