@@ -1,26 +1,13 @@
-#manifest:
-#  remotes:
-#   - name: urob
-#     url-base: https://github.com/urob
-# projects:
-#   - name: zmk
-#     remote: urob
-#     revision: main
-#     import: app/west.yml
-# self:
-#   path: config
-
-
 manifest:
   remotes:
-  - name: zmkfirmware
-    url-base: https://github.com/zmkfirmware
-  - name: urob
-    url-base: https://github.com/urob
+   - name: urob
+     url-base: https://github.com/urob
  projects:
-    name: zmk
-    remote: urob
-    revision: mouse-3.2
-    import: app/west.yml
-  self:
-      path: config
+   - name: zmk
+     remote: urob
+     revision: main
+     import: app/west.yml
+ self:
+   path: config
+
+
