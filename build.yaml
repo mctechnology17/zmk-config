@@ -54,118 +54,118 @@
 ---
 include:
 
-  ### CORNE START ###
-    ### nice_view START ###
-    # nice_nano_v2 + nice_view_gem
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_View\"
-    artifact-name: nice_corne_left_view
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
-    artifact-name: nice_corne_right_view
+  # ### CORNE START ###
+  #   ### nice_view START ###
+  #   # nice_nano_v2 + nice_view_gem
+  # - board: nice_nano_v2
+  #   shield: corne_left nice_view_adapter nice_view_gem
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_View\"
+  #   artifact-name: nice_corne_left_view
+  #   snippet: studio-rpc-usb-uart
+  # - board: nice_nano_v2
+  #   shield: corne_right nice_view_adapter nice_view_gem
+  #   cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
+  #   artifact-name: nice_corne_right_view
 
-    # puchi_ble_v1 + nice_view_gem
-  - board: puchi_ble_v1
-    shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_View\"
-    artifact-name: puchi_corne_left_view
-    snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1
-    shield: corne_right nice_view_adapter nice_view
-    artifact-name: puchi_corne_right_view
+  #   # puchi_ble_v1 + nice_view_gem
+  # - board: puchi_ble_v1
+  #   shield: corne_left nice_view_adapter nice_view_gem
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_View\"
+  #   artifact-name: puchi_corne_left_view
+  #   snippet: studio-rpc-usb-uart
+  # - board: puchi_ble_v1
+  #   shield: corne_right nice_view_adapter nice_view
+  #   artifact-name: puchi_corne_right_view
 
-    # peripheral_left + nice_nano_v2 + nice_view_gem
-  - board: nice_nano_v2
-    shield: corne_left_peripheral nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
-    artifact-name: nice_corne_left_peripheral_view
+  #   # peripheral_left + nice_nano_v2 + nice_view_gem
+  # - board: nice_nano_v2
+  #   shield: corne_left_peripheral nice_view_adapter nice_view_gem
+  #   cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
+  #   artifact-name: nice_corne_left_peripheral_view
 
-    # peripheral_left + puchi_ble_v1 + nice_view_gem
-  - board: puchi_ble_v1
-    shield: corne_left_peripheral nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
-    artifact-name: puchi_corne_left_peripheral_view
-    ### nice_view END ###
+  #   # peripheral_left + puchi_ble_v1 + nice_view_gem
+  # - board: puchi_ble_v1
+  #   shield: corne_left_peripheral nice_view_adapter nice_view_gem
+  #   cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
+  #   artifact-name: puchi_corne_left_peripheral_view
+  #   ### nice_view END ###
 
-    ### nice_oled START ###
-    # nice_nano_v2 + nice_oled
-  - board: nice_nano_v2
-    shield: corne_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_Oled\"
-    artifact-name: nice_corne_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: corne_right nice_oled
-    artifact-name: nice_corne_right_oled
+  #   ### nice_oled START ###
+  #   # nice_nano_v2 + nice_oled
+  # - board: nice_nano_v2
+  #   shield: corne_left nice_oled
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_Oled\"
+  #   artifact-name: nice_corne_left_oled
+  #   snippet: studio-rpc-usb-uart
+  # - board: nice_nano_v2
+  #   shield: corne_right nice_oled
+  #   artifact-name: nice_corne_right_oled
 
-    # puchi_ble_v1 + nice_oled
-  - board: puchi_ble_v1
-    shield: corne_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_Oled\"
-    artifact-name: puchi_corne_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1
-    shield: corne_right nice_oled
-    artifact-name: puchi_corne_right_oled
+  #   # puchi_ble_v1 + nice_oled
+  # - board: puchi_ble_v1
+  #   shield: corne_left nice_oled
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_Oled\"
+  #   artifact-name: puchi_corne_left_oled
+  #   snippet: studio-rpc-usb-uart
+  # - board: puchi_ble_v1
+  #   shield: corne_right nice_oled
+  #   artifact-name: puchi_corne_right_oled
 
-    # peripheral_left + nice_nano_v2 + nice_oled
-  - board: nice_nano_v2
-    shield: corne_left_peripheral nice_oled
-    artifact-name: nice_corne_left_peripheral_oled
+  #   # peripheral_left + nice_nano_v2 + nice_oled
+  # - board: nice_nano_v2
+  #   shield: corne_left_peripheral nice_oled
+  #   artifact-name: nice_corne_left_peripheral_oled
 
-    # peripheral_left + puchi_ble_v1 + nice_oled
-  - board: puchi_ble_v1
-    shield: corne_left_peripheral nice_oled
-    artifact-name: puchi_corne_left_peripheral_oled
-    ### nice_oled END ###
+  #   # peripheral_left + puchi_ble_v1 + nice_oled
+  # - board: puchi_ble_v1
+  #   shield: corne_left_peripheral nice_oled
+  #   artifact-name: puchi_corne_left_peripheral_oled
+  #   ### nice_oled END ###
 
-    ### Xiao_Dongle START ###
-  - board: seeeduino_xiao_ble
-    shield: corne_dongle_xiao
-    #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\" -DCONFIG_ZMK_STUDIO=y
-    artifact-name: xiao_corne_dongle
-    snippet: studio-rpc-usb-uart
-  - board: seeeduino_xiao_ble
-    shield: corne_dongle_xiao dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle_O\"
-    artifact-name: xiao_corne_dongle_oled
-    snippet: studio-rpc-usb-uart
-    # snippet: zmk-usb-logging
-    ### Xiao_Dongle END ###
+  #   ### Xiao_Dongle START ###
+  # - board: seeeduino_xiao_ble
+  #   shield: corne_dongle_xiao
+  #   #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\" -DCONFIG_ZMK_STUDIO=y
+  #   artifact-name: xiao_corne_dongle
+  #   snippet: studio-rpc-usb-uart
+  # - board: seeeduino_xiao_ble
+  #   shield: corne_dongle_xiao dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle_O\"
+  #   artifact-name: xiao_corne_dongle_oled
+  #   snippet: studio-rpc-usb-uart
+  #   # snippet: zmk-usb-logging
+  #   ### Xiao_Dongle END ###
 
-    ### ProMicro_Dongle START ###
-    # nice_nano_v2 dongle
-  - board: nice_nano_v2
-    shield: corne_dongle_pro_micro
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle\"
-    artifact-name: nice_corne_dongle_pro_micro
-    snippet: studio-rpc-usb-uart
-    # snippet: zmk-usb-logging
-  - board: nice_nano_v2
-    shield: corne_dongle_pro_micro dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle_O\"
-    artifact-name: nice_corne_dongle_oled
-    snippet: studio-rpc-usb-uart
-    # snippet: zmk-usb-logging
-  - board: puchi_ble_v1
-    shield: corne_dongle_pro_micro
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle\"
-    artifact-name: puchi_corne_dongle
-    snippet: studio-rpc-usb-uart
-    # snippet: zmk-usb-logging
-  - board: puchi_ble_v1
-    shield: corne_dongle_pro_micro nice_view_adapter nice_view_gem
-    #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle_V\"  -DCONFIG_ZMK_STUDIO=y
-    snippet: studio-rpc-usb-uart
-    artifact-name: puchi_corne_dongle_view
-    # snippet: zmk-usb-logging
-    ### Pro Micro END ###
-  ### CORNE END ###
+  #   ### ProMicro_Dongle START ###
+  #   # nice_nano_v2 dongle
+  # - board: nice_nano_v2
+  #   shield: corne_dongle_pro_micro
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle\"
+  #   artifact-name: nice_corne_dongle_pro_micro
+  #   snippet: studio-rpc-usb-uart
+  #   # snippet: zmk-usb-logging
+  # - board: nice_nano_v2
+  #   shield: corne_dongle_pro_micro dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle_O\"
+  #   artifact-name: nice_corne_dongle_oled
+  #   snippet: studio-rpc-usb-uart
+  #   # snippet: zmk-usb-logging
+  # - board: puchi_ble_v1
+  #   shield: corne_dongle_pro_micro
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle\"
+  #   artifact-name: puchi_corne_dongle
+  #   snippet: studio-rpc-usb-uart
+  #   # snippet: zmk-usb-logging
+  # - board: puchi_ble_v1
+  #   shield: corne_dongle_pro_micro nice_view_adapter nice_view_gem
+  #   #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle_V\"  -DCONFIG_ZMK_STUDIO=y
+  #   snippet: studio-rpc-usb-uart
+  #   artifact-name: puchi_corne_dongle_view
+  #   # snippet: zmk-usb-logging
+  #   ### Pro Micro END ###
+  # ### CORNE END ###
 
   ### SOFLEV2 SOFLEV1 SOFLEPLUS START ###
   # nice!oled sofle
@@ -185,95 +185,95 @@ include:
     cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_sofle_left_peripheral_oled
 
-  # Xiao_Dongle
-  - board: seeeduino_xiao_ble
-    shield: sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: xiao_sofle_dongle_xiao_oled
-    snippet: studio-rpc-usb-uart
+  # # Xiao_Dongle
+  # - board: seeeduino_xiao_ble
+  #   shield: sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: xiao_sofle_dongle_xiao_oled
+  #   snippet: studio-rpc-usb-uart
 
-  # ProMicro_Dongle
-  - board: nice_nano_v2
-    shield: sofle_dongle_pro_micro dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_sofle_dongle_oled
-    snippet: studio-rpc-usb-uart
-  ### SOFLEV2 SOFLEV1 SOFLEPLUS END ###
+  # # ProMicro_Dongle
+  # - board: nice_nano_v2
+  #   shield: sofle_dongle_pro_micro dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_sofle_dongle_oled
+  #   snippet: studio-rpc-usb-uart
+  # ### SOFLEV2 SOFLEV1 SOFLEPLUS END ###
 
-  ### LILY58 START ###
-  # nice!oled lily58
-  - board: nice_nano_v2
-    shield: lily58_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_lily58_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: lily58_right nice_oled
-    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_lily58_right_oled
+  # ### LILY58 START ###
+  # # nice!oled lily58
+  # - board: nice_nano_v2
+  #   shield: lily58_left nice_oled
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_lily58_left_oled
+  #   snippet: studio-rpc-usb-uart
+  # - board: nice_nano_v2
+  #   shield: lily58_right nice_oled
+  #   cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_lily58_right_oled
 
-  # peripheral_left
-  - board: nice_nano_v2
-    shield: lily58_left_peripheral nice_oled
-    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_lily58_left_peripheral_oled
+  # # peripheral_left
+  # - board: nice_nano_v2
+  #   shield: lily58_left_peripheral nice_oled
+  #   cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_lily58_left_peripheral_oled
 
-  # Xiao_Dongle
-  - board: seeeduino_xiao_ble
-    shield: lily58_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58Dongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: xiao_lily58_dongle_xiao_oled
-    snippet: studio-rpc-usb-uart
+  # # Xiao_Dongle
+  # - board: seeeduino_xiao_ble
+  #   shield: lily58_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58Dongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: xiao_lily58_dongle_xiao_oled
+  #   snippet: studio-rpc-usb-uart
 
-  # ProMicro_Dongle
-  - board: nice_nano_v2
-    shield: lily58_dongle_pro_micro dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58Dongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_lily58_dongle_oled
-    snippet: studio-rpc-usb-uart
-  ### LILY58 END ###
+  # # ProMicro_Dongle
+  # - board: nice_nano_v2
+  #   shield: lily58_dongle_pro_micro dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58Dongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_lily58_dongle_oled
+  #   snippet: studio-rpc-usb-uart
+  # ### LILY58 END ###
 
-  ### SPLITKB AURORA SOFLE START ###
-  # nice!oled splitkb_aurora_sofle
-  - board: nice_nano_v2
-    shield: splitkb_aurora_sofle_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_Sofle_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_splitkb_aurora_sofle_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: splitkb_aurora_sofle_right nice_oled
-    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_splitkb_aurora_sofle_right_oled
+  # ### SPLITKB AURORA SOFLE START ###
+  # # nice!oled splitkb_aurora_sofle
+  # - board: nice_nano_v2
+  #   shield: splitkb_aurora_sofle_left nice_oled
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_Sofle_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_splitkb_aurora_sofle_left_oled
+  #   snippet: studio-rpc-usb-uart
+  # - board: nice_nano_v2
+  #   shield: splitkb_aurora_sofle_right nice_oled
+  #   cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_splitkb_aurora_sofle_right_oled
 
-  # peripheral_left
-  - board: nice_nano_v2
-    shield: splitkb_aurora_sofle_left_peripheral nice_oled
-    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_splitkb_aurora_sofle_left_peripheral_oled
+  # # peripheral_left
+  # - board: nice_nano_v2
+  #   shield: splitkb_aurora_sofle_left_peripheral nice_oled
+  #   cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_splitkb_aurora_sofle_left_peripheral_oled
 
-  # Xiao_Dongle
-  - board: seeeduino_xiao_ble
-    shield: splitkb_aurora_sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: xiao_splitkb_aurora_sofle_dongle_xiao_oled
-    snippet: studio-rpc-usb-uart
+  # # Xiao_Dongle
+  # - board: seeeduino_xiao_ble
+  #   shield: splitkb_aurora_sofle_dongle_xiao oled_adapter_seeeduino_xiao_ble_128x64 dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_SofleDongle_X\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: xiao_splitkb_aurora_sofle_dongle_xiao_oled
+  #   snippet: studio-rpc-usb-uart
 
-  # ProMicro_Dongle
-  - board: nice_nano_v2
-    shield: splitkb_aurora_sofle_dongle_pro_micro dongle_display
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-    artifact-name: nice_splitkb_aurora_sofle_dongle_oled
-    snippet: studio-rpc-usb-uart
-  ### SPLITKB AURORA SOFLE END ###
+  # # ProMicro_Dongle
+  # - board: nice_nano_v2
+  #   shield: splitkb_aurora_sofle_dongle_pro_micro dongle_display
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"A_SofleDongle_P\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+  #   artifact-name: nice_splitkb_aurora_sofle_dongle_oled
+  #   snippet: studio-rpc-usb-uart
+  # ### SPLITKB AURORA SOFLE END ###
 
   ### SETTINGS_RESET START ###
   - board: nice_nano_v2
     shield: settings_reset
     artifact-name: nice_settings_reset
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
-    artifact-name: xiao_settings_reset
-  - board: puchi_ble_v1
-    shield: settings_reset
-    artifact-name: puchi_settings_reset
+  # - board: seeeduino_xiao_ble
+  #   shield: settings_reset
+  #   artifact-name: xiao_settings_reset
+  # - board: puchi_ble_v1
+  #   shield: settings_reset
+  #   artifact-name: puchi_settings_reset
   ### SETTINGS_RESET END ###
