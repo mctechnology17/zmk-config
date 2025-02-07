@@ -1,23 +1,9 @@
-# MC Technology's zmk-config for corne - sofle - lily58
-
-[![MC Technology](https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_extendido.GIF)](https://www.youtube.com/channel/UC_mYh5PYPHBJ5YYUj8AIkcw)
-
-<div align="center">
-
-  [<img align="center" alt="MC Technology | YouTube" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/youtube.png" />][youtube]
-  [<img align="center" alt="MC Technology17 | Facebook" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/facebook.png" />][facebook]
-  [<img align="center" alt="MC Technology17 | Reddit" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/reddit.png" />][reddit]
-
-</div>
-<br>
+# W3ND31 zmk-config for sofle - Based on MC Technology's zmk-config
 
 
 - [INTRO](#INTRO)
 - [QUICK START](#QUICK-START)
-  - [keymap corne](#keymap-corne)
   - [keymap sofle](#keymap-sofle)
-  - [keymap splitkb_aurora_sofle](#keymap-splitkb_aurora_sofle)
-  - [keymap lily58](#keymap-lily58)
 - [LOCAL INSTALLATION](#LOCAL-INSTALLATION)
 - [DISPLAY](#DISPLAY)
 - [RGB](#RGB)
@@ -37,10 +23,10 @@
 
 ----
 
-- If you already have your corne - sofle - lily58 configured with this repository and want to make
+- If you already have your sofle configured with this repository and want to make
 a modification to your keymap, you can do it with the online [ZMK-STUDIO](https://zmk.studio/).
 
-- If you already have your corne - sofle - lily58 configured with this repository and want to make
+- If you already have your sofle configured with this repository and want to make
 a modification to your keymap, you can do it with the online [keymap-editor](https://nickcoutsos.github.io/keymap-editor/).
 
 - If you already have a repository and you want only the dongle option of this repository with support for `zmk-studio`, just add this repository as a module to your configuration, look the section [THIS REPOSITORY AS A MODULE](#THIS-REPOSITORY-AS-A-MODULE).
@@ -63,21 +49,14 @@ a modification to your keymap, you can do it with the online [keymap-editor](htt
 
 
 The objective of this repository is to serve as a base for configuring your
-corne - sofle - lily58 keyboard with the firmware [ZMK firmware] in a simple and fast way.
+sofle keyboard with the firmware [ZMK firmware] in a simple and fast way.
 without having to configure everything from scratch. Many of us are fascinated
 by customizing our keyboards, but sometimes we don't have the time or
 experience to do it. That is why I have decided to create this repository so
 that you can have a base configuration and you can modify it to your liking.
 
-This base includes the most recent corne - sofle - lily58 configurations, featuring a setup for
-the corne - sofle - lily58 dongle with/without an OLED screen.
-You can also use your keyboard WITH / WITHOUT a dongle of course. with any of the
-plates or screens you have.
+This base includes the most recent sofle configurations.
 
-Tested with **[puchi_ble_v1]** (used as a dongle and as
-peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
-**clones of nice_nano_v2** (used as a dongle and as peripherals), and the
-**[seeeduino_xiao_ble]** (used only as a dongle).
 
 | Main Pros                                                                                       |
 |-------------------------------------------------------------------------------------------------|
@@ -101,24 +80,16 @@ peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
 | support [nice-view] screen and oled screen                                                      |
 | online editor for keymap. see               [keymap-editor]                                     |
 | 100% open source                                                                                |
-| support for puchi-ble dongle, nice!nano v2, nice!nano v2 clones, seeeduino xiao ble and more... |
+| support for nice!nano v2, nice!nano v2 clones and more... |
 | support with dongle with display 128x32, 128x64 and 128x128                                     |
 | and more...                                                                                     |
 
 # QUICK START
 > [!NOTE]
 >
-> 1. With this configuration you can use the corne - sofle - lily58 keyboard practically
+> 1. With this configuration you can use the sofle keyboard practically
 > immediately, you just have to follow the following steps and that's it.
 >
-> 2. If you need precompiled files you can download them from the [firmware
->    folder](./firmware)
->
-> 3. If you have any problems, you just have to flash the reset firmwares that
->    are in the [firmware](./firmware) folder and that's it.
->
-> 4. Disable the builds you don't need in the file [build.yaml](./build.yaml),
->    by default they are all activated.
 
 
 ### zmk-studio (quick start)
@@ -142,13 +113,9 @@ the need to configure anything else. You just have to follow the steps below:
    - unzip the .zip file
    - Connect the nice!nano v2 microcontroller to the USB-C port of your computer
    - the microcontroller is recognized as a storage device
-5. Flash the firmware to the keyboard with the uf2 files (drag and drop and WITH dongle)
-   - xiao_corne_dongle_xiao_dongle_display.uf2 for [seeeduino_xiao_ble] as a dongle
-   - nice_corne_left_peripheral.uf2 for [nice_nano_v2] as a peripheral
-   - nice_corne_right.uf2 for [nice_nano_v2] as a peripheral
-6. Flash the firmware to the keyboard with the uf2 files (drag and drop and WITHOUT dongle)
-   - nice_corne_left.uf2 for [nice_nano_v2] as a master side
-   - nice_corne_right.uf2 for [nice_nano_v2] as a peripheral
+5. Flash the firmware to the keyboard with the uf2 files (drag and drop and WITHOUT dongle)
+   - nice_sofle_left.uf2 for [nice_nano_v2] as a master side
+   - nice_sofle_right.uf2 for [nice_nano_v2] as a peripheral
 7. If you need help, you can ask in the [ZMK Discord]
 8. Enjoy your new keyboard
 
@@ -164,14 +131,8 @@ Here you can see the visual changes to the configuration:
 > [config](./config/config_keymap-drawer.yaml).
 > The file for the workflows is in [workflows](./.github/workflows/keymap-drawer.yaml) in case you want to modify it.
 
-## keymap corne
-[![keymap-drawer-demo-corne](keymap-drawer/corne.svg)](https://www.youtube.com/c/mctechnology17)
 ## keymap sofle
 [![keymap-drawer-demo-sofle](keymap-drawer/sofle.svg)](https://www.youtube.com/c/mctechnology17)
-## keymap splitkb_aurora_sofle
-[![keymap-drawer-demo-splitkb_aurora_sofle](keymap-drawer/splitkb_aurora_sofle.svg)](https://www.youtube.com/c/mctechnology17)
-## keymap lily58
-[![keymap-drawer-demo-lily58](keymap-drawer/lily58.svg)](https://www.youtube.com/c/mctechnology17)
 
 If you want to customize this image with shapes/colors/etc. You can see these references:
 [^1] [^2] [^3]
@@ -207,40 +168,31 @@ zmk-config # main folder
 │   boards
 │   ├── ... # other boards
 │   ├── nice_nano_v2.overlay
-│   ├── puchi_ble_v1.overlay
 │   └── shields
-│       ├── corne
+│       ├── sofle
 │       │   ├── Kconfig.defconfig # modify if you want to add a new shield
 │       │   ├── Kconfig.shield # modify if you want to add a new shield
 │       │   ├── boards
 │       │   │   ├── ... # other boards
-│       │   ├── corne.conf # general configurations of the corne
-│       │   ├── corne.dtsi # default dtsi
-│       │   ├── corne.keymap # default keymap
-│       │   ├── corne.zmk.yml # modify if you want to add a new shield
-│       │   ├── corne_dongle_pro_micro.conf # conf dongle pro_micro pinout
-│       │   ├── corne_dongle_pro_micro.overlay # properties/displays dongle
-│       │   ├── corne_dongle_xiao.conf # conf dongle xiao pinout
-│       │   ├── corne_dongle_xiao.overlay # properties/displays dongle
-│       │   ├── corne_left.conf # conf left
-│       │   ├── corne_left_peripheral.conf # config left peripheral
-│       │   ├── corne_right.conf # conf right
+│       │   ├── sofle.conf # general configurations of the sofle
+│       │   ├── sofle.dtsi # default dtsi
+│       │   ├── sofle.keymap # default keymap
+│       │   ├── sofle.zmk.yml # modify if you want to add a new shield
+│       │   ├── sofle_left.conf # conf left
+│       │   ├── sofle_right.conf # conf right
 │       │   ├── ... # other files
-│       └── dongle_display
-│           ├── ... # here you can modify the screen widgets
-│           └── widgets
-│               └── # here you can modify the screen widgets
+│       └── 
 │   config # configuration folder
 │   ├── config_keymap-drawer.yaml # config file keymap-drawer
-│   ├── corne.conf # general configurations of the corne
-│   ├── corne.keymap # your keymap file
+│   ├── sofle.conf # general configurations of the sofle
+│   ├── sofle.keymap # your keymap file
 │   ├── keymap_german_mac_iso_zmk.h # example of definition for german mac iso
 │   └── west.yml # conf to connect with the repository
 ├── firmware
 │   └── *.uf2 # all the firmwares
 ├── keymap-drawer # folder with the keymap-drawer
-│   ├── corne.svg # img of the keymap
-│   └── corne.yaml # keymap file yaml format for keymap-drawer
+│   ├── sofle.svg # img of the keymap
+│   └── sofle.yaml # keymap file yaml format for keymap-drawer
 └── src
     └── ... # other files
 ```
@@ -279,55 +231,6 @@ make corne_urob # compile all the *.uf2 of the corne and copy them to the firmwa
    - Remember to disable the [nice-view] screens to avoid conflict in the compilation.
 3. FULL COLOR LCD SCREEN
    - [Prospector](https://github.com/carrefinho/prospector) is a desktop ZMK dongle with full color LCD screen.
-
-> [!IMPORTANT]
->
-> 1. To modify the dongle's OLED screen you can modify the `.overlay` file as follows for its respective board:
-[corne_dongle_xiao.overlay](./config/boards/shields/corne/corne_dongle_xiao.overlay) and
-[corne_dongle_pro_micro.overlay](./config/boards/shields/corne/corne_dongle_pro_micro.overlay). There you can find as a comment examples for the 128x32, 128x64, 128x128 screens and [nice-view] for the dongle screen.
-> 3. For the 128x128 OLED screen model sh1107 there are no default drivers in Zephyr, so neither in ZMK, but you can add it yourself with this small tutorial (This tutorial is the same for the OLED screens mentioned above):
-
-You just have to modify the following line:
-```dts
-// replace the following lines for the 128x64 screen by default
-&pro_micro_i2c {
-    status = "okay";
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        inversion-on;
-        prechargep = <0x22>;
-    };
-};
-// for this (i.e. just copy and paste) replace the 128x64 screen with the 128x128 sh1107 screen
-&pro_micro_i2c {
-    status = "okay";
-    oled: sh1106@3c {
-        compatible = "sinowealth,sh1106";
-        reg = <0x3c>;
-        width = <120>;
-        height = <128>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <119>;
-        segment-remap;
-        com-invdir;
-        inversion-on;
-        prechargep = <0x22>;
-        };
-};
-
-```
 
 # RGB
 > [!WARNING]
@@ -425,7 +328,7 @@ combo_bootloader_left {
 # USEFUL TIPS
 > [!TIP]
 >
-> Below are some useful tips for using your corne - sofle - lily58 keyboard with this
+> Below are some useful tips for using your sofle keyboard with this
 > configuration.
 
 - You can add a reset key on each half, that's useful for when your halves disconnect/desynchronize, or something unusual happens. That way the firmware is loaded again. see reference in [corne.keymap](./config/corne.keymap)
@@ -433,7 +336,7 @@ combo_bootloader_left {
 - If both halves were disconnected/unsynchronized, you just have to press the reset button on both halves 10 times in a row and they will reconnect.
 - If you want to flash the firmware again you just have to connect the keyboard (that is, one half first, usually the left one) press the reset button 2 times in a row
   and your device is recognized as a hard disk storage drive, then just drag the file to flash and that's it. do the same with the other half.
-- Remember that if your corne - sofle - lily58 only has some functional RGB lights you can activate only the ones that you have functional, it is not necessary to activate all the lights. see reference in [led strip](./config/corne.keymap)
+- Remember that if your sofle only has some functional RGB lights you can activate only the ones that you have functional, it is not necessary to activate all the lights. see reference in [led strip](./config/corne.keymap)
 - You can combine the boards, for example: on the left you can have a [nice_nano_v2], on the right a [puchi_ble_v1] and on the dongle a [seeeduino_xiao_ble] or some clone [nice_nano_v2], or any combination you can think of.
 
 # ZMK STUDIO
