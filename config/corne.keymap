@@ -80,6 +80,5 @@
         extra_3 {
             status = "reserved";
         };
-   };
     };
 };
