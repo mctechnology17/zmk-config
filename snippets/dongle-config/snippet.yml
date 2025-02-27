@@ -1,0 +1,3 @@
+name: dongle-config
+append:
+  EXTRA_CONF_FILE: dongle-config.conf

@@ -165,6 +165,19 @@ include:
     artifact-name: puchi_corne_dongle_view
     # snippet: zmk-usb-logging
     ### Pro Micro END ###
+
+    ### ProMicro_Dongle START ###
+    # NICE x PUCHI and nice_oled + rgb
+  - board: nice_nano_v2
+    shield: corne_left nice_oled
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Corne_Oled_RGB\"
+    artifact-name: nice_corne_left_oled_rgb
+    snippet: rgb-config studio-rpc-usb-uart
+  - board: puchi_ble_v1
+    shield: corne_right nice_oled
+    snippet: rgb-config
+    artifact-name: puchi_corne_right_oled_rgb
+    ### Pro Micro END ###
   ### CORNE END ###
 
   ### SOFLEV2 SOFLEV1 SOFLEPLUS START ###

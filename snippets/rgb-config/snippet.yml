@@ -1,0 +1,3 @@
+name: rgb-config
+append:
+  EXTRA_CONF_FILE: rgb-config.conf

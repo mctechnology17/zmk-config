@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
+&led_strip {
+    chain-length = <27>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -60,5 +64,17 @@
                              &kp LGUI   &studio_unlock    &kp SPACE    &kp RET    &studio_unlock     &kp RALT
             >;
         };
+        extra_1 {
+            status = "reserved";
+        };
+
+        extra_2 {
+            status = "reserved";
+        };
+
+        extra_3 {
+            status = "reserved";
+        };
+   };
     };
 };

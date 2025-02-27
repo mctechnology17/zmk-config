@@ -43,7 +43,39 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         rows = <0>;
         events = <0>;
     };
-    // TODO: per-key RGB node(s)?
+
+    /*
+    row-gpios
+        = <&xiao_d 0 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 1 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 2 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 3 GPIO_ACTIVE_HIGH>
+        ;
+    };
+    */
+
+    left_encoder: encoder_left {
+    compatible = "alps,ec11";
+    a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <80>;
+    status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+    compatible = "alps,ec11";
+    a-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <80>;
+    status = "disabled";
+
+    };
+
+    sensors {
+    	compatible = "zmk,keymap-sensors";
+    	sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <20>;
+    };
 };
 
 &xiao_i2c {

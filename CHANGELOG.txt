@@ -1,6 +1,19 @@
 Changelog file for Structures extra.
 https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 
+# FEATURES 0.0.2-beta4 (Feb 27, 2025)
+=======================================
++ NEW FEATURES
+- [x] build.yaml updated
+- [x] Add build for rgb + oled display
+- [x] seeeduino_xiao_ble.overlay rgb added
+- [x] Add build for rgb + oled display + dongle
+- [x] corne.overlay rgb led definition, layer reserved added
+- [x] snippet: rgb-config common-config dongle-config for multiple settings
+- [x] Add right- left_encoder definition sofle_dongle_pro_micro.overlay sofle_dongle_xiao.overlay
+- [x] Add right- left_encoder definition splitkb_aurora_sofle_dongle_pro_micro.overlay splitkb_aurora_sofle_dongle_xiao.overlay
+- [x] Add left_encoder definition lily58_dongle_pro_micro.overlay lily58_dongle_xiao.overlay
+
 # FEATURES 0.0.2-beta3 (Jan 06, 2025)
 =======================================
 + NEW FEATURES
@@ -52,6 +65,4 @@ https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
 - [ ] Add set up the workspace https://github.com/urob/zmk-config?tab=readme-ov-file#set-up-the-workspace
 - [ ] Add a wiki to the repository
 - [ ] Add a video tutorial to the repository
-- [ ] Add EXTRA_CONF_FILE for each device
-- [ ] Add build for rgb + oled display
-- [ ] Add build for rgb + oled display + dongle
+- [ ] README.md updated + fotos as reference

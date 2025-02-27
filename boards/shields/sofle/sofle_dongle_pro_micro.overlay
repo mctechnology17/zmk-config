@@ -50,6 +50,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
             , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
+    */
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
@@ -72,7 +73,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>;
     };
-    */
 
     mock_kscan: kscan_0 {
         compatible = "zmk,kscan-mock";
@@ -81,7 +81,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         rows = <0>;
         events = <0>;
     };
-    // TODO: per-key RGB node(s)?
 };
 
 &pro_micro_i2c {
