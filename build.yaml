@@ -70,7 +70,7 @@ include:
     # puchi_ble_v1 + nice_view_gem
   - board: puchi_ble_v1
     shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_View\"
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_V\"
     artifact-name: puchi_corne_left_view
     snippet: studio-rpc-usb-uart
   - board: puchi_ble_v1
@@ -104,7 +104,7 @@ include:
     # puchi_ble_v1 + nice_oled
   - board: puchi_ble_v1
     shield: corne_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_Oled\"
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_O\"
     artifact-name: puchi_corne_left_oled
     snippet: studio-rpc-usb-uart
   - board: puchi_ble_v1
