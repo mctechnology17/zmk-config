@@ -12,6 +12,6 @@ features:
 siblings:
   - lily58_left
   - lily58_right
-  - lily58_left_peripheral
-  - lily58_dongle_xiao
-  - lily58_dongle_pro_micro
+#  - lily58_left_peripheral
+#  - lily58_dongle_xiao
+#  - lily58_dongle_pro_micro
