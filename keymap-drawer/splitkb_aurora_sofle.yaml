@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: sofle/rev1}
+layout: {zmk_keyboard: splitkb_aurora_sofle}
 layers:
   BAS: [Esc, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '`', ↹, Q, W, E, R, T, Y, U, I, O, P, '-', '$$mdi:apple-keyboard-control$$', A, S, D, F, G, H, J, K,
     L, ;, '''', '$$mdi:apple-keyboard-shift$$', Z, X, C, V, B, '[', ']', N, M, ',', ., /, '$$mdi:apple-keyboard-shift$$', '$$mdi:apple-keyboard-control$$', '$$mdi:apple-keyboard-option$$',
