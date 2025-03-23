@@ -2,13 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # nice_view_gem
-    - name: m165437
-      url-base: https://github.com/M165437
     # dongle_display
     - name: englmaxi
       url-base: https://github.com/englmaxi
-    # nice_oled - dongle_display!view - oled Adapter
+    # nice_oled - nice_epaper - dongle_display!view - oled Adapter
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
   projects:
@@ -16,15 +13,11 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # nice_view_gem
-    - name: nice-view-gem
-      remote: m165437
-      revision: main
     # dongle_display
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
-    # nice_oled
+    # nice_oled - nice_epaper
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
