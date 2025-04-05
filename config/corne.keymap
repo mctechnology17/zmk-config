@@ -4,19 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/led/led.h>
+#include <dt-bindings/zmk/reset.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/led/led.h>
-#include <dt-bindings/zmk/backlight.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/reset.h>
 
-&led_strip {
-    chain-length = <27>;
-};
+&led_strip { chain-length = <27>; };
 
 / {
     keymap {
@@ -24,6 +17,7 @@
 
         default_layer {
             display-name = "BAS";
+
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -31,15 +25,16 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y    &kp BSPC  &kp BSPC
+&kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp G        &kp M    &kp N  &kp E      &kp I    &kp O     &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V        &kp K    &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
 
         lower_layer {
             display-name = "LOW";
+
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -47,15 +42,16 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp ESC    &kp ESC   &kp ESC    &kp N7        &kp N8     &kp N9    &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+&kp LSHFT  &kp UP    &kp LCTRL  &kp N4        &kp N5     &kp N6    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&kp LEFT   &kp DOWN  &kp RIGHT  &kp NUMBER_1  &kp N2     &kp N3    &trans    &trans    &trans    &trans     &trans  &trans
+                                &kp DOT       &kp ENTER  &kp N0    &kp RET   &trans    &kp RALT
             >;
         };
 
         raise_layer {
             display-name = "RAI";
+
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -63,22 +59,17 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans  &trans    &trans    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans     &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI   &studio_unlock    &kp SPACE    &kp RET    &studio_unlock     &kp RALT
+&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &trans    &trans  &trans    &trans          &trans       &kp MINUS  &kp EQUAL       &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans    &trans  &trans    &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                             &kp LGUI  &studio_unlock  &kp SPACE    &kp RET    &studio_unlock  &kp RALT
             >;
         };
-        extra_1 {
-            status = "reserved";
-        };
 
-        extra_2 {
-            status = "reserved";
-        };
+        extra_1 { status = "reserved"; };
 
-        extra_3 {
-            status = "reserved";
-        };
+        extra_2 { status = "reserved"; };
+
+        extra_3 { status = "reserved"; };
     };
 };
