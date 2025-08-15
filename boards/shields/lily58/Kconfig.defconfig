@@ -1,5 +1,4 @@
-
-if SHIELD_LILY58_LEFT || SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
+if SHIELD_LILY58_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "Lily58"
@@ -9,7 +8,8 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT || SHIELD_LILY58_LEFT_PERIPHERAL || SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
+
+if SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT || SHIELD_LILY58_LEFT_PERIPHERAL
 
 config ZMK_SPLIT
     default y
@@ -22,13 +22,34 @@ config I2C
 config SSD1306
     default y
 
-if SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
+# --- Виджеты ---
+# Левая половина — стандартные виджеты
+if SHIELD_LILY58_LEFT
+config ZMK_WIDGET_WPM_STATUS
+    bool
+    default y
+config ZMK_WIDGET_LAYER_STATUS
+    bool
+    default y
+config ZMK_WIDGET_BATTERY_STATUS
+    bool
+    default y
+config ZMK_WIDGET_OUTPUT_STATUS
+    bool
+    default y
+endif # SHIELD_LILY58_LEFT
 
-choice ZMK_DISPLAY_WORK_QUEUE
-    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
-endchoice
-
-endif
+# Правая половина — Bongo Cat (анимация пока закомментирована)
+if SHIELD_LILY58_RIGHT
+# config LV_USE_ANIMATION
+#     bool
+#     default y
+# config ZMK_WIDGET_BONGO_CAT
+#     bool
+#     default y
+#     select LV_USE_IMG
+#     select LV_USE_ANIMATION
+endif # SHIELD_LILY58_RIGHT
 
 endif # ZMK_DISPLAY
 
@@ -48,5 +69,3 @@ choice LV_COLOR_DEPTH
 endchoice
 
 endif # LVGL
-
-endif
