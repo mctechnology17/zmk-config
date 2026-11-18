@@ -109,9 +109,9 @@ peripherals), **[nice_nano_v2]** (used as a dongle and as peripherals),
 
 All my ZMK projects follow the same rules. The idea is that every project can be paired with ZMK in its different versions (v0.3, v0.4, ...), so you always know which branch or tag fits the ZMK version you use.
 
-What to write as `revision:` in your `west.yml`:
+Which branch or tag to clone, fork or download:
 
-| You want | `revision:` |
+| You want | Branch or tag |
 |---|---|
 | The latest stable version | `main` |
 | Stay on ZMK v0.3 and keep receiving fixes | `zmk-v0.3` |
