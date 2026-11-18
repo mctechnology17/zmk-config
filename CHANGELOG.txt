@@ -1,5 +1,28 @@
-Changelog file for Structures extra.
+Changelog of zmk-config.
 https://github.com/mctechnology17/zmk-config/blob/main/CHANGELOG.txt
+
+How the versions work:
+- vX.Y.Z          released from the branch `main`
+- vX.Y.Z-beta.N   public test version from the branch `beta`
+- v0.0.3.N        fixes for ZMK v0.3, from the branch `zmk-v0.3`
+- New work is developed on the branch `dev`
+
+# FEATURES NEXT (not released yet)
+=======================================
+# CHANGES
+- [x] CHANGELOG.txt: version scheme explained and v0.0.3 added
+
+# FEATURES v0.0.3 (Nov 18, 2026) · ZMK v0.3
+=======================================
+Snapshot of `main` before the next round of updates. Tested with ZMK v0.3. From this version on, the numbers follow the same scheme as the other mctechnology17 ZMK projects.
+
+# NEW FEATURES
+- [x] Module for nice!view, nice_epaper, hid, modifiers and Luna the dog (Mar 23, 2025)
+- [x] ZMK version set to v0.3.0 (Dec 13, 2025)
+- [x] Sponsorship links added (Jan 11, 2026)
+
+# FIXES
+- [x] Compilation error fixed for dongle_display with ZMK v0.3 (Jan 11, 2026)
 
 # FEATURES 0.0.2-beta4 (Feb 27, 2025)
 =======================================
