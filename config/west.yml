@@ -11,7 +11,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
+      revision: v0.3
       import: app/west.yml
     # dongle_display
     - name: zmk-dongle-display
@@ -20,7 +20,7 @@ manifest:
     # nice_oled - nice_epaper
     - name: zmk-nice-oled
       remote: mctechnology17
-      revision: main
+      revision: v0.3
     # dongle_display!view
     - name: zmk-dongle-display-view
       remote: mctechnology17
