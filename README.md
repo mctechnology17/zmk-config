@@ -237,8 +237,8 @@ zmk-config # main folder
 ├── build.yaml # config file for compilation on the github server
 │   boards
 │   ├── ... # other boards
-│   ├── nice_nano_v2.overlay
-│   ├── puchi_ble_v1.overlay
+│   ├── nice_nano_nrf52840_zmk.overlay
+│   ├── puchi_ble_nrf52840_zmk.overlay
 │   └── shields
 │       ├── corne
 │       │   ├── Kconfig.defconfig # modify if you want to add a new shield

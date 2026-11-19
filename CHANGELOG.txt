@@ -7,6 +7,18 @@ How the versions work (the third number is the ZMK version):
 - vX.Y.Z-beta.N   public test version from the branch `beta`
 - New work is developed on the branch `dev`
 
+# FEATURES v0.0.4 (not released yet, branch `zmk-v0.4`) · next ZMK (Zephyr 4.1)
+=======================================
+Migration to the next ZMK version. This branch does not build with ZMK v0.3: use `main` or `zmk-v0.3` for that.
+
+# CHANGES
+- [x] `config/west.yml`: ZMK pinned to its `main` of Nov 14, 2026 (Zephyr 4.1), `zmk-dongle-display` on its `main` (already on Zephyr 4.1) and my modules on their branch `zmk-v0.4`
+- [x] `build.yaml` and `Makefile`: new board names (`nice_nano//zmk`, `puchi_ble//zmk`, `xiao_ble//zmk`) and the Docker image `zmkfirmware/zmk-dev-arm:4.1-branch`
+- [x] Per-board overlays renamed to the new board names (`nice_nano_nrf52840_zmk.overlay`, `puchi_ble_nrf52840_zmk.overlay`, `xiao_ble_nrf52840_zmk.overlay`, `nrfmicro_nrf52840_zmk_1_1_0.overlay`, ...). With the old names ZMK skips them without any warning
+- [x] `CONFIG_WS2812_STRIP` removed from the shields (the option no longer exists) and `CONFIG_ZMK_MOUSE` replaced by `CONFIG_ZMK_POINTING`
+- [x] GitHub workflow: `build-user-config.yml@main`
+- [ ] Not tested on hardware yet
+
 # FEATURES NEXT (not released yet)
 =======================================
 # CHANGES

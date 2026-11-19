@@ -11,23 +11,25 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
+      # ZMK main (Zephyr 4.1) of Nov 14, 2026. It becomes v0.4.0 when ZMK releases it.
+      revision: 4de313367288aad5aeaa1243890e40dc813f7008
       import: app/west.yml
     # dongle_display
     - name: zmk-dongle-display
       remote: englmaxi
-      revision: v0.3
+      # Its main branch is the Zephyr 4.1 version since Dec 28, 2025.
+      revision: main
     # nice_oled - nice_epaper
     - name: zmk-nice-oled
       remote: mctechnology17
-      revision: main
+      revision: zmk-v0.4
     # dongle_display!view
     - name: zmk-dongle-display-view
       remote: mctechnology17
-      revision: main
+      revision: zmk-v0.4
     # oled Adapter
     - name: zmk-oled-adapter
       remote: mctechnology17
-      revision: main
+      revision: zmk-v0.4
   self:
     path: config

@@ -39,10 +39,10 @@ config=${PWD}/config
 nice_mount=/Volumes/NICENANO
 puchi_mount=/Volumes/NRF52BOOT
 xiao_mount=/Volumes/XIAO-SENSE
-zmk_image=zmkfirmware/zmk-dev-arm:3.5
-nice=nice_nano_v2
-puchi=puchi_ble_v1
-xiao=seeeduino_xiao_ble
+zmk_image=zmkfirmware/zmk-dev-arm:4.1-branch
+nice=nice_nano//zmk
+puchi=puchi_ble//zmk
+xiao=xiao_ble//zmk
 urob=zmk-codebase_urob
 default=zmk-codebase_default
 # --name zmk-$@ is for codebase_urob, for example: zmk-codebase_urob
