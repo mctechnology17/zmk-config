@@ -115,6 +115,7 @@ Which branch or tag to clone, fork or download:
 |---|---|
 | The latest stable version | `main` |
 | Stay on ZMK v0.3 | `zmk-v0.3` |
+| The next ZMK (v0.4, Zephyr 4.1), in preparation | `zmk-v0.4` (this branch) |
 | A fixed version that never changes | a tag, for example `v0.0.3` |
 | Try what is coming next (it can still change) | `beta` |
 
@@ -552,7 +553,7 @@ manifest:
     # include corne with dongle pro_micro and xiao compatible
     - name: zmk-config
       remote: mctechnology17
-      revision: main
+      revision: zmk-v0.4
   self:
     path: config
 ```
