@@ -2,13 +2,16 @@
 
 [![MC Technology](https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_extendido.GIF)](https://www.youtube.com/channel/UC_mYh5PYPHBJ5YYUj8AIkcw)
 
+<!-- mc-follow-top:start -->
 <div align="center">
 
-  [<img align="center" alt="MC Technology | YouTube" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/youtube.png" />][youtube]
-  [<img align="center" alt="MC Technology17 | Facebook" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/facebook.png" />][facebook]
-  [<img align="center" alt="MC Technology17 | Reddit" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/reddit.png" />][reddit]
+  <a href="https://youtube.com/@mctechnology17"><img align="center" alt="MC Technology | YouTube" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/youtube.png" /></a>
+  <a href="https://www.instagram.com/mctechnology17/"><img align="center" alt="MC Technology | Instagram" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/instagram.png" /></a>
+  <a href="https://www.facebook.com/mctechnology17/"><img align="center" alt="MC Technology | Facebook" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/facebook.png" /></a>
+  <a href="https://www.tiktok.com/@mctechnology17"><img align="center" alt="MC Technology | TikTok" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/tiktok.png" /></a>
 
 </div>
+<!-- mc-follow-top:end -->
 <br>
 
 
@@ -582,6 +585,21 @@ include:
 - [minusfive/zmk-config](https://github.com/minusfive/zmk-config)
 - [infused-kim/zmk-config](https://github.com/infused-kim/zmk-config)
 - [urob/zmk-config](https://github.com/urob/zmk-config)
+
+<!-- mc-follow:start -->
+# Support this project
+
+This is a personal project that I build in my free time. If it is useful to
+you, the best way to help is to follow and subscribe:
+
+[YouTube](https://youtube.com/@mctechnology17) · [Instagram](https://www.instagram.com/mctechnology17/) · [Facebook](https://www.facebook.com/mctechnology17/) · [TikTok](https://www.tiktok.com/@mctechnology17)
+
+I make videos about split keyboards, ZMK and open source (in Spanish, long
+videos with English subtitles). Every follow and every subscription helps me a
+lot and keeps me motivated to bring more to the open source community.
+
+Thank you for every report and every issue: they make these projects better.
+<!-- mc-follow:end -->
 
 # MY OTHER PROJECTS:
 - [nice!oled](https://github.com/mctechnology17/zmk-nice-oled): nice_oled
