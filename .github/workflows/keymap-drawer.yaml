@@ -6,6 +6,8 @@ name: Draw ZMK keymaps
 on:
   workflow_dispatch: # can be triggered manually
   push: # automatically run on changes to following paths
+    branches: # only branches: from a tag there is no branch to push the drawings to
+      - "**"
     paths:
       - "config/*.keymap"
       - "config/config_keymap-drawer.yaml"
@@ -17,7 +19,7 @@ jobs:
     permissions:
       contents: write # allow workflow to commit to the repo
     with:
-      amend_commit: true
+      amend_commit: false # a new commit with the drawings, the last commit is never rewritten
       keymap_patterns: "config/*.keymap" # path to the keymaps to parse
       config_path: "config/config_keymap-drawer.yaml" # config file, ignored if not exists
       output_folder: "keymap-drawer" # path to save produced SVG and keymap YAML files
